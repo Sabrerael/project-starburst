@@ -4,16 +4,17 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour {
 
     // CACHE
+    private BulletMagnet bulletMagnet;
     private Movement movement;
 
     private void Start() {
+        bulletMagnet = GetComponent<BulletMagnet>();
         movement = GetComponent<Movement>();
     }
 
     private void OnFire(InputValue value) {
         if (value.isPressed) {
-            //GetComponent<Fighter>().CheckIfSwinging();
-            Debug.Log("Attack");
+            bulletMagnet.LaunchBullet();
         }
     }
 
