@@ -18,6 +18,14 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
+    private void OnMagnet(InputValue value) {
+        if (value.isPressed) {
+            bulletMagnet.SetMagnetActive(true);
+        } else if (!value.isPressed) {
+            bulletMagnet.SetMagnetActive(false);
+        }
+    }
+
     private void OnMove(InputValue value) {
         movement.SetMovementValues(value.Get<Vector2>());
     }

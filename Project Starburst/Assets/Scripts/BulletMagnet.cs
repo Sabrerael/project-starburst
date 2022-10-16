@@ -4,9 +4,19 @@ using UnityEngine;
 public class BulletMagnet : MonoBehaviour {
     [SerializeField] Transform bulletParent = null;
 
+    private bool magnetActive = false;
     private GameObject[] bulletArray = new GameObject[5];
 
+    public void SetMagnetActive(bool magnetActive) {
+        Debug.Log("Setting magnet to " + magnetActive);
+        this.magnetActive = magnetActive;
+    }
+
     private void OnTriggerEnter2D(Collider2D other) {
+        if (!magnetActive) {
+            return;
+        }
+
         if (other.gameObject.tag == "Enemy Projectile") {
             Debug.Log("Bullet should be grabbed by player");
             AddEnemyBulletToArray(other.gameObject);
@@ -40,6 +50,8 @@ public class BulletMagnet : MonoBehaviour {
     }
 
     private void ResetBulletArray() {
-        // TODO
+        for (int i = 1; i < bulletArray.Length; i++) {
+            bulletArray[i-1] = bulletArray[i];
+        }
     }
 }
