@@ -9,7 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 893736129610568902}
-  m_Layer: 0
+  - component: {fileID: 2122771733882977346}
+  - component: {fileID: 2523589688782449934}
+  m_Layer: 7
   m_Name: Bullet Parent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30,6 +32,36 @@ Transform:
   m_Father: {fileID: 5844647460688250634}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2122771733882977346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3145897602285299460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a00c3790a60b5664186dc7060740995b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletParent: {fileID: 893736129610568902}
+  playerBulletPrefab: {fileID: 518050238800716108, guid: e904e37c812b21f4298a8e6cf86f62dd, type: 3}
+--- !u!58 &2523589688782449934
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3145897602285299460}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.35
 --- !u!1 &5844647460688250632
 GameObject:
   m_ObjectHideFlags: 0
@@ -39,14 +71,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5844647460688250634}
-  - component: {fileID: 4709829121875487064}
   - component: {fileID: 1682577739490508675}
   - component: {fileID: 5620356226316752676}
   - component: {fileID: 6889347018425099681}
   - component: {fileID: 3918301685344090853}
   - component: {fileID: 8865931347629622181}
-  - component: {fileID: 7940140183021485087}
-  m_Layer: 0
+  - component: {fileID: 1121599244797466937}
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -61,7 +92,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5844647460688250632}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -4, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children:
   - {fileID: 4711331471882341538}
@@ -69,22 +100,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &4709829121875487064
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5844647460688250632}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.35
 --- !u!61 &1682577739490508675
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -174,6 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d34b968717382a4c8b030576563109b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletMagnet: {fileID: 2122771733882977346}
 --- !u!114 &8865931347629622181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,7 +204,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 6
   velocityAdjustment: 17500
---- !u!114 &7940140183021485087
+--- !u!114 &1121599244797466937
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -197,10 +213,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5844647460688250632}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a00c3790a60b5664186dc7060740995b, type: 3}
+  m_Script: {fileID: 11500000, guid: 366aa188abf0faf4facb52f9ed0b4d1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletParent: {fileID: 893736129610568902}
+  healthPoints: 100
 --- !u!1 &8677556797163360799
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,9 +227,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4711331471882341538}
   - component: {fileID: 4440651294222900210}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Body
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

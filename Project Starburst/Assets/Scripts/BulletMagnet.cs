@@ -1,14 +1,13 @@
-using System;
 using UnityEngine;
 
 public class BulletMagnet : MonoBehaviour {
-    [SerializeField] Transform bulletParent = null;
+    [SerializeField] Transform bulletParent;
+    [SerializeField] GameObject playerBulletPrefab;
 
     private bool magnetActive = false;
     private GameObject[] bulletArray = new GameObject[5];
 
     public void SetMagnetActive(bool magnetActive) {
-        Debug.Log("Setting magnet to " + magnetActive);
         this.magnetActive = magnetActive;
     }
 
@@ -19,7 +18,8 @@ public class BulletMagnet : MonoBehaviour {
 
         if (other.gameObject.tag == "Enemy Projectile") {
             Debug.Log("Bullet should be grabbed by player");
-            AddEnemyBulletToArray(other.gameObject);
+            Destroy(other.gameObject);
+            AddEnemyBulletToArray(Instantiate(playerBulletPrefab));
         }
     }
 
@@ -31,6 +31,7 @@ public class BulletMagnet : MonoBehaviour {
 
         GameObject bulletToFire = bulletArray[0];
         bulletToFire.transform.parent = null;
+        bulletToFire.GetComponent<Collider2D>().enabled = true;
         bulletToFire.GetComponent<PlayerProjectile>().enabled = true;
 
         ResetBulletArray();
@@ -39,8 +40,6 @@ public class BulletMagnet : MonoBehaviour {
     private void AddEnemyBulletToArray(GameObject gameObject) {
         for (int i = 0; i < bulletArray.Length; i++) {
             if (bulletArray[i] == null) {
-                gameObject.GetComponent<EnemyProjectile>().enabled = false;
-                gameObject.tag = "Player Projectile";
                 bulletArray[i] = gameObject;
                 gameObject.transform.parent = bulletParent;
                 gameObject.transform.position = transform.position + new Vector3(0, 1f, 0);
