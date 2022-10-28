@@ -3,9 +3,25 @@ using UnityEngine;
 public class Health : MonoBehaviour {
     [SerializeField] int healthPoints = 100;
 
-    public int GetHealthPoints() { return healthPoints; }
+    private int totalHealthPoints;
+    private int currentHealthPoints;
+
+    private void Start() {
+        totalHealthPoints = healthPoints;
+        currentHealthPoints = healthPoints;
+    }
+
+    public int GetTotalHealthPoints() { return totalHealthPoints; }
+    public int GetCurrentHealthPoints() { return currentHealthPoints; }
 
     public void ModifyHealthPoints(int value) { 
-        healthPoints += value;
+        currentHealthPoints += value;
+        if (currentHealthPoints <= 0) {
+            Death();
+        }
+    }
+
+    private void Death() {
+        Destroy(gameObject);
     }
 }
