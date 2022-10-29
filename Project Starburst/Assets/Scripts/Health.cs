@@ -13,6 +13,7 @@ public class Health : MonoBehaviour {
 
     public int GetTotalHealthPoints() { return totalHealthPoints; }
     public int GetCurrentHealthPoints() { return currentHealthPoints; }
+    public float GetFraction() { return (float)currentHealthPoints / (float)totalHealthPoints; }
 
     public void ModifyHealthPoints(int value) { 
         currentHealthPoints += value;
@@ -23,5 +24,8 @@ public class Health : MonoBehaviour {
 
     private void Death() {
         Destroy(gameObject);
+        if (tag != "Player") {
+            GetComponent<Enemy>().AddScoreToPlayer();
+        }
     }
 }

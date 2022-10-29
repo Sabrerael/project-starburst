@@ -46,6 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletParent: {fileID: 893736129610568902}
   playerBulletPrefab: {fileID: 518050238800716108, guid: e904e37c812b21f4298a8e6cf86f62dd, type: 3}
+  magnetDrain: 2
+  magnetRegen: 4
 --- !u!58 &2523589688782449934
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -74,6 +76,7 @@ GameObject:
   - component: {fileID: 1682577739490508675}
   - component: {fileID: 5620356226316752676}
   - component: {fileID: 6889347018425099681}
+  - component: {fileID: 1628906767754951472}
   - component: {fileID: 3918301685344090853}
   - component: {fileID: 8865931347629622181}
   - component: {fileID: 1121599244797466937}
@@ -177,6 +180,18 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &1628906767754951472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5844647460688250632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8c67c5c15eada44d8e57a65a147f819, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &3918301685344090853
 MonoBehaviour:
   m_ObjectHideFlags: 0

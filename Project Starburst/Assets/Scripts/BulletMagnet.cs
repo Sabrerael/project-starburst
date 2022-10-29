@@ -4,11 +4,24 @@ public class BulletMagnet : MonoBehaviour {
     [SerializeField] Transform bulletParent;
     [SerializeField] GameObject playerBulletPrefab;
 
+    [SerializeField] float magnetDrain = 2;
+    [SerializeField] float magnetRegen = 4;
+
     private bool magnetActive = false;
+    private float magnetPower = 1;
     private GameObject[] bulletArray = new GameObject[5];
 
-    public void SetMagnetActive(bool magnetActive) {
-        this.magnetActive = magnetActive;
+    private void Update() {
+        if (!magnetActive && magnetPower != 1) {
+            magnetPower = Mathf.Clamp(magnetPower + (magnetRegen * Time.deltaTime), 0, 1);
+            return;
+        } 
+
+        magnetPower = Mathf.Clamp(magnetPower - (magnetDrain * Time.deltaTime), 0, 1);
+
+        if (magnetPower == 0) {
+            magnetActive = false;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
@@ -21,6 +34,12 @@ public class BulletMagnet : MonoBehaviour {
             Destroy(other.gameObject);
             AddEnemyBulletToArray(Instantiate(playerBulletPrefab));
         }
+    }
+
+    public float GetMagnetPower() { return magnetPower; }
+
+    public void SetMagnetActive(bool magnetActive) {
+        this.magnetActive = magnetActive;
     }
 
     public void LaunchBullet() {

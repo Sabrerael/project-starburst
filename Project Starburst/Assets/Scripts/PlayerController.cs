@@ -28,14 +28,4 @@ public class PlayerController : MonoBehaviour {
     private void OnMove(InputValue value) {
         movement.SetMovementValues(value.Get<Vector2>());
     }
-    //This really shouldn't go in here but I'll move it later
-    private void OnCollisionEnter2D(Collision2D other) {
-        if (other.gameObject.tag == "Enemy Projectile") {
-            Debug.Log("Enemy Projectile hit " + name);
-            int damage = other.gameObject.GetComponent<EnemyProjectile>().GetDamage();
-            GetComponent<Health>().ModifyHealthPoints(-damage);
-            Destroy(other.gameObject);
-        }
-    }
-
 }

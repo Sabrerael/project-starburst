@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour {
     [SerializeField] GameObject projectile;
+    [SerializeField] int scoreValue = 100;
 
     private Health health;
 
@@ -18,6 +20,10 @@ public class Enemy : MonoBehaviour {
             health.ModifyHealthPoints(-damage);
             Destroy(other.gameObject);
         }
+    }
+
+    public void AddScoreToPlayer() {
+        FindObjectOfType<Player>().AddToTotalScore(scoreValue);
     }
 
     private IEnumerator FireProjectiles(float time) {
