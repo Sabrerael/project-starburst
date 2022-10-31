@@ -10,6 +10,11 @@ public class BulletMagnet : MonoBehaviour {
     private bool magnetActive = false;
     private float magnetPower = 1;
     private GameObject[] bulletArray = new GameObject[5];
+    private SpriteRenderer spriteRenderer;
+
+    private void Start() {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
 
     private void Update() {
         if (!magnetActive && magnetPower != 1) {
@@ -21,6 +26,7 @@ public class BulletMagnet : MonoBehaviour {
 
         if (magnetPower == 0) {
             magnetActive = false;
+            spriteRenderer.enabled = false;
         }
     }
 
@@ -40,6 +46,7 @@ public class BulletMagnet : MonoBehaviour {
 
     public void SetMagnetActive(bool magnetActive) {
         this.magnetActive = magnetActive;
+        spriteRenderer.enabled = magnetActive;
     }
 
     public void LaunchBullet() {
