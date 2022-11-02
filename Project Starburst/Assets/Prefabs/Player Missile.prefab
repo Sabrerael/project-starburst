@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 4277688632517598970}
   - component: {fileID: 3082088543636625502}
   - component: {fileID: 5512458694092462939}
-  - component: {fileID: 8620032734408803431}
+  - component: {fileID: -8650535024729223731}
   m_Layer: 7
   m_Name: Player Missile
   m_TagString: Player Projectile
@@ -153,7 +153,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &8620032734408803431
+--- !u!114 &-8650535024729223731
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -162,8 +162,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5550583240862649229}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2e03aa700618aa48999bfe74b4b0972, type: 3}
+  m_Script: {fileID: 11500000, guid: d6dea5e76732a7744bdf74295920e599, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 5
-  damage: 50
+  isPlayerProjectile: 1
+  movementSpeed: 7.5
+  damage: 100
+  missileExplosion: {fileID: 0}

@@ -36,7 +36,6 @@ public class BulletMagnet : MonoBehaviour {
         }
 
         if (other.gameObject.tag == "Enemy Projectile") {
-            Debug.Log("Bullet should be grabbed by player");
             Destroy(other.gameObject);
             AddEnemyBulletToArray(Instantiate(playerBulletPrefab));
         }
@@ -58,7 +57,7 @@ public class BulletMagnet : MonoBehaviour {
         GameObject bulletToFire = bulletArray[0];
         bulletToFire.transform.parent = null;
         bulletToFire.GetComponent<Collider2D>().enabled = true;
-        bulletToFire.GetComponent<PlayerProjectile>().enabled = true;
+        bulletToFire.GetComponent<Projectile>().enabled = true;
 
         ResetBulletArray();
     }

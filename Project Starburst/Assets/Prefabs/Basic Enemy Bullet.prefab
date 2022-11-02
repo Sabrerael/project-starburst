@@ -165,5 +165,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f99efb4062622242a920797cbabed35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 10
+  isPlayerProjectile: 0
+  movementSpeed: -10
   damage: 50

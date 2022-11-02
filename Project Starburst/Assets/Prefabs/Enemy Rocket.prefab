@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8442524086552863863}
   - component: {fileID: 7255720094991033043}
   - component: {fileID: 212960221037634006}
-  - component: {fileID: 560410041993462573}
+  - component: {fileID: 2360829553577357284}
   m_Layer: 6
   m_Name: Enemy Rocket
   m_TagString: Enemy Projectile
@@ -71,7 +71,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &560410041993462573
+--- !u!114 &2360829553577357284
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -80,11 +80,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 248572933423984896}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f99efb4062622242a920797cbabed35, type: 3}
+  m_Script: {fileID: 11500000, guid: d6dea5e76732a7744bdf74295920e599, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 10
-  damage: 50
+  isPlayerProjectile: 0
+  movementSpeed: -7.5
+  damage: 100
+  missileExplosion: {fileID: 0}
 --- !u!1 &6568614249052806274
 GameObject:
   m_ObjectHideFlags: 0

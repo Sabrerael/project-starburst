@@ -190,7 +190,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &438413236
 GameObject:
@@ -846,7 +846,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &912968466023590152
 PrefabInstance:
@@ -869,7 +869,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 912968466634624366, guid: 84ba54aa9f1155a4fa249c030de49bbf, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 912968466634624366, guid: 84ba54aa9f1155a4fa249c030de49bbf, type: 3}
       propertyPath: m_AnchorMax.x
@@ -976,6 +976,10 @@ PrefabInstance:
       propertyPath: magnetRegen
       value: 0.6
       objectReference: {fileID: 0}
+    - target: {fileID: 2122771733882977346, guid: b57d320a93d1bae4c8cc13ab85508611, type: 3}
+      propertyPath: playerBulletPrefab
+      value: 
+      objectReference: {fileID: 518050238800716108, guid: e904e37c812b21f4298a8e6cf86f62dd, type: 3}
     - target: {fileID: 2523589688782449934, guid: b57d320a93d1bae4c8cc13ab85508611, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -986,7 +990,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5844647460688250634, guid: b57d320a93d1bae4c8cc13ab85508611, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5844647460688250634, guid: b57d320a93d1bae4c8cc13ab85508611, type: 3}
       propertyPath: m_LocalPosition.x

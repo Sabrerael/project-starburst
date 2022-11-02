@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8083529626763045335}
   - component: {fileID: 7041051785632264051}
   - component: {fileID: 572871403206585462}
-  - component: {fileID: 4383007809966682954}
+  - component: {fileID: 8944401492133752567}
   m_Layer: 7
   m_Name: Player Piercing Bullet
   m_TagString: Player Projectile
@@ -71,7 +71,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &4383007809966682954
+--- !u!114 &8944401492133752567
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -80,10 +80,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 465192876194954400}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2e03aa700618aa48999bfe74b4b0972, type: 3}
+  m_Script: {fileID: 11500000, guid: 0cd32e9e90609564bb1a21a969fe98eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 5
+  isPlayerProjectile: 1
+  movementSpeed: 12.5
   damage: 50
 --- !u!1 &6786870123928719650
 GameObject:
