@@ -168,4 +168,4 @@ MonoBehaviour:
   isPlayerProjectile: 1
   movementSpeed: 7.5
   damage: 100
-  missileExplosion: {fileID: 0}
+  missileExplosionPrefab: {fileID: 104292047470291208, guid: 4899a021c96056841a36759c321c414e, type: 3}

@@ -1,12 +1,12 @@
 using UnityEngine;
 
 public class Missile : Projectile {
-    [SerializeField] GameObject missileExplosion;
+    [SerializeField] MissileExplosion missileExplosionPrefab;
 
     protected override void OnCollisionEnter2D(Collision2D other) {
         if ((isPlayerProjectile && other.gameObject.tag == "Enemy") || other.gameObject.tag == "Player") {
-            other.gameObject.GetComponent<Health>().ModifyHealthPoints(-damage);
-            Debug.Log("Spawn explosion here");
+            MissileExplosion missionExplosion = Instantiate(missileExplosionPrefab, transform.position, Quaternion.identity);
+            missionExplosion.SetDamage(damage);
             Destroy(gameObject);
         }
     }

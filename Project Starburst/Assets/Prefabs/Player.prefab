@@ -47,8 +47,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletParent: {fileID: 893736129610568902}
   playerBulletPrefab: {fileID: 518050238800716108, guid: e904e37c812b21f4298a8e6cf86f62dd, type: 3}
-  magnetDrain: 2
-  magnetRegen: 4
+  magnetDrain: 0.3
+  magnetRegen: 0.6
 --- !u!58 &2523589688782449934
 CircleCollider2D:
   m_ObjectHideFlags: 0
