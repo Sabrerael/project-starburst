@@ -86,6 +86,7 @@ MonoBehaviour:
   isPlayerProjectile: 1
   movementSpeed: 12.5
   damage: 50
+  fireSound: {fileID: 8300000, guid: 66d6f42991b26ad499d426d4c230e891, type: 3}
 --- !u!1 &6786870123928719650
 GameObject:
   m_ObjectHideFlags: 0

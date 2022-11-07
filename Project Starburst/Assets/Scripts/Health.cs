@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Health : MonoBehaviour {
     [SerializeField] int healthPoints = 100;
+    [SerializeField] AudioClip hitSound;
+    [SerializeField] AudioClip deathSound;
 
     private int totalHealthPoints;
     private int currentHealthPoints;
@@ -17,12 +19,14 @@ public class Health : MonoBehaviour {
 
     public void ModifyHealthPoints(int value) { 
         currentHealthPoints += value;
+        AudioSource.PlayClipAtPoint(hitSound, transform.position);
         if (currentHealthPoints <= 0) {
             Death();
         }
     }
 
     private void Death() {
+        AudioSource.PlayClipAtPoint(deathSound, transform.position);
         Destroy(gameObject);
         if (tag != "Player") {
             GetComponent<Enemy>().AddScoreToPlayer();

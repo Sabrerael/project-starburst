@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour {
     [SerializeField] List<WaveConfigSO> waveConfigs;
-    [SerializeField] float timeBetweenWaves = 0;
     
     private WaveConfigSO currentWave;
 
@@ -24,7 +23,7 @@ public class EnemySpawner : MonoBehaviour {
                     transform);
                 yield return new WaitForSeconds(currentWave.GetRandomSpawnTime());
             }
-            yield return new WaitForSeconds(timeBetweenWaves);
+            yield return new WaitForSeconds(currentWave.GetTimeAfterWave());
         }
     }
 

@@ -4,12 +4,13 @@ using UnityEngine;
 public class Enemy : MonoBehaviour {
     [SerializeField] GameObject projectile;
     [SerializeField] int scoreValue = 100;
+    [SerializeField] float fireInterval = 2;
 
     private Health health;
 
     private void Start() {
         health = GetComponent<Health>();
-        StartCoroutine(FireProjectiles(2));
+        StartCoroutine(FireProjectiles(fireInterval));
     }
 
     public void AddScoreToPlayer() {

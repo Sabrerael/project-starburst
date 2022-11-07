@@ -2,14 +2,21 @@ using UnityEngine;
 
 public class BulletMagnet : MonoBehaviour {
     [SerializeField] Transform bulletParent;
-    [SerializeField] GameObject playerBulletPrefab;
+    [SerializeField] AudioClip magnetActivateSound;
 
+    [Header("Bullet Prefabs")]
+    [SerializeField] GameObject basicBulletPrefab;
+    [SerializeField] GameObject missilePrefab;
+    [SerializeField] GameObject piercingBulletPrefab;
+
+    [Header("Magnet Properties")]
     [SerializeField] float magnetDrain = 2;
     [SerializeField] float magnetRegen = 4;
+    [SerializeField] Transform[] bulletLocations;
 
     private bool magnetActive = false;
     private float magnetPower = 1;
-    private GameObject[] bulletArray = new GameObject[5];
+    private GameObject[] bulletArray = new GameObject[7];
     private SpriteRenderer spriteRenderer;
 
     private void Start() {
@@ -35,9 +42,15 @@ public class BulletMagnet : MonoBehaviour {
             return;
         }
 
-        if (other.gameObject.tag == "Enemy Projectile") {
+        if (other.gameObject.tag == "Enemy Projectile" && bulletArray[4] == null) {
+            if (other.GetComponent<Missile>()) {
+                AddEnemyBulletToArray(Instantiate(missilePrefab));
+            } else if (other.GetComponent<PiercingBullet>()) {
+                AddEnemyBulletToArray(Instantiate(piercingBulletPrefab));
+            } else {
+                AddEnemyBulletToArray(Instantiate(basicBulletPrefab));
+            }
             Destroy(other.gameObject);
-            AddEnemyBulletToArray(Instantiate(playerBulletPrefab));
         }
     }
 
@@ -46,6 +59,9 @@ public class BulletMagnet : MonoBehaviour {
     public void SetMagnetActive(bool magnetActive) {
         this.magnetActive = magnetActive;
         spriteRenderer.enabled = magnetActive;
+        if (magnetActive) {
+            AudioSource.PlayClipAtPoint(magnetActivateSound, transform.position);
+        }
     }
 
     public void LaunchBullet() {
@@ -67,7 +83,7 @@ public class BulletMagnet : MonoBehaviour {
             if (bulletArray[i] == null) {
                 bulletArray[i] = gameObject;
                 gameObject.transform.parent = bulletParent;
-                gameObject.transform.position = transform.position + new Vector3(0, 1f, 0);
+                gameObject.transform.position = bulletLocations[i].position;
                 return;
             }
         }
@@ -75,7 +91,11 @@ public class BulletMagnet : MonoBehaviour {
 
     private void ResetBulletArray() {
         for (int i = 1; i < bulletArray.Length; i++) {
+            if (bulletArray[i] == null) {
+                return;
+            }
             bulletArray[i-1] = bulletArray[i];
+            bulletArray[i-1].transform.position = bulletLocations[i-1].position;
         }
     }
 }

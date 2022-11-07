@@ -4,6 +4,11 @@ public class Projectile : MonoBehaviour {
     [SerializeField] protected bool isPlayerProjectile = false;
     [SerializeField] float movementSpeed = -2.5f;
     [SerializeField] protected int damage = 50;
+    [SerializeField] AudioClip fireSound;
+
+    private void Start() {
+        AudioSource.PlayClipAtPoint(fireSound, transform.position);
+    }
 
     private void Update() {
         transform.position += new Vector3(0, movementSpeed * Time.deltaTime, 0);

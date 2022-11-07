@@ -179,6 +179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 248572933423984896, guid: d07b18d970145ac4fbf8624db7dbe690, type: 3}
   scoreValue: 100
+  fireInterval: 1.75
 --- !u!114 &3438192588948367191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,3 +205,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthPoints: 50
+  hitSound: {fileID: 8300000, guid: 0c677cf2459b0c4469d6be8b5bb99155, type: 3}
+  deathSound: {fileID: 8300000, guid: 834af7613e983234692de57764dbc706, type: 3}

@@ -61,6 +61,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5c727fe24d263c498f95b77f23509b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lifetime: 0.25
+  explosionSound: {fileID: 8300000, guid: eda852917d1c64f429c0a9529bed4cc3, type: 3}
 --- !u!1 &5421628348175057643
 GameObject:
   m_ObjectHideFlags: 0
