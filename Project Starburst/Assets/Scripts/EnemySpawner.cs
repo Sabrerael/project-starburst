@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour {
     [SerializeField] List<WaveConfigSO> waveConfigs;
+    [SerializeField] WaveConfigSO bossWaveConfig;
     
     private WaveConfigSO currentWave;
 
@@ -25,6 +26,11 @@ public class EnemySpawner : MonoBehaviour {
             }
             yield return new WaitForSeconds(currentWave.GetTimeAfterWave());
         }
+        currentWave = bossWaveConfig;
+        Instantiate(currentWave.GetEnemyPrefab(0),
+                    currentWave.GetStartingWaypoint().position,
+                    Quaternion.identity,
+                    transform);
     }
 
     public WaveConfigSO GetCurrentWave() { return currentWave; }

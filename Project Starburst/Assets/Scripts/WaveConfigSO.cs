@@ -10,6 +10,8 @@ public class WaveConfigSO : ScriptableObject {
     [SerializeField] float spawnTimeVariance = 0f;
     [SerializeField] float minimumSpawnTime = 2f;
     [SerializeField] float timeAfterWave = 1f;
+    [SerializeField] bool continuePathfinding = false;
+    [SerializeField] int waypointIndexToReturnTo = 1;
 
     public int GetEnemyCount() { return enemyPrefabs.Count; }
 
@@ -20,6 +22,10 @@ public class WaveConfigSO : ScriptableObject {
     public float GetMoveSpeed() { return moveSpeed; }
 
     public float GetTimeAfterWave() { return timeAfterWave; }
+
+    public bool IsContinuePathfinding() { return continuePathfinding; }
+
+    public int GetWaypointIndexToReturnTo() { return waypointIndexToReturnTo;}
 
     public List<Transform> GetWaypoints() {
         List<Transform> waypoints = new List<Transform>();
