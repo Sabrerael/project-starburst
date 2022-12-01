@@ -18,12 +18,16 @@ public class Boss : MonoBehaviour {
     [SerializeField] Material missileEnemyMaterial;
     [SerializeField] float missileFireInterval = 2;
     [SerializeField] int missilesToFire = 5;
+    [SerializeField] Transform missileSpawn1;
+    [SerializeField] Transform missileSpawn2;
     
     [Header("Piercing Bullet Properties")]
     [SerializeField] GameObject piercingBullet;
     [SerializeField] Material piercingEnemyMaterial;
     [SerializeField] float piercingBulletFireInterval = 2;
     [SerializeField] int piercingBulletsToFire = 5;
+    [SerializeField] Transform piercingSpawn1;
+    [SerializeField] Transform piercingSpawn2;
 
     private Health health;
 
@@ -49,7 +53,8 @@ public class Boss : MonoBehaviour {
             yield return new WaitForSeconds(timeBetweenPhases);
             
             for (int i = 0; i < missilesToFire; i++) {
-                Instantiate(missile, transform.position + new Vector3(0,-0.5f, 0), Quaternion.identity);
+                Instantiate(missile, missileSpawn1.position, Quaternion.identity);
+                Instantiate(missile, missileSpawn2.position, Quaternion.identity);
                 yield return new WaitForSeconds(missileFireInterval);
             }
             
@@ -57,7 +62,8 @@ public class Boss : MonoBehaviour {
             yield return new WaitForSeconds(timeBetweenPhases);
 
             for (int i = 0; i < piercingBulletsToFire; i++) {
-                Instantiate(piercingBullet, transform.position + new Vector3(0,-0.5f, 0), Quaternion.identity);
+                Instantiate(piercingBullet, piercingSpawn1.position, Quaternion.identity);
+                Instantiate(piercingBullet, piercingSpawn2.position, Quaternion.identity);
                 yield return new WaitForSeconds(piercingBulletFireInterval);
             }
         }
