@@ -2,12 +2,13 @@ using UnityEngine;
 
 public class MissileExplosion : MonoBehaviour {
     [SerializeField] float lifetime = 0.25f;
-    [SerializeField] AudioClip explosionSound;
 
     private int damage = 100;
+    private AudioSource audioSource;
 
     private void Start() {
-        AudioSource.PlayClipAtPoint(explosionSound, transform.position);
+        audioSource = GetComponent<AudioSource>();
+        audioSource.volume = SettingsManager.GetSoundEffectsVolume();
         Destroy(gameObject, lifetime);
     }
 

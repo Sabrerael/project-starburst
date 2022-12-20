@@ -4,10 +4,12 @@ public class Projectile : MonoBehaviour {
     [SerializeField] protected bool isPlayerProjectile = false;
     [SerializeField] float movementSpeed = -2.5f;
     [SerializeField] protected int damage = 50;
-    [SerializeField] AudioClip fireSound;
+    
+    private AudioSource audioSource;
 
     private void Start() {
-        AudioSource.PlayClipAtPoint(fireSound, transform.position);
+        audioSource = GetComponent<AudioSource>();
+        audioSource.volume = SettingsManager.GetSoundEffectsVolume();
     }
 
     private void Update() {

@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class BulletMagnet : MonoBehaviour {
     [SerializeField] Transform bulletParent;
-    [SerializeField] AudioClip magnetActivateSound;
 
     [Header("Bullet Prefabs")]
     [SerializeField] GameObject basicBulletPrefab;
@@ -16,11 +15,14 @@ public class BulletMagnet : MonoBehaviour {
 
     private bool magnetActive = false;
     private float magnetPower = 1;
+    private AudioSource audioSource;
     private GameObject[] bulletArray = new GameObject[7];
     private SpriteRenderer spriteRenderer;
 
     private void Start() {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        audioSource = GetComponent<AudioSource>();
+        audioSource.volume = SettingsManager.GetSoundEffectsVolume();
     }
 
     private void Update() {
@@ -60,7 +62,7 @@ public class BulletMagnet : MonoBehaviour {
         this.magnetActive = magnetActive;
         spriteRenderer.enabled = magnetActive;
         if (magnetActive) {
-            AudioSource.PlayClipAtPoint(magnetActivateSound, transform.position);
+            audioSource.Play();
         }
     }
 
