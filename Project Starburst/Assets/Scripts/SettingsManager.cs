@@ -69,7 +69,7 @@ public class SettingsManager : MonoBehaviour {
     private void SetupSettings() {
         brightnessLevel = PlayerPrefs.GetInt(BRIGHTNESS_LEVEL, 0);
         colorSet = PlayerPrefs.GetInt(COLOR_SET, 0);
-        musicVolume = PlayerPrefs.GetFloat(MUSIC_VOLUME, 0.1f);
+        musicVolume = PlayerPrefs.GetFloat(MUSIC_VOLUME, 0.325f);
         soundEffectsVolume = PlayerPrefs.GetFloat(SOUND_EFFECTS_VOLUME, 1f);
     }
 }

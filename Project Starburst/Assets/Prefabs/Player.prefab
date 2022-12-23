@@ -197,7 +197,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletParent: {fileID: 893736129610568902}
-  magnetActivateSound: {fileID: 8300000, guid: 87a03ad92c74b6d46aff284f4f2ed1ee, type: 3}
   basicBulletPrefab: {fileID: 518050238800716108, guid: e904e37c812b21f4298a8e6cf86f62dd, type: 3}
   missilePrefab: {fileID: 5550583240862649229, guid: c3592a7d2d41d4d4f89cd0ace5e6fb22, type: 3}
   piercingBulletPrefab: {fileID: 465192876194954400, guid: 7e33f9caacd928d489246ff5dcf712dc, type: 3}
@@ -544,7 +543,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthPoints: 250
-  deathSound: {fileID: 8300000, guid: 834af7613e983234692de57764dbc706, type: 3}
+  deathSoundEffectObject: {fileID: 3553197256188102150, guid: e1539ae132cebc94db5d3d695b5d9592, type: 3}
 --- !u!82 &3520145899633785956
 AudioSource:
   m_ObjectHideFlags: 0

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Health : MonoBehaviour {
     [SerializeField] int healthPoints = 100;
-    [SerializeField] AudioClip deathSound;
+    [SerializeField] GameObject deathSoundEffectObject;
 
     private AudioSource audioSource;
     private int totalHealthPoints;
@@ -20,6 +20,7 @@ public class Health : MonoBehaviour {
     public float GetFraction() { return (float)currentHealthPoints / (float)totalHealthPoints; }
 
     public void ModifyHealthPoints(int value) {
+        currentHealthPoints += value;
         audioSource.Play();
         if (currentHealthPoints <= 0) {
             Death();
@@ -27,8 +28,7 @@ public class Health : MonoBehaviour {
     }
 
     private void Death() {
-        audioSource.clip = deathSound;
-        audioSource.Play();
+        Instantiate(deathSoundEffectObject, transform.position, Quaternion.identity);
         Destroy(gameObject);
         if (tag != "Player") {
             GetComponent<Enemy>().AddScoreToPlayer();

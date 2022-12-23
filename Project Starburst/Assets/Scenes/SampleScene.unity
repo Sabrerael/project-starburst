@@ -1133,6 +1133,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c89dd691d95de448b3cfe1bd108cbb6, type: 3}
+--- !u!1001 &4638751585588665406
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 814951966699839371, guid: e1539ae132cebc94db5d3d695b5d9592, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 814951966699839371, guid: e1539ae132cebc94db5d3d695b5d9592, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 814951966699839371, guid: e1539ae132cebc94db5d3d695b5d9592, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 814951966699839371, guid: e1539ae132cebc94db5d3d695b5d9592, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 814951966699839371, guid: e1539ae132cebc94db5d3d695b5d9592, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 814951966699839371, guid: e1539ae132cebc94db5d3d695b5d9592, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 814951966699839371, guid: e1539ae132cebc94db5d3d695b5d9592, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 814951966699839371, guid: e1539ae132cebc94db5d3d695b5d9592, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 814951966699839371, guid: e1539ae132cebc94db5d3d695b5d9592, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 814951966699839371, guid: e1539ae132cebc94db5d3d695b5d9592, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 814951966699839371, guid: e1539ae132cebc94db5d3d695b5d9592, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3553197256188102150, guid: e1539ae132cebc94db5d3d695b5d9592, type: 3}
+      propertyPath: m_Name
+      value: Death Sound Effect
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e1539ae132cebc94db5d3d695b5d9592, type: 3}
 --- !u!1001 &5844647461408541536
 PrefabInstance:
   m_ObjectHideFlags: 0

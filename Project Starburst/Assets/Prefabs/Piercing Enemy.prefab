@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthPoints: 50
-  deathSound: {fileID: 8300000, guid: 834af7613e983234692de57764dbc706, type: 3}
+  deathSoundEffectObject: {fileID: 3553197256188102150, guid: e1539ae132cebc94db5d3d695b5d9592, type: 3}
 --- !u!82 &8069331413158596110
 AudioSource:
   m_ObjectHideFlags: 0
