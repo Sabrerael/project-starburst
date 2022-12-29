@@ -177,9 +177,11 @@ MonoBehaviour:
   waveConfigs:
   - {fileID: 11400000, guid: 1de7f293d909e9c4c90148a2f11adc2e, type: 2}
   - {fileID: 11400000, guid: 769535c988df62340abbfe71cb636d53, type: 2}
-  - {fileID: 11400000, guid: b803ce6a87b0e43458d5674038d2b1aa, type: 2}
+  - {fileID: 11400000, guid: 9499228c6e23c5145878e0b4f8cffb86, type: 2}
   - {fileID: 11400000, guid: 21cbeeee2dd3c014dae650bbfbc6b6d3, type: 2}
   - {fileID: 11400000, guid: 419d607b90d3158409b0b577a943becd, type: 2}
+  - {fileID: 11400000, guid: b803ce6a87b0e43458d5674038d2b1aa, type: 2}
+  - {fileID: 11400000, guid: d4dcd05d8e9512f46bfa6308d38d8a36, type: 2}
   bossWaveConfig: {fileID: 11400000, guid: 8dd663148d784fa4f94203bf6d5953b6, type: 2}
 --- !u!4 &275318602
 Transform:
@@ -1133,63 +1135,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c89dd691d95de448b3cfe1bd108cbb6, type: 3}
---- !u!1001 &4638751585588665406
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 814951966699839371, guid: e1539ae132cebc94db5d3d695b5d9592, type: 3}
-      propertyPath: m_RootOrder
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 814951966699839371, guid: e1539ae132cebc94db5d3d695b5d9592, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 814951966699839371, guid: e1539ae132cebc94db5d3d695b5d9592, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 814951966699839371, guid: e1539ae132cebc94db5d3d695b5d9592, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 814951966699839371, guid: e1539ae132cebc94db5d3d695b5d9592, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 814951966699839371, guid: e1539ae132cebc94db5d3d695b5d9592, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 814951966699839371, guid: e1539ae132cebc94db5d3d695b5d9592, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 814951966699839371, guid: e1539ae132cebc94db5d3d695b5d9592, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 814951966699839371, guid: e1539ae132cebc94db5d3d695b5d9592, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 814951966699839371, guid: e1539ae132cebc94db5d3d695b5d9592, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 814951966699839371, guid: e1539ae132cebc94db5d3d695b5d9592, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3553197256188102150, guid: e1539ae132cebc94db5d3d695b5d9592, type: 3}
-      propertyPath: m_Name
-      value: Death Sound Effect
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e1539ae132cebc94db5d3d695b5d9592, type: 3}
 --- !u!1001 &5844647461408541536
 PrefabInstance:
   m_ObjectHideFlags: 0
