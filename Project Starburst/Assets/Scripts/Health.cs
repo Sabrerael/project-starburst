@@ -12,7 +12,8 @@ public class Health : MonoBehaviour {
         totalHealthPoints = healthPoints;
         currentHealthPoints = healthPoints;
         audioSource = GetComponent<AudioSource>();
-        audioSource.volume = SettingsManager.GetSoundEffectsVolume();
+        SetVolume();
+        SettingsManager.onSettingsChange += SetVolume;
     }
 
     public int GetTotalHealthPoints() { return totalHealthPoints; }
@@ -33,5 +34,9 @@ public class Health : MonoBehaviour {
         if (tag != "Player") {
             GetComponent<Enemy>().AddScoreToPlayer();
         }
+    }
+
+    private void SetVolume() {
+        audioSource.volume = SettingsManager.GetSoundEffectsVolume();
     }
 }

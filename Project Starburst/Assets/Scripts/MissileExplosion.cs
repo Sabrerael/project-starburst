@@ -8,7 +8,8 @@ public class MissileExplosion : MonoBehaviour {
 
     private void Start() {
         audioSource = GetComponent<AudioSource>();
-        audioSource.volume = SettingsManager.GetSoundEffectsVolume();
+        SetVolume();
+        SettingsManager.onSettingsChange += SetVolume;
         Destroy(gameObject, lifetime);
     }
 
@@ -19,4 +20,8 @@ public class MissileExplosion : MonoBehaviour {
     }
 
     public void SetDamage(int damage) { this.damage = damage; }
+    
+    private void SetVolume() {
+        audioSource.volume = SettingsManager.GetSoundEffectsVolume();
+    }
 }

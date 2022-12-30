@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class SettingsManager : MonoBehaviour {
@@ -12,16 +13,20 @@ public class SettingsManager : MonoBehaviour {
     private static int colorSet;
     private static float musicVolume;
     private static float soundEffectsVolume;
-
+    
+    public static event Action onSettingsChange;
     public static SettingsManager instance = null;
 
     // Unity functions
 
     private void Awake() {
-        if (instance == null)
+        if (instance == null) {
             instance = this;
-        else if (instance != this)
+        }
+        else if (instance != this) {
             Destroy(gameObject);
+            return;
+        }
 
         DontDestroyOnLoad(gameObject);
         SetupSettings();
@@ -59,13 +64,17 @@ public class SettingsManager : MonoBehaviour {
     // Public Functions
 
     public static void SaveAllSettings(int brightnessLevel, int colorSet, float musicVolume, float soundEffectsVolume) {
+        Debug.Log("In Save Function");
         SetBrightnessLevel(brightnessLevel);
         SetColorSet(colorSet);
         SetMusicVolume(musicVolume);
         SetSoundEffectsVolume(soundEffectsVolume);
+        if (onSettingsChange != null) { onSettingsChange(); }
+        Debug.Log("Finished Save Function");
     }
 
     // Private Functions
+
     private void SetupSettings() {
         brightnessLevel = PlayerPrefs.GetInt(BRIGHTNESS_LEVEL, 0);
         colorSet = PlayerPrefs.GetInt(COLOR_SET, 0);

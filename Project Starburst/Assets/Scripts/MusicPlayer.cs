@@ -16,6 +16,11 @@ public class MusicPlayer : MonoBehaviour {
 
     private void Start() {
         audioSource = GetComponent<AudioSource>();
+        SetVolume();
+        SettingsManager.onSettingsChange += SetVolume;
+    }
+
+    private void SetVolume() {
         audioSource.volume = SettingsManager.GetMusicVolume();
     }
 }

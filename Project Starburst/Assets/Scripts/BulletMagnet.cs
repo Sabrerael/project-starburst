@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class BulletMagnet : MonoBehaviour {
@@ -22,7 +23,8 @@ public class BulletMagnet : MonoBehaviour {
     private void Start() {
         spriteRenderer = GetComponent<SpriteRenderer>();
         audioSource = GetComponent<AudioSource>();
-        audioSource.volume = SettingsManager.GetSoundEffectsVolume();
+        SetVolume();
+        SettingsManager.onSettingsChange += SetVolume;
     }
 
     private void Update() {
@@ -99,5 +101,9 @@ public class BulletMagnet : MonoBehaviour {
             bulletArray[i-1] = bulletArray[i];
             bulletArray[i-1].transform.position = bulletLocations[i-1].position;
         }
+    }
+
+    private void SetVolume() {
+        audioSource.volume = SettingsManager.GetSoundEffectsVolume();
     }
 }

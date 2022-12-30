@@ -9,7 +9,8 @@ public class Projectile : MonoBehaviour {
 
     private void Start() {
         audioSource = GetComponent<AudioSource>();
-        audioSource.volume = SettingsManager.GetSoundEffectsVolume();
+        SetVolume();
+        SettingsManager.onSettingsChange += SetVolume;
     }
 
     private void Update() {
@@ -24,7 +25,12 @@ public class Projectile : MonoBehaviour {
     }
 
     public bool IsPlayerProjectile() { return isPlayerProjectile; }
+
     public int GetDamage() { return damage; }
 
     public void SetPlayerProjectile(bool isPlayerProjectile) { this.isPlayerProjectile = isPlayerProjectile; }
+
+    private void SetVolume() {
+        audioSource.volume = SettingsManager.GetSoundEffectsVolume();
+    }
 }

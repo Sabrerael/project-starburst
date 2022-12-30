@@ -8,11 +8,16 @@ public class TemporarySoundEffect : MonoBehaviour {
 
     private void Start() {
         audioSource = GetComponent<AudioSource>();
-        audioSource.volume = SettingsManager.GetSoundEffectsVolume();
+        SetVolume();
+        SettingsManager.onSettingsChange += SetVolume;
     }
 
     private void Update() {
         timer += Time.deltaTime;
         if (timer >= lifetime) { Destroy(gameObject);}
+    }
+
+    private void SetVolume() {
+        audioSource.volume = SettingsManager.GetSoundEffectsVolume();
     }
 }
