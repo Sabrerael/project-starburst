@@ -334,16 +334,19 @@ MonoBehaviour:
   spriteRenderer: {fileID: 8418502353642908297}
   basicBullet: {fileID: 5437220429731685477, guid: f307648afc17da145904e1e4fc702028, type: 3}
   basicEnemyMaterial: {fileID: 2100000, guid: 51adb4ec7af064340b933f1cb85e7207, type: 2}
+  basicEnemyMaterialColorBlind: {fileID: 2100000, guid: 4900947c0ec148a46bb0b8ec472ea582, type: 2}
   basicBulletFireInterval: 2
   basicBulletsToFire: 5
   missile: {fileID: 248572933423984896, guid: d07b18d970145ac4fbf8624db7dbe690, type: 3}
   missileEnemyMaterial: {fileID: 2100000, guid: 1249bdb3ca7372643a207431d12e235a, type: 2}
+  missileEnemyMaterialColorBlind: {fileID: 2100000, guid: f73a99045c3a04043884e571820e68d6, type: 2}
   missileFireInterval: 2
   missilesToFire: 5
   missileSpawn1: {fileID: 2226230946364460644}
   missileSpawn2: {fileID: 4965552482833022464}
   piercingBullet: {fileID: 3176741985367620412, guid: cda78298e07c89948bf7efbf1de0e87b, type: 3}
   piercingEnemyMaterial: {fileID: 2100000, guid: c3398a0c794f0bd488a92d27c6b757e4, type: 2}
+  piercingEnemyMaterialColorBlind: {fileID: 2100000, guid: ee08bb5da98c91241bedbe252d138abc, type: 2}
   piercingBulletFireInterval: 2
   piercingBulletsToFire: 5
   piercingSpawn1: {fileID: 496938257724394700}

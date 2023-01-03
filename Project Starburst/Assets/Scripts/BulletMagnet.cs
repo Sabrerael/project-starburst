@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class BulletMagnet : MonoBehaviour {
@@ -46,7 +45,7 @@ public class BulletMagnet : MonoBehaviour {
             return;
         }
 
-        if (other.gameObject.tag == "Enemy Projectile" && bulletArray[4] == null) {
+        if (other.gameObject.tag == "Enemy Projectile" && bulletArray[bulletArray.Length-1] == null) {
             if (other.GetComponent<Missile>()) {
                 AddEnemyBulletToArray(Instantiate(missilePrefab));
             } else if (other.GetComponent<PiercingBullet>()) {
@@ -78,6 +77,7 @@ public class BulletMagnet : MonoBehaviour {
         bulletToFire.transform.parent = null;
         bulletToFire.GetComponent<Collider2D>().enabled = true;
         bulletToFire.GetComponent<Projectile>().enabled = true;
+        bulletArray[0] = null;
 
         ResetBulletArray();
     }
@@ -85,6 +85,7 @@ public class BulletMagnet : MonoBehaviour {
     private void AddEnemyBulletToArray(GameObject gameObject) {
         for (int i = 0; i < bulletArray.Length; i++) {
             if (bulletArray[i] == null) {
+                Debug.Log("Adding bullet to index " + i);
                 bulletArray[i] = gameObject;
                 gameObject.transform.parent = bulletParent;
                 gameObject.transform.position = bulletLocations[i].position;
@@ -94,12 +95,20 @@ public class BulletMagnet : MonoBehaviour {
     }
 
     private void ResetBulletArray() {
-        for (int i = 1; i < bulletArray.Length; i++) {
-            if (bulletArray[i] == null) {
+        for (int i = 1; i <= bulletArray.Length; i++) {
+            if (i != 0 && bulletArray[i] == null) {
                 return;
             }
-            bulletArray[i-1] = bulletArray[i];
-            bulletArray[i-1].transform.position = bulletLocations[i-1].position;
+            int j = i-1;
+            do {
+                bulletArray[i-1] = bulletArray[i];
+                bulletArray[i] = null;
+                bulletArray[i-1].transform.position = bulletLocations[i-1].position;
+                Debug.Log("Moving bullet index " + i + " to index " + j);
+                j--;
+                if (j == -1) { break; }
+            } while(bulletArray[j] == null);
+
         }
     }
 
