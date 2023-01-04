@@ -86,7 +86,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlayerProjectile: 0
   movementSpeed: -12.5
-  damage: 50
+  damage: 35
 --- !u!82 &3506750635692233679
 AudioSource:
   m_ObjectHideFlags: 0

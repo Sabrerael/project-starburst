@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Health : MonoBehaviour {
@@ -21,9 +22,9 @@ public class Health : MonoBehaviour {
     public float GetFraction() { return (float)currentHealthPoints / (float)totalHealthPoints; }
 
     public void ModifyHealthPoints(int value) {
-        currentHealthPoints += value;
+        currentHealthPoints = Mathf.Clamp(currentHealthPoints + value, 0, totalHealthPoints);
         audioSource.Play();
-        if (currentHealthPoints <= 0) {
+        if (currentHealthPoints == 0) {
             Death();
         }
     }
@@ -31,12 +32,28 @@ public class Health : MonoBehaviour {
     private void Death() {
         Instantiate(deathSoundEffectObject, transform.position, Quaternion.identity);
         Destroy(gameObject);
-        if (tag != "Player") {
+        if (tag == "Player") {
+            StartCoroutine(TriggerDeathTransition());
+        } else if (tag == "Boss") {
+            GetComponent<Boss>().AddScoreToPlayer();
+            StartCoroutine(TriggerWinTransition());
+        } else {
             GetComponent<Enemy>().AddScoreToPlayer();
         }
+
     }
 
     private void SetVolume() {
         audioSource.volume = SettingsManager.GetSoundEffectsVolume();
+    }
+
+    private IEnumerator TriggerDeathTransition() {
+        yield return new WaitForSeconds(1);
+        FindObjectOfType<LevelLoader>().LoadGameOver();
+    }
+
+    private IEnumerator TriggerWinTransition() {
+        yield return new WaitForSeconds(1);
+        FindObjectOfType<LevelLoader>().LoadWinScreen();
     }
 }

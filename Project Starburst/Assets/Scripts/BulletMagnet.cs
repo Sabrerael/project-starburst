@@ -69,7 +69,6 @@ public class BulletMagnet : MonoBehaviour {
 
     public void LaunchBullet() {
         if (bulletArray[0] == null) {
-            Debug.Log("No Bullet to fire");
             return;
         }
 
@@ -85,7 +84,6 @@ public class BulletMagnet : MonoBehaviour {
     private void AddEnemyBulletToArray(GameObject gameObject) {
         for (int i = 0; i < bulletArray.Length; i++) {
             if (bulletArray[i] == null) {
-                Debug.Log("Adding bullet to index " + i);
                 bulletArray[i] = gameObject;
                 gameObject.transform.parent = bulletParent;
                 gameObject.transform.position = bulletLocations[i].position;
@@ -104,7 +102,6 @@ public class BulletMagnet : MonoBehaviour {
                 bulletArray[i-1] = bulletArray[i];
                 bulletArray[i] = null;
                 bulletArray[i-1].transform.position = bulletLocations[i-1].position;
-                Debug.Log("Moving bullet index " + i + " to index " + j);
                 j--;
                 if (j == -1) { break; }
             } while(bulletArray[j] == null);
