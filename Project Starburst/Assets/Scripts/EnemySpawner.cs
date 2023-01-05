@@ -9,6 +9,7 @@ public class EnemySpawner : MonoBehaviour {
     private WaveConfigSO currentWave;
 
     private void Start() {
+        //Time.timeScale = 5f;
         StartCoroutine(SpawnEnemyWaves());
     }
 

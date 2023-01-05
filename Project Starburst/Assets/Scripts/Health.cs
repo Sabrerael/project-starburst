@@ -31,7 +31,6 @@ public class Health : MonoBehaviour {
 
     private void Death() {
         Instantiate(deathSoundEffectObject, transform.position, Quaternion.identity);
-        Destroy(gameObject);
         if (tag == "Player") {
             StartCoroutine(TriggerDeathTransition());
         } else if (tag == "Boss") {
@@ -39,6 +38,7 @@ public class Health : MonoBehaviour {
             StartCoroutine(TriggerWinTransition());
         } else {
             GetComponent<Enemy>().AddScoreToPlayer();
+            Destroy(gameObject);
         }
 
     }
@@ -48,12 +48,15 @@ public class Health : MonoBehaviour {
     }
 
     private IEnumerator TriggerDeathTransition() {
+        // Need to do this more discretely, maybe move the Coroutine into the LevelLoader?
         yield return new WaitForSeconds(1);
+        Destroy(gameObject);
         FindObjectOfType<LevelLoader>().LoadGameOver();
     }
 
     private IEnumerator TriggerWinTransition() {
         yield return new WaitForSeconds(1);
+        Destroy(gameObject);
         FindObjectOfType<LevelLoader>().LoadWinScreen();
     }
 }

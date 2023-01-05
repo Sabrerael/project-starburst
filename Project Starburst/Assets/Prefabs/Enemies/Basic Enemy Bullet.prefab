@@ -141,7 +141,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5437220429731685477}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -169,7 +169,6 @@ MonoBehaviour:
   isPlayerProjectile: 0
   movementSpeed: -10
   damage: 50
-  audioSource: {fileID: 6022792281836891035}
 --- !u!82 &6022792281836891035
 AudioSource:
   m_ObjectHideFlags: 0

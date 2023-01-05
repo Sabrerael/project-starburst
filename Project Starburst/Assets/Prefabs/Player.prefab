@@ -529,7 +529,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 6
-  velocityAdjustment: 17500
+  xBoundary: 4.35
+  yBoundary: 4
 --- !u!114 &1121599244797466937
 MonoBehaviour:
   m_ObjectHideFlags: 0

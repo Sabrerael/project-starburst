@@ -182,6 +182,14 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 419d607b90d3158409b0b577a943becd, type: 2}
   - {fileID: 11400000, guid: b803ce6a87b0e43458d5674038d2b1aa, type: 2}
   - {fileID: 11400000, guid: d4dcd05d8e9512f46bfa6308d38d8a36, type: 2}
+  - {fileID: 11400000, guid: 88238ebe1c96cbb4ca23ea5f7b1f7565, type: 2}
+  - {fileID: 11400000, guid: d417d90cb6def3f44a509ff64ef85a95, type: 2}
+  - {fileID: 11400000, guid: 027037e8c0f670b489d5f1d487bee7d7, type: 2}
+  - {fileID: 11400000, guid: 70090c3851e4fe443b42e2c46e540b8e, type: 2}
+  - {fileID: 11400000, guid: aead99e96a7aa244484e452dd36479ed, type: 2}
+  - {fileID: 11400000, guid: af8bc8faf8ad23047bafd3a01464118d, type: 2}
+  - {fileID: 11400000, guid: 5dcaa75c42336b54a9ae36ffbd70e114, type: 2}
+  - {fileID: 11400000, guid: e013f612b04ada445b507f0160138e70, type: 2}
   bossWaveConfig: {fileID: 11400000, guid: 8dd663148d784fa4f94203bf6d5953b6, type: 2}
 --- !u!4 &275318602
 Transform:
@@ -1213,6 +1221,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1682577739490508675, guid: b57d320a93d1bae4c8cc13ab85508611, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2122771733882977346, guid: b57d320a93d1bae4c8cc13ab85508611, type: 3}
       propertyPath: playerBulletPrefab
       value: 
