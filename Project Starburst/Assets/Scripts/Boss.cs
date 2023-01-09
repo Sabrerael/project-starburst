@@ -13,6 +13,7 @@ public class Boss : MonoBehaviour {
     [SerializeField] Material basicEnemyMaterialColorBlind;
     [SerializeField] float basicBulletFireInterval = 2;
     [SerializeField] int basicBulletsToFire = 5;
+    [SerializeField] GameObject basicEnemyParticles;
 
     [Header("Missile Properties")]
     [SerializeField] GameObject missile;
@@ -22,6 +23,7 @@ public class Boss : MonoBehaviour {
     [SerializeField] int missilesToFire = 5;
     [SerializeField] Transform missileSpawn1;
     [SerializeField] Transform missileSpawn2;
+    [SerializeField] GameObject missileEnemyParticles;
     
     [Header("Piercing Bullet Properties")]
     [SerializeField] GameObject piercingBullet;
@@ -31,6 +33,7 @@ public class Boss : MonoBehaviour {
     [SerializeField] int piercingBulletsToFire = 5;
     [SerializeField] Transform piercingSpawn1;
     [SerializeField] Transform piercingSpawn2;
+    [SerializeField] GameObject piercingEnemyParticles;
 
     private Health health;
 

@@ -4,6 +4,7 @@ using UnityEngine;
 public class Health : MonoBehaviour {
     [SerializeField] int healthPoints = 100;
     [SerializeField] GameObject deathSoundEffectObject;
+    [SerializeField] GameObject hitParticleEffect;
 
     private AudioSource audioSource;
     private int totalHealthPoints;
@@ -24,6 +25,8 @@ public class Health : MonoBehaviour {
     public void ModifyHealthPoints(int value) {
         currentHealthPoints = Mathf.Clamp(currentHealthPoints + value, 0, totalHealthPoints);
         audioSource.Play();
+        GameObject particles = Instantiate(hitParticleEffect, transform.position, Quaternion.identity);
+        Destroy(particles, 0.5f);
         if (currentHealthPoints == 0) {
             Death();
         }
@@ -40,7 +43,8 @@ public class Health : MonoBehaviour {
             GetComponent<Enemy>().AddScoreToPlayer();
             Destroy(gameObject);
         }
-
+        GameObject particles = Instantiate(hitParticleEffect, transform.position, Quaternion.identity);
+        Destroy(particles, 0.5f);
     }
 
     private void SetVolume() {
