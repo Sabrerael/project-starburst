@@ -64,19 +64,17 @@ public class SettingsManager : MonoBehaviour {
     // Public Functions
 
     public static void SaveAllSettings(int brightnessLevel, int colorSet, float musicVolume, float soundEffectsVolume) {
-        Debug.Log("In Save Function");
-        SetBrightnessLevel(brightnessLevel);
+        //SetBrightnessLevel(brightnessLevel);
         SetColorSet(colorSet);
         SetMusicVolume(musicVolume);
         SetSoundEffectsVolume(soundEffectsVolume);
         if (onSettingsChange != null) { onSettingsChange(); }
-        Debug.Log("Finished Save Function");
     }
 
     // Private Functions
 
     private void SetupSettings() {
-        brightnessLevel = PlayerPrefs.GetInt(BRIGHTNESS_LEVEL, 0);
+        //brightnessLevel = PlayerPrefs.GetInt(BRIGHTNESS_LEVEL, 0);
         colorSet = PlayerPrefs.GetInt(COLOR_SET, 0);
         musicVolume = PlayerPrefs.GetFloat(MUSIC_VOLUME, 0.325f);
         soundEffectsVolume = PlayerPrefs.GetFloat(SOUND_EFFECTS_VOLUME, 1f);

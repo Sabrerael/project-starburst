@@ -36,8 +36,11 @@ public class Boss : MonoBehaviour {
     [SerializeField] GameObject piercingEnemyParticles;
 
     private Health health;
+    private bool useColorBlindScheme = false;
 
     private void Start() {
+        SetMaterials();
+        SettingsManager.onSettingsChange += SetMaterials;
         StartCoroutine(BossCycle());
     }
 
@@ -45,9 +48,21 @@ public class Boss : MonoBehaviour {
         FindObjectOfType<Player>().AddToTotalScore(scoreValue);
     }
 
+    private void SetMaterials() {
+        if (SettingsManager.GetColorSet() == 0) {
+            useColorBlindScheme = false;
+        } else {
+            useColorBlindScheme = true;
+        }
+    }
+
     private IEnumerator BossCycle() {
         while(true) {
-            spriteRenderer.material = basicEnemyMaterial;
+            if (useColorBlindScheme) {
+                spriteRenderer.material = basicEnemyMaterialColorBlind;
+            } else {
+                spriteRenderer.material = basicEnemyMaterial;
+            }
             yield return new WaitForSeconds(timeBetweenPhases);
 
             for (int i = 0; i < basicBulletsToFire; i++) {
@@ -55,7 +70,11 @@ public class Boss : MonoBehaviour {
                 yield return new WaitForSeconds(basicBulletFireInterval);
             }
 
-            spriteRenderer.material = missileEnemyMaterial;
+            if (useColorBlindScheme) {
+                spriteRenderer.material = missileEnemyMaterialColorBlind;
+            } else {
+                spriteRenderer.material = missileEnemyMaterial;
+            }
             yield return new WaitForSeconds(timeBetweenPhases);
             
             for (int i = 0; i < missilesToFire; i++) {
@@ -64,7 +83,11 @@ public class Boss : MonoBehaviour {
                 yield return new WaitForSeconds(missileFireInterval);
             }
             
-            spriteRenderer.material = piercingEnemyMaterial;
+            if (useColorBlindScheme) {
+                spriteRenderer.material = piercingEnemyMaterialColorBlind;
+            } else {
+                spriteRenderer.material = piercingEnemyMaterial;
+            }
             yield return new WaitForSeconds(timeBetweenPhases);
 
             for (int i = 0; i < piercingBulletsToFire; i++) {

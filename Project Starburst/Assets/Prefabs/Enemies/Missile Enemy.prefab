@@ -179,8 +179,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 248572933423984896, guid: d07b18d970145ac4fbf8624db7dbe690, type: 3}
+  spriteRenderer: {fileID: 6787264697364709299}
   scoreValue: 100
   fireInterval: 1.75
+  defaultMaterial: {fileID: 2100000, guid: 1249bdb3ca7372643a207431d12e235a, type: 2}
+  colorblindMaterial: {fileID: 2100000, guid: f73a99045c3a04043884e571820e68d6, type: 2}
 --- !u!114 &3438192588948367191
 MonoBehaviour:
   m_ObjectHideFlags: 0

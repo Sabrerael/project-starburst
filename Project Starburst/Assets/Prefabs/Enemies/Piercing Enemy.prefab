@@ -97,8 +97,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 3176741985367620412, guid: cda78298e07c89948bf7efbf1de0e87b, type: 3}
+  spriteRenderer: {fileID: 543300662613600073}
   scoreValue: 100
   fireInterval: 1.55
+  defaultMaterial: {fileID: 2100000, guid: c3398a0c794f0bd488a92d27c6b757e4, type: 2}
+  colorblindMaterial: {fileID: 2100000, guid: ee08bb5da98c91241bedbe252d138abc, type: 2}
 --- !u!114 &8506716592653762477
 MonoBehaviour:
   m_ObjectHideFlags: 0
