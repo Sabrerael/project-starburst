@@ -4,13 +4,22 @@ public class Projectile : MonoBehaviour {
     [SerializeField] protected bool isPlayerProjectile = false;
     [SerializeField] float movementSpeed = -2.5f;
     [SerializeField] protected int damage = 50;
+    [SerializeField] protected Material defaultMaterial;
+    [SerializeField] protected Material colorblindMaterial;
+    [SerializeField] protected SpriteRenderer spriteRenderer;
+    [SerializeField] protected TrailRenderer trailRenderer;
     
     private AudioSource audioSource;
+
+    private void Awake() {
+        SetMaterial();
+    }
 
     private void Start() {
         audioSource = GetComponent<AudioSource>();
         SetVolume();
         SettingsManager.onSettingsChange += SetVolume;
+        SettingsManager.onSettingsChange += SetMaterial;
     }
 
     private void Update() {
@@ -29,6 +38,16 @@ public class Projectile : MonoBehaviour {
     public int GetDamage() { return damage; }
 
     public void SetPlayerProjectile(bool isPlayerProjectile) { this.isPlayerProjectile = isPlayerProjectile; }
+
+    private void SetMaterial() {
+        if (SettingsManager.GetColorSet() != 0) {
+            spriteRenderer.material = colorblindMaterial;
+            trailRenderer.material = colorblindMaterial;
+        } else {
+            spriteRenderer.material = defaultMaterial;
+            trailRenderer.material = defaultMaterial;
+        }
+    }
 
     private void SetVolume() {
         audioSource.volume = SettingsManager.GetSoundEffectsVolume();

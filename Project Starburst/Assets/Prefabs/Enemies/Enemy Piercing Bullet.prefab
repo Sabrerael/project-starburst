@@ -87,6 +87,10 @@ MonoBehaviour:
   isPlayerProjectile: 0
   movementSpeed: -12.5
   damage: 35
+  defaultMaterial: {fileID: 2100000, guid: c3398a0c794f0bd488a92d27c6b757e4, type: 2}
+  colorblindMaterial: {fileID: 2100000, guid: ee08bb5da98c91241bedbe252d138abc, type: 2}
+  spriteRenderer: {fileID: 841540361724311867}
+  trailRenderer: {fileID: 3108730488449054565}
 --- !u!82 &3506750635692233679
 AudioSource:
   m_ObjectHideFlags: 0
@@ -330,5 +334,10 @@ PrefabInstance:
 --- !u!4 &3108730488449054564 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4821619297104889389, guid: 0918d0cd70ac50e48b1d6d7c716af498, type: 3}
+  m_PrefabInstance: {fileID: 7623953003341787465}
+  m_PrefabAsset: {fileID: 0}
+--- !u!96 &3108730488449054565 stripped
+TrailRenderer:
+  m_CorrespondingSourceObject: {fileID: 4821619297104889388, guid: 0918d0cd70ac50e48b1d6d7c716af498, type: 3}
   m_PrefabInstance: {fileID: 7623953003341787465}
   m_PrefabAsset: {fileID: 0}

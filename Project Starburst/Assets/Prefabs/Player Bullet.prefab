@@ -87,6 +87,10 @@ MonoBehaviour:
   isPlayerProjectile: 1
   movementSpeed: 10
   damage: 50
+  defaultMaterial: {fileID: 2100000, guid: 51adb4ec7af064340b933f1cb85e7207, type: 2}
+  colorblindMaterial: {fileID: 2100000, guid: 4900947c0ec148a46bb0b8ec472ea582, type: 2}
+  spriteRenderer: {fileID: 2345167539519693643}
+  trailRenderer: {fileID: 2779557330006245852}
 --- !u!82 &979268516486928138
 AudioSource:
   m_ObjectHideFlags: 0
@@ -210,7 +214,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 2779557330006245853}
   m_Father: {fileID: 8172554324789900347}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -265,3 +270,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &7240430983927826416
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5526533815227673038}
+    m_Modifications:
+    - target: {fileID: 4821619297104889389, guid: 0918d0cd70ac50e48b1d6d7c716af498, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.185
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0918d0cd70ac50e48b1d6d7c716af498, type: 3}
+--- !u!4 &2779557330006245853 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4821619297104889389, guid: 0918d0cd70ac50e48b1d6d7c716af498, type: 3}
+  m_PrefabInstance: {fileID: 7240430983927826416}
+  m_PrefabAsset: {fileID: 0}
+--- !u!96 &2779557330006245852 stripped
+TrailRenderer:
+  m_CorrespondingSourceObject: {fileID: 4821619297104889388, guid: 0918d0cd70ac50e48b1d6d7c716af498, type: 3}
+  m_PrefabInstance: {fileID: 7240430983927826416}
+  m_PrefabAsset: {fileID: 0}

@@ -87,6 +87,10 @@ MonoBehaviour:
   isPlayerProjectile: 0
   movementSpeed: -7.5
   damage: 100
+  defaultMaterial: {fileID: 2100000, guid: 1249bdb3ca7372643a207431d12e235a, type: 2}
+  colorblindMaterial: {fileID: 2100000, guid: f73a99045c3a04043884e571820e68d6, type: 2}
+  spriteRenderer: {fileID: 2650602873806631687}
+  trailRenderer: {fileID: 7908778447756635719}
   missileExplosionPrefab: {fileID: 104292047470291208, guid: 4899a021c96056841a36759c321c414e, type: 3}
 --- !u!82 &7139989686068474706
 AudioSource:
@@ -331,5 +335,10 @@ PrefabInstance:
 --- !u!4 &7908778447756635718 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4821619297104889389, guid: 0918d0cd70ac50e48b1d6d7c716af498, type: 3}
+  m_PrefabInstance: {fileID: 3398094754579720299}
+  m_PrefabAsset: {fileID: 0}
+--- !u!96 &7908778447756635719 stripped
+TrailRenderer:
+  m_CorrespondingSourceObject: {fileID: 4821619297104889388, guid: 0918d0cd70ac50e48b1d6d7c716af498, type: 3}
   m_PrefabInstance: {fileID: 3398094754579720299}
   m_PrefabAsset: {fileID: 0}

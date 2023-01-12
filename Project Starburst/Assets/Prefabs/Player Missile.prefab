@@ -27,7 +27,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 6859038099231380406}
   m_Father: {fileID: 4277688632517598970}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -169,6 +170,10 @@ MonoBehaviour:
   isPlayerProjectile: 1
   movementSpeed: 7.5
   damage: 100
+  defaultMaterial: {fileID: 2100000, guid: 1249bdb3ca7372643a207431d12e235a, type: 2}
+  colorblindMaterial: {fileID: 2100000, guid: f73a99045c3a04043884e571820e68d6, type: 2}
+  spriteRenderer: {fileID: 7691141619298732426}
+  trailRenderer: {fileID: 6859038099231380407}
   missileExplosionPrefab: {fileID: 104292047470291208, guid: 4899a021c96056841a36759c321c414e, type: 3}
 --- !u!82 &473406268753257633
 AudioSource:
@@ -266,3 +271,30 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1001 &2151005362731718043
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 470037678793638671}
+    m_Modifications:
+    - target: {fileID: 4821619297104889388, guid: 0918d0cd70ac50e48b1d6d7c716af498, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1249bdb3ca7372643a207431d12e235a, type: 2}
+    - target: {fileID: 4821619297104889389, guid: 0918d0cd70ac50e48b1d6d7c716af498, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.185
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0918d0cd70ac50e48b1d6d7c716af498, type: 3}
+--- !u!4 &6859038099231380406 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4821619297104889389, guid: 0918d0cd70ac50e48b1d6d7c716af498, type: 3}
+  m_PrefabInstance: {fileID: 2151005362731718043}
+  m_PrefabAsset: {fileID: 0}
+--- !u!96 &6859038099231380407 stripped
+TrailRenderer:
+  m_CorrespondingSourceObject: {fileID: 4821619297104889388, guid: 0918d0cd70ac50e48b1d6d7c716af498, type: 3}
+  m_PrefabInstance: {fileID: 2151005362731718043}
+  m_PrefabAsset: {fileID: 0}

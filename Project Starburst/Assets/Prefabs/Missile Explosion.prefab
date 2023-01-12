@@ -63,6 +63,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifetime: 0.25
+  defaultMaterial: {fileID: 2100000, guid: 1249bdb3ca7372643a207431d12e235a, type: 2}
+  colorblindMaterial: {fileID: 2100000, guid: f73a99045c3a04043884e571820e68d6, type: 2}
+  spriteRenderer: {fileID: 5421628348175057621}
 --- !u!82 &7182256411223517859
 AudioSource:
   m_ObjectHideFlags: 0
