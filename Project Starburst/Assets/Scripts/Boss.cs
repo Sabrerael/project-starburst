@@ -14,6 +14,7 @@ public class Boss : MonoBehaviour {
     [SerializeField] float basicBulletFireInterval = 2;
     [SerializeField] int basicBulletsToFire = 5;
     [SerializeField] GameObject basicEnemyParticles;
+    [SerializeField] GameObject basicEnemyParticlesColorBlind;
 
     [Header("Missile Properties")]
     [SerializeField] GameObject missile;
@@ -24,6 +25,7 @@ public class Boss : MonoBehaviour {
     [SerializeField] Transform missileSpawn1;
     [SerializeField] Transform missileSpawn2;
     [SerializeField] GameObject missileEnemyParticles;
+    [SerializeField] GameObject missileEnemyParticlesColorBlind;
     
     [Header("Piercing Bullet Properties")]
     [SerializeField] GameObject piercingBullet;
@@ -34,6 +36,7 @@ public class Boss : MonoBehaviour {
     [SerializeField] Transform piercingSpawn1;
     [SerializeField] Transform piercingSpawn2;
     [SerializeField] GameObject piercingEnemyParticles;
+    [SerializeField] GameObject piercingEnemyParticlesColorBlind;
 
     private Health health;
     private bool useColorBlindScheme = false;
@@ -58,6 +61,7 @@ public class Boss : MonoBehaviour {
 
     private IEnumerator BossCycle() {
         while(true) {
+            health.SetHitParticleEffects(basicEnemyParticles, basicEnemyParticlesColorBlind);
             if (useColorBlindScheme) {
                 spriteRenderer.material = basicEnemyMaterialColorBlind;
             } else {
@@ -70,6 +74,7 @@ public class Boss : MonoBehaviour {
                 yield return new WaitForSeconds(basicBulletFireInterval);
             }
 
+            health.SetHitParticleEffects(missileEnemyParticles, missileEnemyParticlesColorBlind);
             if (useColorBlindScheme) {
                 spriteRenderer.material = missileEnemyMaterialColorBlind;
             } else {
@@ -82,7 +87,8 @@ public class Boss : MonoBehaviour {
                 Instantiate(missile, missileSpawn2.position, Quaternion.identity);
                 yield return new WaitForSeconds(missileFireInterval);
             }
-            
+
+            health.SetHitParticleEffects(piercingEnemyParticles, piercingEnemyParticlesColorBlind);
             if (useColorBlindScheme) {
                 spriteRenderer.material = piercingEnemyMaterialColorBlind;
             } else {

@@ -317,7 +317,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthPoints: 1000
   deathSoundEffectObject: {fileID: 3553197256188102150, guid: e1539ae132cebc94db5d3d695b5d9592, type: 3}
-  hitParticleEffect: {fileID: 8760689742216663979, guid: 99e12a8c1b5b54848be1e96bdf65e1e2, type: 3}
+  hitParticleEffect: {fileID: 8760689742216663979, guid: d3e26136373d4f14888398ef7b8834ab, type: 3}
+  hitParticleEffectColorBlind: {fileID: 8760689742216663979, guid: ca0bb5faa09a2f44caceb0f24bb827d2, type: 3}
 --- !u!114 &8938242818058098881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -338,6 +339,8 @@ MonoBehaviour:
   basicEnemyMaterialColorBlind: {fileID: 2100000, guid: 4900947c0ec148a46bb0b8ec472ea582, type: 2}
   basicBulletFireInterval: 2
   basicBulletsToFire: 5
+  basicEnemyParticles: {fileID: 8760689742216663979, guid: d3e26136373d4f14888398ef7b8834ab, type: 3}
+  basicEnemyParticlesColorBlind: {fileID: 8760689742216663979, guid: ca0bb5faa09a2f44caceb0f24bb827d2, type: 3}
   missile: {fileID: 248572933423984896, guid: d07b18d970145ac4fbf8624db7dbe690, type: 3}
   missileEnemyMaterial: {fileID: 2100000, guid: 1249bdb3ca7372643a207431d12e235a, type: 2}
   missileEnemyMaterialColorBlind: {fileID: 2100000, guid: f73a99045c3a04043884e571820e68d6, type: 2}
@@ -345,6 +348,8 @@ MonoBehaviour:
   missilesToFire: 5
   missileSpawn1: {fileID: 2226230946364460644}
   missileSpawn2: {fileID: 4965552482833022464}
+  missileEnemyParticles: {fileID: 8760689742216663979, guid: e0b607f0013e7634b816a23d7a9a2a73, type: 3}
+  missileEnemyParticlesColorBlind: {fileID: 8760689742216663979, guid: c4a073f573b439341a682f13ff8b6781, type: 3}
   piercingBullet: {fileID: 3176741985367620412, guid: cda78298e07c89948bf7efbf1de0e87b, type: 3}
   piercingEnemyMaterial: {fileID: 2100000, guid: c3398a0c794f0bd488a92d27c6b757e4, type: 2}
   piercingEnemyMaterialColorBlind: {fileID: 2100000, guid: ee08bb5da98c91241bedbe252d138abc, type: 2}
@@ -352,6 +357,8 @@ MonoBehaviour:
   piercingBulletsToFire: 5
   piercingSpawn1: {fileID: 496938257724394700}
   piercingSpawn2: {fileID: 1687102331606922284}
+  piercingEnemyParticles: {fileID: 8760689742216663979, guid: cadbca1d454cce84289266f89805afef, type: 3}
+  piercingEnemyParticlesColorBlind: {fileID: 8760689742216663979, guid: db7a8a98e5cf4ad449200f75f9c1f512, type: 3}
 --- !u!82 &-3746498318057572503
 AudioSource:
   m_ObjectHideFlags: 0

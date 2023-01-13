@@ -211,6 +211,7 @@ MonoBehaviour:
   healthPoints: 50
   deathSoundEffectObject: {fileID: 3553197256188102150, guid: e1539ae132cebc94db5d3d695b5d9592, type: 3}
   hitParticleEffect: {fileID: 8760689742216663979, guid: d3e26136373d4f14888398ef7b8834ab, type: 3}
+  hitParticleEffectColorBlind: {fileID: 8760689742216663979, guid: ca0bb5faa09a2f44caceb0f24bb827d2, type: 3}
 --- !u!82 &3987485414145864587
 AudioSource:
   m_ObjectHideFlags: 0

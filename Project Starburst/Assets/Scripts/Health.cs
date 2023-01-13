@@ -5,6 +5,7 @@ public class Health : MonoBehaviour {
     [SerializeField] int healthPoints = 100;
     [SerializeField] GameObject deathSoundEffectObject;
     [SerializeField] GameObject hitParticleEffect;
+    [SerializeField] GameObject hitParticleEffectColorBlind;
 
     private AudioSource audioSource;
     private int totalHealthPoints;
@@ -22,11 +23,21 @@ public class Health : MonoBehaviour {
     public int GetCurrentHealthPoints() { return currentHealthPoints; }
     public float GetFraction() { return (float)currentHealthPoints / (float)totalHealthPoints; }
 
+    public void SetHitParticleEffects(GameObject defaultParticle, GameObject cbParticle) {
+        hitParticleEffect = defaultParticle;
+        hitParticleEffectColorBlind = cbParticle;
+    }
+
     public void ModifyHealthPoints(int value) {
         currentHealthPoints = Mathf.Clamp(currentHealthPoints + value, 0, totalHealthPoints);
         audioSource.Play();
-        GameObject particles = Instantiate(hitParticleEffect, transform.position, Quaternion.identity);
-        Destroy(particles, 0.5f);
+        if (SettingsManager.GetColorSet() == 0) {
+            GameObject particles = Instantiate(hitParticleEffect, transform.position, Quaternion.identity);
+            Destroy(particles, 0.5f);
+        } else {
+            GameObject particles = Instantiate(hitParticleEffectColorBlind, transform.position, Quaternion.identity);
+            Destroy(particles, 0.5f);
+        }
         if (currentHealthPoints == 0) {
             Death();
         }
@@ -43,8 +54,13 @@ public class Health : MonoBehaviour {
             GetComponent<Enemy>().AddScoreToPlayer();
             Destroy(gameObject);
         }
-        GameObject particles = Instantiate(hitParticleEffect, transform.position, Quaternion.identity);
-        Destroy(particles, 0.5f);
+        if (SettingsManager.GetColorSet() == 0) {
+            GameObject particles = Instantiate(hitParticleEffect, transform.position, Quaternion.identity);
+            Destroy(particles, 0.5f);
+        } else {
+            GameObject particles = Instantiate(hitParticleEffectColorBlind, transform.position, Quaternion.identity);
+            Destroy(particles, 0.5f);
+        }
     }
 
     private void SetVolume() {

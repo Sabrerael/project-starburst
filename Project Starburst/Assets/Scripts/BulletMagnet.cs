@@ -93,7 +93,7 @@ public class BulletMagnet : MonoBehaviour {
     }
 
     private void ResetBulletArray() {
-        for (int i = 1; i <= bulletArray.Length; i++) {
+        for (int i = 1; i < bulletArray.Length; i++) {
             if (i != 0 && bulletArray[i] == null) {
                 return;
             }
