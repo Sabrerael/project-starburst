@@ -8,6 +8,8 @@ public class MagnetBar : MonoBehaviour {
     protected virtual void Update() {
         rootCanvas.enabled = true;
 
-        foreground.localScale = new Vector3(bulletMagnet.GetMagnetPower(), 1, 1);
+        if (bulletMagnet.GetMagnetPower() < 1) {
+            foreground.localScale = new Vector3(bulletMagnet.GetMagnetPower(), 1, 1);
+        }
     }
 }

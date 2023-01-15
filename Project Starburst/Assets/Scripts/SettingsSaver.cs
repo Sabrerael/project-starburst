@@ -13,6 +13,17 @@ public class SettingsSaver : MonoBehaviour {
     [SerializeField] float musicVolumeMaxValue = 0.325f;
     [SerializeField] float soundFxMaxVolume = 1f;
 
+    private void Start() {
+        int colorSet = SettingsManager.GetColorSet();
+        if (colorSet == 0) {
+            colorSchemeToggle1.isOn = true;
+        } else {
+            colorSchemeToggle2.isOn = true;
+        }
+        musicVolumeSlider.value = SettingsManager.GetMusicVolume() / musicVolumeMaxValue;
+        soundFxVolumeSlider.value = SettingsManager.GetSoundEffectsVolume() / soundFxMaxVolume;
+    }
+
     public void SaveButton() {
         int activeBrightnessToggleValue = 0;
         //if (brightnessToggle2.isOn) {

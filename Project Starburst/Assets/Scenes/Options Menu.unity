@@ -2624,10 +2624,8 @@ MonoBehaviour:
   soundFxVolumeSlider: {fileID: 1133358261}
   colorSchemeToggle1: {fileID: 1859999450}
   colorSchemeToggle2: {fileID: 2108622701}
-  brightnessToggle1: {fileID: 0}
-  brightnessToggle2: {fileID: 0}
   musicVolumeMaxValue: 0.325
-  soundFxMaxVolume: 1
+  soundFxMaxVolume: 0.75
 --- !u!4 &2097552728
 Transform:
   m_ObjectHideFlags: 0
