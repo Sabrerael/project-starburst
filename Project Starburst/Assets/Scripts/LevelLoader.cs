@@ -1,28 +1,38 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class LevelLoader : MonoBehaviour {
+    [SerializeField] Animator animator;
+    [SerializeField] float transitionTime = 1f;
+
     public void LoadMainMenu() {
-        SceneManager.LoadScene(0);
+        StartCoroutine(LoadLevel(0));
     }
 
     public void LoadOptions() {
-        SceneManager.LoadScene(1);
+        StartCoroutine(LoadLevel(1));
     }
 
     public void LoadCredits() {
-        SceneManager.LoadScene(2);
+        StartCoroutine(LoadLevel(2));
     }
 
     public void LoadLevelOne() {
-        SceneManager.LoadScene(3);
+        StartCoroutine(LoadLevel(3));
     }
 
     public void LoadWinScreen() {
-        SceneManager.LoadScene(4);
+        StartCoroutine(LoadLevel(4));
     }
 
     public void LoadGameOver() {   
-        SceneManager.LoadScene(5);
+        StartCoroutine(LoadLevel(5));
+    }
+
+    private IEnumerator LoadLevel(int sceneIndex) {
+        animator.SetTrigger("Start");
+        yield return new WaitForSeconds(transitionTime);
+        SceneManager.LoadScene(sceneIndex);
     }
 }

@@ -12,9 +12,9 @@ public class MissileExplosion : MonoBehaviour {
     private void Start() {
         audioSource = GetComponent<AudioSource>();
         SetVolume();
-        SetMaterial();
+         //SetMaterial();
         SettingsManager.onSettingsChange += SetVolume;
-        SettingsManager.onSettingsChange += SetMaterial;
+        //SettingsManager.onSettingsChange += SetMaterial;
         Destroy(gameObject, lifetime);
     }
 
@@ -26,13 +26,13 @@ public class MissileExplosion : MonoBehaviour {
 
     public void SetDamage(int damage) { this.damage = damage; }
 
-    private void SetMaterial() {
+    /*private void SetMaterial() {
         if (SettingsManager.GetColorSet() != 0) {
             spriteRenderer.material = colorblindMaterial;
         } else {
             spriteRenderer.material = defaultMaterial;
         }
-    }
+    }*/
     
     private void SetVolume() {
         audioSource.volume = SettingsManager.GetSoundEffectsVolume();
