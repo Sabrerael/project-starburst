@@ -7,13 +7,21 @@ public class Health : MonoBehaviour {
     [SerializeField] GameObject hitParticleEffect;
     [SerializeField] GameObject hitParticleEffectColorBlind;
 
+    [Header("Player Specific Properties")]
+    [SerializeField] SpriteRenderer spriteRenderer;
+    [SerializeField] ParticleSystem playerParticleSystem;
+
+    private Animator animator;
     private AudioSource audioSource;
+    private Movement movement;
     private int totalHealthPoints;
     private int currentHealthPoints;
 
     private void Start() {
         totalHealthPoints = healthPoints;
         currentHealthPoints = healthPoints;
+        animator = GetComponent<Animator>();
+        movement = GetComponent<Movement>();
         audioSource = GetComponent<AudioSource>();
         SetVolume();
         SettingsManager.onSettingsChange += SetVolume;
@@ -68,13 +76,16 @@ public class Health : MonoBehaviour {
     }
 
     private IEnumerator TriggerDeathTransition() {
-        // Need to do this more discretely, maybe move the Coroutine into the LevelLoader?
+        movement.enabled = false;
+        spriteRenderer.color = new Color(0,0,0,0);
+        playerParticleSystem.Stop();
         yield return new WaitForSeconds(1);
         Destroy(gameObject);
         FindObjectOfType<LevelLoader>().LoadGameOver();
     }
 
     private IEnumerator TriggerWinTransition() {
+        animator.SetTrigger("Death");
         yield return new WaitForSeconds(1);
         Destroy(gameObject);
         FindObjectOfType<LevelLoader>().LoadWinScreen();

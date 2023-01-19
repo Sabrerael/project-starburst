@@ -428,7 +428,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.02}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -439,7 +439,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.5}
+  m_Size: {x: 0.25, y: 0.4}
   m_EdgeRadius: 0
 --- !u!50 &5620356226316752676
 Rigidbody2D:
@@ -544,10 +544,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 366aa188abf0faf4facb52f9ed0b4d1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthPoints: 250
+  healthPoints: 350
   deathSoundEffectObject: {fileID: 3553197256188102150, guid: e1539ae132cebc94db5d3d695b5d9592, type: 3}
   hitParticleEffect: {fileID: 8760689742216663979, guid: 99e12a8c1b5b54848be1e96bdf65e1e2, type: 3}
   hitParticleEffectColorBlind: {fileID: 8760689742216663979, guid: 99e12a8c1b5b54848be1e96bdf65e1e2, type: 3}
+  spriteRenderer: {fileID: 4440651294222900210}
+  playerParticleSystem: {fileID: 4999751384725380991}
 --- !u!82 &3520145899633785956
 AudioSource:
   m_ObjectHideFlags: 0
@@ -883,5 +885,10 @@ PrefabInstance:
 --- !u!4 &4999751384725380990 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1724942959841798268, guid: 87690a224c413364b9488d774553a01a, type: 3}
+  m_PrefabInstance: {fileID: 5949982016358102786}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &4999751384725380991 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 1724942959841798269, guid: 87690a224c413364b9488d774553a01a, type: 3}
   m_PrefabInstance: {fileID: 5949982016358102786}
   m_PrefabAsset: {fileID: 0}
