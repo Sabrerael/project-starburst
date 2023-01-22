@@ -56,8 +56,9 @@ public class Health : MonoBehaviour {
         if (tag == "Player") {
             StartCoroutine(TriggerDeathTransition());
         } else if (tag == "Boss") {
-            GetComponent<Boss>().AddScoreToPlayer();
-            StartCoroutine(TriggerWinTransition());
+            Boss boss = GetComponent<Boss>();
+            boss.AddScoreToPlayer();
+            boss.DeathAnimation();
         } else {
             GetComponent<Enemy>().AddScoreToPlayer();
             Destroy(gameObject);
@@ -82,12 +83,5 @@ public class Health : MonoBehaviour {
         yield return new WaitForSeconds(1);
         Destroy(gameObject);
         FindObjectOfType<LevelLoader>().LoadGameOver();
-    }
-
-    private IEnumerator TriggerWinTransition() {
-        animator.SetTrigger("Death");
-        yield return new WaitForSeconds(1);
-        Destroy(gameObject);
-        FindObjectOfType<LevelLoader>().LoadWinScreen();
     }
 }

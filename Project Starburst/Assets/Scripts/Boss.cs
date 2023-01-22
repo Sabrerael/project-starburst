@@ -42,6 +42,7 @@ public class Boss : MonoBehaviour {
     private bool useColorBlindScheme = false;
 
     private void Start() {
+        health = GetComponent<Health>();
         SetMaterials();
         SettingsManager.onSettingsChange += SetMaterials;
         StartCoroutine(BossCycle());
@@ -49,6 +50,11 @@ public class Boss : MonoBehaviour {
 
     public void AddScoreToPlayer() {
         FindObjectOfType<Player>().AddToTotalScore(scoreValue);
+    }
+
+    public void DeathAnimation() {
+        // TODO Set up the triggering of several particle effects playing over a few seconds, corisponding sound effects, and fading to white.
+        StartCoroutine(BossDeath());
     }
 
     private void SetMaterials() {
@@ -102,6 +108,15 @@ public class Boss : MonoBehaviour {
                 yield return new WaitForSeconds(piercingBulletFireInterval);
             }
         }
-        
+    }
+
+    private IEnumerator BossDeath() {
+        for (int i = 0; i < 3; i++) {
+            Vector2 particleInstantationPoint = new Vector2(Random.Range(-1, 1), Random.Range(-0.5f, 0.5f));
+            Instantiate(basicEnemyParticles, particleInstantationPoint, Quaternion.identity, transform);
+            yield return new WaitForSeconds(0.35f);
+        }
+        Destroy(gameObject);
+        FindObjectOfType<LevelLoader>().LoadWinScreen();
     }
 }

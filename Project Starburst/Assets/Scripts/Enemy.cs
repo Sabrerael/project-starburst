@@ -4,6 +4,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour {
     [SerializeField] GameObject projectile;
     [SerializeField] SpriteRenderer spriteRenderer;
+    [SerializeField] TrailRenderer trailRenderer;
     [SerializeField] int scoreValue = 100;
     [SerializeField] float fireInterval = 2;
     [SerializeField] Material defaultMaterial;
@@ -25,8 +26,10 @@ public class Enemy : MonoBehaviour {
     private void SetMaterial() {
         if (SettingsManager.GetColorSet() != 0) {
             spriteRenderer.material = colorblindMaterial;
+            trailRenderer.material = colorblindMaterial;
         } else {
             spriteRenderer.material = defaultMaterial;
+            trailRenderer.material = defaultMaterial;
         }
     }
 

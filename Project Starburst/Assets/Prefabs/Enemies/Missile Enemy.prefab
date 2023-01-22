@@ -116,6 +116,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1349223788933150625}
+  - {fileID: 2827831989587262691}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -180,6 +181,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 248572933423984896, guid: d07b18d970145ac4fbf8624db7dbe690, type: 3}
   spriteRenderer: {fileID: 6787264697364709299}
+  trailRenderer: {fileID: 2827831989587262690}
   scoreValue: 100
   fireInterval: 1.75
   defaultMaterial: {fileID: 2100000, guid: 1249bdb3ca7372643a207431d12e235a, type: 2}
@@ -212,6 +214,8 @@ MonoBehaviour:
   deathSoundEffectObject: {fileID: 3553197256188102150, guid: e1539ae132cebc94db5d3d695b5d9592, type: 3}
   hitParticleEffect: {fileID: 8760689742216663979, guid: e0b607f0013e7634b816a23d7a9a2a73, type: 3}
   hitParticleEffectColorBlind: {fileID: 8760689742216663979, guid: c4a073f573b439341a682f13ff8b6781, type: 3}
+  spriteRenderer: {fileID: 0}
+  playerParticleSystem: {fileID: 0}
 --- !u!82 &2470238418381325341
 AudioSource:
   m_ObjectHideFlags: 0
@@ -308,3 +312,74 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1001 &7338526541515504334
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5544513076357668148}
+    m_Modifications:
+    - target: {fileID: 4821619297104889388, guid: 0918d0cd70ac50e48b1d6d7c716af498, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1249bdb3ca7372643a207431d12e235a, type: 2}
+    - target: {fileID: 4821619297104889389, guid: 0918d0cd70ac50e48b1d6d7c716af498, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4821619297104889389, guid: 0918d0cd70ac50e48b1d6d7c716af498, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4821619297104889389, guid: 0918d0cd70ac50e48b1d6d7c716af498, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 4821619297104889389, guid: 0918d0cd70ac50e48b1d6d7c716af498, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4821619297104889389, guid: 0918d0cd70ac50e48b1d6d7c716af498, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4821619297104889389, guid: 0918d0cd70ac50e48b1d6d7c716af498, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4821619297104889389, guid: 0918d0cd70ac50e48b1d6d7c716af498, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4821619297104889389, guid: 0918d0cd70ac50e48b1d6d7c716af498, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4821619297104889389, guid: 0918d0cd70ac50e48b1d6d7c716af498, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4821619297104889389, guid: 0918d0cd70ac50e48b1d6d7c716af498, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4821619297104889389, guid: 0918d0cd70ac50e48b1d6d7c716af498, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4821619297104889391, guid: 0918d0cd70ac50e48b1d6d7c716af498, type: 3}
+      propertyPath: m_Name
+      value: Default Bullet Trail
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0918d0cd70ac50e48b1d6d7c716af498, type: 3}
+--- !u!4 &2827831989587262691 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4821619297104889389, guid: 0918d0cd70ac50e48b1d6d7c716af498, type: 3}
+  m_PrefabInstance: {fileID: 7338526541515504334}
+  m_PrefabAsset: {fileID: 0}
+--- !u!96 &2827831989587262690 stripped
+TrailRenderer:
+  m_CorrespondingSourceObject: {fileID: 4821619297104889388, guid: 0918d0cd70ac50e48b1d6d7c716af498, type: 3}
+  m_PrefabInstance: {fileID: 7338526541515504334}
+  m_PrefabAsset: {fileID: 0}
