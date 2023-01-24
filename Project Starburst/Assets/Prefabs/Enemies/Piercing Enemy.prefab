@@ -34,7 +34,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5404992153018724187}
-  - {fileID: 6312218656663068548}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -99,7 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 3176741985367620412, guid: cda78298e07c89948bf7efbf1de0e87b, type: 3}
   spriteRenderer: {fileID: 543300662613600073}
-  trailRenderer: {fileID: 6312218656663068549}
+  trailRenderer: {fileID: 0}
   scoreValue: 100
   fireInterval: 1.55
   defaultMaterial: {fileID: 2100000, guid: c3398a0c794f0bd488a92d27c6b757e4, type: 2}
@@ -312,74 +311,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &1544827412626659753
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1533780369028351438}
-    m_Modifications:
-    - target: {fileID: 4821619297104889388, guid: 0918d0cd70ac50e48b1d6d7c716af498, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: c3398a0c794f0bd488a92d27c6b757e4, type: 2}
-    - target: {fileID: 4821619297104889389, guid: 0918d0cd70ac50e48b1d6d7c716af498, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4821619297104889389, guid: 0918d0cd70ac50e48b1d6d7c716af498, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4821619297104889389, guid: 0918d0cd70ac50e48b1d6d7c716af498, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.18
-      objectReference: {fileID: 0}
-    - target: {fileID: 4821619297104889389, guid: 0918d0cd70ac50e48b1d6d7c716af498, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4821619297104889389, guid: 0918d0cd70ac50e48b1d6d7c716af498, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4821619297104889389, guid: 0918d0cd70ac50e48b1d6d7c716af498, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4821619297104889389, guid: 0918d0cd70ac50e48b1d6d7c716af498, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4821619297104889389, guid: 0918d0cd70ac50e48b1d6d7c716af498, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4821619297104889389, guid: 0918d0cd70ac50e48b1d6d7c716af498, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4821619297104889389, guid: 0918d0cd70ac50e48b1d6d7c716af498, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4821619297104889389, guid: 0918d0cd70ac50e48b1d6d7c716af498, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4821619297104889391, guid: 0918d0cd70ac50e48b1d6d7c716af498, type: 3}
-      propertyPath: m_Name
-      value: Default Bullet Trail
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 0918d0cd70ac50e48b1d6d7c716af498, type: 3}
---- !u!4 &6312218656663068548 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4821619297104889389, guid: 0918d0cd70ac50e48b1d6d7c716af498, type: 3}
-  m_PrefabInstance: {fileID: 1544827412626659753}
-  m_PrefabAsset: {fileID: 0}
---- !u!96 &6312218656663068549 stripped
-TrailRenderer:
-  m_CorrespondingSourceObject: {fileID: 4821619297104889388, guid: 0918d0cd70ac50e48b1d6d7c716af498, type: 3}
-  m_PrefabInstance: {fileID: 1544827412626659753}
-  m_PrefabAsset: {fileID: 0}

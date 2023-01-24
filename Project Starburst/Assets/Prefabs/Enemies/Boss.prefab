@@ -315,10 +315,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 366aa188abf0faf4facb52f9ed0b4d1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthPoints: 1000
+  healthPoints: 750
   deathSoundEffectObject: {fileID: 3553197256188102150, guid: e1539ae132cebc94db5d3d695b5d9592, type: 3}
   hitParticleEffect: {fileID: 8760689742216663979, guid: d3e26136373d4f14888398ef7b8834ab, type: 3}
   hitParticleEffectColorBlind: {fileID: 8760689742216663979, guid: ca0bb5faa09a2f44caceb0f24bb827d2, type: 3}
+  spriteRenderer: {fileID: 0}
+  playerParticleSystem: {fileID: 0}
 --- !u!114 &8938242818058098881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -331,9 +333,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc3352b2664f4ce4997d8c5ab9e41891, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreValue: 100
+  scoreValue: 5000
   timeBetweenPhases: 1.5
   spriteRenderer: {fileID: 8418502353642908297}
+  explosionSFX: {fileID: 8300000, guid: 834af7613e983234692de57764dbc706, type: 3}
   basicBullet: {fileID: 5437220429731685477, guid: f307648afc17da145904e1e4fc702028, type: 3}
   basicEnemyMaterial: {fileID: 2100000, guid: 51adb4ec7af064340b933f1cb85e7207, type: 2}
   basicEnemyMaterialColorBlind: {fileID: 2100000, guid: 4900947c0ec148a46bb0b8ec472ea582, type: 2}

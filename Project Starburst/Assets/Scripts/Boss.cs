@@ -6,6 +6,7 @@ public class Boss : MonoBehaviour {
     [SerializeField] int scoreValue = 10000;
     [SerializeField] float timeBetweenPhases = 1.5f;
     [SerializeField] SpriteRenderer spriteRenderer;
+    [SerializeField] AudioClip explosionSFX;
 
     [Header("Basic Bullet Properties")]
     [SerializeField] GameObject basicBullet;
@@ -53,7 +54,7 @@ public class Boss : MonoBehaviour {
     }
 
     public void DeathAnimation() {
-        // TODO Set up the triggering of several particle effects playing over a few seconds, corisponding sound effects, and fading to white.
+        StopAllCoroutines();
         StartCoroutine(BossDeath());
     }
 
@@ -111,11 +112,26 @@ public class Boss : MonoBehaviour {
     }
 
     private IEnumerator BossDeath() {
-        for (int i = 0; i < 3; i++) {
-            Vector2 particleInstantationPoint = new Vector2(Random.Range(-1, 1), Random.Range(-0.5f, 0.5f));
+        GameObject bossCrossFade = GameObject.Find("Boss Crossfade");
+        GetComponent<Pathfinder>().enabled = false;
+        AudioSource audioSource = GetComponent<AudioSource>();
+        audioSource.clip = explosionSFX;
+        for (int i = 0; i < 5; i++) {
+            Vector3 particleInstantationPoint = new Vector3(Random.Range(-1f, 1f), Random.Range(-0.5f, 0.5f)) + 
+                                                transform.position;
             Instantiate(basicEnemyParticles, particleInstantationPoint, Quaternion.identity, transform);
-            yield return new WaitForSeconds(0.35f);
+            audioSource.Play();
+            yield return new WaitForSeconds(0.5f);
         }
+        bossCrossFade.GetComponent<Animator>().SetTrigger("Start");
+        for (int i = 0; i < 16; i++) {
+            Vector3 particleInstantationPoint = new Vector3(Random.Range(-1f, 1f), Random.Range(-0.5f, 0.5f)) + 
+                                                transform.position;
+            Instantiate(basicEnemyParticles, particleInstantationPoint, Quaternion.identity, transform);
+            audioSource.Play();
+            yield return new WaitForSeconds(0.125f);
+        }
+        // TODO Add slow fade to white
         Destroy(gameObject);
         FindObjectOfType<LevelLoader>().LoadWinScreen();
     }
