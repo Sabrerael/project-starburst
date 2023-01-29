@@ -131,7 +131,6 @@ public class Boss : MonoBehaviour {
             audioSource.Play();
             yield return new WaitForSeconds(0.125f);
         }
-        // TODO Add slow fade to white
         Destroy(gameObject);
         FindObjectOfType<LevelLoader>().LoadWinScreen();
     }
