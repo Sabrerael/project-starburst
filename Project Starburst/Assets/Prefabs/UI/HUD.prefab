@@ -140,7 +140,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &912968466634624364
 MonoBehaviour:
@@ -1178,22 +1178,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2984774002656684012}
     m_Modifications:
-    - target: {fileID: 1182611042113960415, guid: c60f5aa2cb36f8b41beeb0e48a219996, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1182611042113960415, guid: c60f5aa2cb36f8b41beeb0e48a219996, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1182611042113960415, guid: c60f5aa2cb36f8b41beeb0e48a219996, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1182611042113960415, guid: c60f5aa2cb36f8b41beeb0e48a219996, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 2100000, guid: 9a46fd74e2476094497cb3baf6ab0eb2, type: 2}
     - target: {fileID: 2030996764772753886, guid: c60f5aa2cb36f8b41beeb0e48a219996, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1308,10 +1292,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2028867042006533350, guid: c48e7a4e923d4874bbcbc4953f4c78c4, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 2100000, guid: c3398a0c794f0bd488a92d27c6b757e4, type: 2}
     - target: {fileID: 4757816927645178380, guid: c48e7a4e923d4874bbcbc4953f4c78c4, type: 3}
       propertyPath: m_SizeDelta.x
       value: 9500
@@ -1320,10 +1300,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5286070040145259022, guid: c48e7a4e923d4874bbcbc4953f4c78c4, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 2100000, guid: 1249bdb3ca7372643a207431d12e235a, type: 2}
     - target: {fileID: 7901267234024945389, guid: c48e7a4e923d4874bbcbc4953f4c78c4, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 0

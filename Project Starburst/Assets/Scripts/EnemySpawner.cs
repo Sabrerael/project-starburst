@@ -14,6 +14,8 @@ public class EnemySpawner : MonoBehaviour {
     }
 
     private IEnumerator SpawnEnemyWaves() {
+        // Just an initial wait
+        yield return new WaitForSeconds(1);
         foreach (WaveConfigSO wave in waveConfigs) {
             currentWave = wave;
 

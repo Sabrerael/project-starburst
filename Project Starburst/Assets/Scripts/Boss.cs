@@ -78,6 +78,10 @@ public class Boss : MonoBehaviour {
 
             for (int i = 0; i < basicBulletsToFire; i++) {
                 Instantiate(basicBullet, transform.position + new Vector3(0,-0.5f, 0), Quaternion.identity);
+                yield return new WaitForSeconds(0.35f);
+                Instantiate(basicBullet, transform.position + new Vector3(0,-0.5f, 0), Quaternion.identity);
+                yield return new WaitForSeconds(0.35f);
+                Instantiate(basicBullet, transform.position + new Vector3(0,-0.5f, 0), Quaternion.identity);
                 yield return new WaitForSeconds(basicBulletFireInterval);
             }
 
@@ -106,6 +110,9 @@ public class Boss : MonoBehaviour {
             for (int i = 0; i < piercingBulletsToFire; i++) {
                 Instantiate(piercingBullet, piercingSpawn1.position, Quaternion.identity);
                 Instantiate(piercingBullet, piercingSpawn2.position, Quaternion.identity);
+                yield return new WaitForSeconds(0.35f);
+                Instantiate(piercingBullet, piercingSpawn1.position, Quaternion.identity);
+                Instantiate(piercingBullet, piercingSpawn2.position, Quaternion.identity);                                
                 yield return new WaitForSeconds(piercingBulletFireInterval);
             }
         }
