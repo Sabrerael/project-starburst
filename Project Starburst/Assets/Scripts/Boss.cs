@@ -41,6 +41,7 @@ public class Boss : MonoBehaviour {
 
     private Health health;
     private bool useColorBlindScheme = false;
+    private GameObject deathParticles;
 
     private void Start() {
         health = GetComponent<Health>();
@@ -71,8 +72,10 @@ public class Boss : MonoBehaviour {
             health.SetHitParticleEffects(basicEnemyParticles, basicEnemyParticlesColorBlind);
             if (useColorBlindScheme) {
                 spriteRenderer.material = basicEnemyMaterialColorBlind;
+                deathParticles = basicEnemyParticlesColorBlind;
             } else {
                 spriteRenderer.material = basicEnemyMaterial;
+                deathParticles = basicEnemyParticles;
             }
             yield return new WaitForSeconds(timeBetweenPhases);
 
@@ -88,8 +91,10 @@ public class Boss : MonoBehaviour {
             health.SetHitParticleEffects(missileEnemyParticles, missileEnemyParticlesColorBlind);
             if (useColorBlindScheme) {
                 spriteRenderer.material = missileEnemyMaterialColorBlind;
+                deathParticles = missileEnemyParticlesColorBlind;
             } else {
                 spriteRenderer.material = missileEnemyMaterial;
+                deathParticles = missileEnemyParticles;
             }
             yield return new WaitForSeconds(timeBetweenPhases);
             
@@ -102,8 +107,10 @@ public class Boss : MonoBehaviour {
             health.SetHitParticleEffects(piercingEnemyParticles, piercingEnemyParticlesColorBlind);
             if (useColorBlindScheme) {
                 spriteRenderer.material = piercingEnemyMaterialColorBlind;
+                deathParticles = piercingEnemyParticlesColorBlind;
             } else {
                 spriteRenderer.material = piercingEnemyMaterial;
+                deathParticles = piercingEnemyParticles;
             }
             yield return new WaitForSeconds(timeBetweenPhases);
 
@@ -126,7 +133,7 @@ public class Boss : MonoBehaviour {
         for (int i = 0; i < 5; i++) {
             Vector3 particleInstantationPoint = new Vector3(Random.Range(-1f, 1f), Random.Range(-0.5f, 0.5f)) + 
                                                 transform.position;
-            Instantiate(basicEnemyParticles, particleInstantationPoint, Quaternion.identity, transform);
+            Instantiate(deathParticles, particleInstantationPoint, Quaternion.identity, transform);
             audioSource.Play();
             yield return new WaitForSeconds(0.5f);
         }
@@ -134,7 +141,7 @@ public class Boss : MonoBehaviour {
         for (int i = 0; i < 16; i++) {
             Vector3 particleInstantationPoint = new Vector3(Random.Range(-1f, 1f), Random.Range(-0.5f, 0.5f)) + 
                                                 transform.position;
-            Instantiate(basicEnemyParticles, particleInstantationPoint, Quaternion.identity, transform);
+            Instantiate(deathParticles, particleInstantationPoint, Quaternion.identity, transform);
             audioSource.Play();
             yield return new WaitForSeconds(0.125f);
         }
