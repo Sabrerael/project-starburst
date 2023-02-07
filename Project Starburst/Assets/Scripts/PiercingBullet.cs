@@ -5,7 +5,7 @@ public class PiercingBullet : Projectile {
     protected override void OnCollisionEnter2D(Collision2D other) {
         if ((isPlayerProjectile && (other.gameObject.tag == "Enemy" || other.gameObject.tag == "Boss")) ||  
              other.gameObject.tag == "Player") {
-            other.gameObject.GetComponent<Health>().ModifyHealthPoints(-damage);
+            other.gameObject.GetComponent<Health>().ModifyHealthPoints(-damage, bulletType);
         } 
     }
 }

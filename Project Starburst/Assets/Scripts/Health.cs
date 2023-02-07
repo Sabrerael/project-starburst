@@ -7,6 +7,10 @@ public class Health : MonoBehaviour {
     [SerializeField] GameObject hitParticleEffect;
     [SerializeField] GameObject hitParticleEffectColorBlind;
 
+    [Header("Enemy Specific Properties")]
+    [SerializeField] BulletType shieldWeakness = BulletType.None;
+    [SerializeField] GameObject shieldObject;
+
     [Header("Player Specific Properties")]
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] ParticleSystem playerParticleSystem;
@@ -36,7 +40,11 @@ public class Health : MonoBehaviour {
         hitParticleEffectColorBlind = cbParticle;
     }
 
-    public void ModifyHealthPoints(int value) {
+    public void ModifyHealthPoints(int value, BulletType bulletType) {
+        if (tag == "Boss" || tag == "Enemy") {
+            if (HandleShield(bulletType)) { return; }
+        }
+
         currentHealthPoints = Mathf.Clamp(currentHealthPoints + value, 0, totalHealthPoints);
         audioSource.Play();
         if (SettingsManager.GetColorSet() == 0) {
@@ -70,6 +78,19 @@ public class Health : MonoBehaviour {
             GameObject particles = Instantiate(hitParticleEffectColorBlind, transform.position, Quaternion.identity);
             Destroy(particles, 0.5f);
         }
+    }
+
+    private bool HandleShield(BulletType bulletType) {
+        if (shieldObject == null || !shieldObject.activeInHierarchy) {
+            return false;
+        } else if (shieldWeakness != BulletType.None && shieldWeakness != bulletType) {
+            return true;
+        } else if (shieldObject.activeInHierarchy && shieldWeakness == bulletType) {
+            shieldObject.SetActive(false);
+            return true;
+        }
+        Debug.Log("No statements in if chain apply to " + gameObject.name + ", returning false");
+        return false;
     }
 
     private void SetVolume() {

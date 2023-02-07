@@ -8,6 +8,7 @@ public class Projectile : MonoBehaviour {
     [SerializeField] protected Material colorblindMaterial;
     [SerializeField] protected SpriteRenderer spriteRenderer;
     [SerializeField] protected TrailRenderer trailRenderer;
+    [SerializeField] protected BulletType bulletType = BulletType.Basic;
     
     private AudioSource audioSource;
 
@@ -29,7 +30,7 @@ public class Projectile : MonoBehaviour {
     protected virtual void OnCollisionEnter2D(Collision2D other) {
         if ((isPlayerProjectile && (other.gameObject.tag == "Enemy" || other.gameObject.tag == "Boss")) ||  
              other.gameObject.tag == "Player") {
-            other.gameObject.GetComponent<Health>().ModifyHealthPoints(-damage);
+            other.gameObject.GetComponent<Health>().ModifyHealthPoints(-damage, bulletType);
             Destroy(gameObject);
         }
     }

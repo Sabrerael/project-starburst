@@ -91,6 +91,7 @@ MonoBehaviour:
   colorblindMaterial: {fileID: 2100000, guid: f73a99045c3a04043884e571820e68d6, type: 2}
   spriteRenderer: {fileID: 2650602873806631687}
   trailRenderer: {fileID: 7908778447756635719}
+  bulletType: 2
   missileExplosionPrefab: {fileID: 104292047470291208, guid: 4899a021c96056841a36759c321c414e, type: 3}
 --- !u!82 &7139989686068474706
 AudioSource:

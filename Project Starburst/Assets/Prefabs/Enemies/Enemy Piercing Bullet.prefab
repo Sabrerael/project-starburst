@@ -91,6 +91,7 @@ MonoBehaviour:
   colorblindMaterial: {fileID: 2100000, guid: ee08bb5da98c91241bedbe252d138abc, type: 2}
   spriteRenderer: {fileID: 841540361724311867}
   trailRenderer: {fileID: 3108730488449054565}
+  bulletType: 3
 --- !u!82 &3506750635692233679
 AudioSource:
   m_ObjectHideFlags: 0
