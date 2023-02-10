@@ -10,6 +10,7 @@ public class Health : MonoBehaviour {
     [Header("Enemy Specific Properties")]
     [SerializeField] BulletType shieldWeakness = BulletType.None;
     [SerializeField] GameObject shieldObject;
+    [SerializeField] GameObject brokenShieldObject;
 
     [Header("Player Specific Properties")]
     [SerializeField] SpriteRenderer spriteRenderer;
@@ -87,6 +88,7 @@ public class Health : MonoBehaviour {
             return true;
         } else if (shieldObject.activeInHierarchy && shieldWeakness == bulletType) {
             shieldObject.SetActive(false);
+            brokenShieldObject.SetActive(true);
             return true;
         }
         Debug.Log("No statements in if chain apply to " + gameObject.name + ", returning false");
