@@ -50,7 +50,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 51adb4ec7af064340b933f1cb85e7207, type: 2}
+  - {fileID: 2100000, guid: 68bc255436f3dd04da8e13d64af6215f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -319,6 +319,9 @@ MonoBehaviour:
   deathSoundEffectObject: {fileID: 3553197256188102150, guid: e1539ae132cebc94db5d3d695b5d9592, type: 3}
   hitParticleEffect: {fileID: 8760689742216663979, guid: d3e26136373d4f14888398ef7b8834ab, type: 3}
   hitParticleEffectColorBlind: {fileID: 8760689742216663979, guid: ca0bb5faa09a2f44caceb0f24bb827d2, type: 3}
+  shieldWeakness: 0
+  shieldObject: {fileID: 0}
+  brokenShieldObject: {fileID: 0}
   spriteRenderer: {fileID: 0}
   playerParticleSystem: {fileID: 0}
 --- !u!114 &8938242818058098881

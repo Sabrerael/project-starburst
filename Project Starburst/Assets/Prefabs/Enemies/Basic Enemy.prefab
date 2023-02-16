@@ -50,7 +50,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 68bc255436f3dd04da8e13d64af6215f, type: 2}
+  - {fileID: 2100000, guid: c2648194c629f27408ef5cf084d17732, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -182,7 +182,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 4984673940254205667}
   scoreValue: 100
   fireInterval: 2
-  defaultMaterial: {fileID: 2100000, guid: 68bc255436f3dd04da8e13d64af6215f, type: 2}
+  defaultMaterial: {fileID: 2100000, guid: c2648194c629f27408ef5cf084d17732, type: 2}
   colorblindMaterial: {fileID: 2100000, guid: 4900947c0ec148a46bb0b8ec472ea582, type: 2}
 --- !u!114 &3795059150491401735
 MonoBehaviour:
@@ -214,6 +214,7 @@ MonoBehaviour:
   hitParticleEffectColorBlind: {fileID: 8760689742216663979, guid: ca0bb5faa09a2f44caceb0f24bb827d2, type: 3}
   shieldWeakness: 0
   shieldObject: {fileID: 0}
+  brokenShieldObject: {fileID: 0}
   spriteRenderer: {fileID: 0}
   playerParticleSystem: {fileID: 0}
 --- !u!82 &3987485414145864587
