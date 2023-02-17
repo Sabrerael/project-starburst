@@ -1170,9 +1170,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 893736129610568902, guid: b57d320a93d1bae4c8cc13ab85508611, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 893736129610568902, guid: b57d320a93d1bae4c8cc13ab85508611, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1682577739490508675, guid: b57d320a93d1bae4c8cc13ab85508611, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1835978542760565656, guid: b57d320a93d1bae4c8cc13ab85508611, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2122771733882977346, guid: b57d320a93d1bae4c8cc13ab85508611, type: 3}
       propertyPath: playerBulletPrefab
@@ -1190,6 +1202,10 @@ PrefabInstance:
       propertyPath: m_Icon
       value: 
       objectReference: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 5024803929174983320, guid: b57d320a93d1bae4c8cc13ab85508611, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5844647460688250632, guid: b57d320a93d1bae4c8cc13ab85508611, type: 3}
       propertyPath: m_Name
       value: Player

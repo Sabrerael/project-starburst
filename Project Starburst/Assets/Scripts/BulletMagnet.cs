@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class BulletMagnet : MonoBehaviour {
@@ -12,6 +13,7 @@ public class BulletMagnet : MonoBehaviour {
     [SerializeField] float magnetDrain = 2;
     [SerializeField] float magnetRegen = 4;
     [SerializeField] Transform[] bulletLocations;
+    [SerializeField] GameObject magnetBody;
 
     private bool magnetActive = false;
     private float magnetPower = 1;
@@ -20,7 +22,7 @@ public class BulletMagnet : MonoBehaviour {
     private SpriteRenderer spriteRenderer;
 
     private void Start() {
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer = magnetBody.GetComponent<SpriteRenderer>();
         audioSource = GetComponent<AudioSource>();
         SetVolume();
         SettingsManager.onSettingsChange += SetVolume;
@@ -35,8 +37,7 @@ public class BulletMagnet : MonoBehaviour {
         magnetPower = Mathf.Clamp(magnetPower - (magnetDrain * Time.deltaTime), 0, 1);
 
         if (magnetPower == 0) {
-            magnetActive = false;
-            spriteRenderer.enabled = false;
+            SetMagnetActive(false);
         }
     }
 
@@ -60,10 +61,12 @@ public class BulletMagnet : MonoBehaviour {
     public float GetMagnetPower() { return magnetPower; }
 
     public void SetMagnetActive(bool magnetActive) {
-        this.magnetActive = magnetActive;
-        spriteRenderer.enabled = magnetActive;
         if (magnetActive) {
             audioSource.Play();
+            spriteRenderer.enabled = magnetActive;
+            StartCoroutine(ActivateMagnet());
+        } else {
+            StartCoroutine(DeactivateMagnet());
         }
     }
 
@@ -112,5 +115,26 @@ public class BulletMagnet : MonoBehaviour {
 
     private void SetVolume() {
         audioSource.volume = SettingsManager.GetSoundEffectsVolume();
+    }
+
+    private IEnumerator ActivateMagnet() {
+        this.magnetActive = true;
+        while (magnetBody.transform.localScale != new Vector3(1,1,1)) {
+            magnetBody.transform.localScale = new Vector3(Mathf.Clamp((float)(magnetBody.transform.localScale.x + (Time.deltaTime / 0.15)), 0.3f, 1),
+                                               Mathf.Clamp((float)(magnetBody.transform.localScale.y + (Time.deltaTime / 0.15)), 0.3f, 1),
+                                               1);
+            yield return new WaitForEndOfFrame();
+        }
+    }
+
+    private IEnumerator DeactivateMagnet() {
+        this.magnetActive = false;
+        while (magnetBody.transform.localScale != new Vector3(0.3f,0.3f,1)) {
+            magnetBody.transform.localScale = new Vector3(Mathf.Clamp((float)(magnetBody.transform.localScale.x - (Time.deltaTime / 0.15)), 0.3f, 1),
+                                               Mathf.Clamp((float)(magnetBody.transform.localScale.y - (Time.deltaTime / 0.15)), 0.3f, 1),
+                                               1);
+            yield return new WaitForEndOfFrame();
+        }
+        spriteRenderer.enabled = false;
     }
 }
