@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 484125998250078618}
   - component: {fileID: 6523253248655753045}
   - component: {fileID: 979268516486928138}
+  - component: {fileID: 7939823686103017603}
+  - component: {fileID: -8717628458202140114}
   m_Layer: 7
   m_Name: Player Bullet
   m_TagString: Player Projectile
@@ -91,6 +93,7 @@ MonoBehaviour:
   colorblindMaterial: {fileID: 2100000, guid: 4900947c0ec148a46bb0b8ec472ea582, type: 2}
   spriteRenderer: {fileID: 2345167539519693643}
   trailRenderer: {fileID: 2779557330006245852}
+  bulletType: 1
 --- !u!82 &979268516486928138
 AudioSource:
   m_ObjectHideFlags: 0
@@ -187,6 +190,38 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &7939823686103017603
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 518050238800716108}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f211d21580c3e44488db0e133d776043, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-8717628458202140114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 518050238800716108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d336d24b30a2c84b822a1926cd90ed6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lerpTime: 0.15
 --- !u!1 &6875597971058724046
 GameObject:
   m_ObjectHideFlags: 0

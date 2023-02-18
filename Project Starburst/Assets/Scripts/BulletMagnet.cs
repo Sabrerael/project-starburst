@@ -48,11 +48,11 @@ public class BulletMagnet : MonoBehaviour {
 
         if (other.gameObject.tag == "Enemy Projectile" && bulletArray[bulletArray.Length-1] == null) {
             if (other.GetComponent<Missile>()) {
-                AddEnemyBulletToArray(Instantiate(missilePrefab));
+                AddEnemyBulletToArray(Instantiate(missilePrefab, other.transform.position, Quaternion.identity));
             } else if (other.GetComponent<PiercingBullet>()) {
-                AddEnemyBulletToArray(Instantiate(piercingBulletPrefab));
+                AddEnemyBulletToArray(Instantiate(piercingBulletPrefab, other.transform.position, Quaternion.identity));
             } else {
-                AddEnemyBulletToArray(Instantiate(basicBulletPrefab));
+                AddEnemyBulletToArray(Instantiate(basicBulletPrefab, other.transform.position, Quaternion.identity));
             }
             Destroy(other.gameObject);
         }
@@ -77,6 +77,7 @@ public class BulletMagnet : MonoBehaviour {
 
         GameObject bulletToFire = bulletArray[0];
         bulletToFire.transform.parent = null;
+        Debug.Log(bulletToFire.transform.position);
         bulletToFire.GetComponent<Collider2D>().enabled = true;
         bulletToFire.GetComponent<Projectile>().enabled = true;
         bulletToFire.GetComponent<AudioSource>().enabled = true;
@@ -90,7 +91,7 @@ public class BulletMagnet : MonoBehaviour {
             if (bulletArray[i] == null) {
                 bulletArray[i] = gameObject;
                 gameObject.transform.parent = bulletParent;
-                gameObject.transform.position = bulletLocations[i].position;
+                gameObject.GetComponent<MagnetMovement>().SetMovementLocation(bulletLocations[i].localPosition);
                 return;
             }
         }
@@ -105,7 +106,7 @@ public class BulletMagnet : MonoBehaviour {
             do {
                 bulletArray[i-1] = bulletArray[i];
                 bulletArray[i] = null;
-                bulletArray[i-1].transform.position = bulletLocations[i-1].position;
+                bulletArray[i-1].GetComponent<MagnetMovement>().SetMovementLocation(bulletLocations[i-1].localPosition);
                 j--;
                 if (j == -1) { break; }
             } while(bulletArray[j] == null);

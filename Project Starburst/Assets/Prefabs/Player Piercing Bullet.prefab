@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 572871403206585462}
   - component: {fileID: 8944401492133752567}
   - component: {fileID: 7854827702111230289}
+  - component: {fileID: 6879376212841665224}
+  - component: {fileID: 7443875974852149443}
   m_Layer: 7
   m_Name: Player Piercing Bullet
   m_TagString: Player Projectile
@@ -188,6 +190,38 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &6879376212841665224
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465192876194954400}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f211d21580c3e44488db0e133d776043, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7443875974852149443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465192876194954400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d336d24b30a2c84b822a1926cd90ed6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lerpTime: 0.15
 --- !u!1 &6786870123928719650
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Health : MonoBehaviour {
     [SerializeField] int healthPoints = 100;
+    [SerializeField] bool applyCameraShake = false;
     [SerializeField] GameObject deathSoundEffectObject;
     [SerializeField] GameObject hitParticleEffect;
     [SerializeField] GameObject hitParticleEffectColorBlind;
@@ -18,9 +19,14 @@ public class Health : MonoBehaviour {
 
     private Animator animator;
     private AudioSource audioSource;
+    private CameraShake cameraShake;
     private Movement movement;
     private int totalHealthPoints;
     private int currentHealthPoints;
+
+    private void Awake() {
+        cameraShake = Camera.main.GetComponent<CameraShake>();
+    }
 
     private void Start() {
         totalHealthPoints = healthPoints;
@@ -45,7 +51,8 @@ public class Health : MonoBehaviour {
         if (tag == "Boss" || tag == "Enemy") {
             if (HandleShield(bulletType)) { return; }
         }
-
+        // TODO if adding health power-ups, will need to check if value is positive and ignore CameraShake if that's the case
+        ShakeCamera();
         currentHealthPoints = Mathf.Clamp(currentHealthPoints + value, 0, totalHealthPoints);
         audioSource.Play();
         if (SettingsManager.GetColorSet() == 0) {
@@ -97,6 +104,12 @@ public class Health : MonoBehaviour {
 
     private void SetVolume() {
         audioSource.volume = SettingsManager.GetSoundEffectsVolume();
+    }
+
+    private void ShakeCamera() {
+        if (cameraShake != null && applyCameraShake) {
+            cameraShake.Play();
+        }
     }
 
     private IEnumerator TriggerDeathTransition() {

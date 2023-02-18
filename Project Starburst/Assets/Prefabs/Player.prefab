@@ -577,6 +577,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthPoints: 400
+  applyCameraShake: 1
   deathSoundEffectObject: {fileID: 3553197256188102150, guid: e1539ae132cebc94db5d3d695b5d9592, type: 3}
   hitParticleEffect: {fileID: 8760689742216663979, guid: 99e12a8c1b5b54848be1e96bdf65e1e2, type: 3}
   hitParticleEffectColorBlind: {fileID: 8760689742216663979, guid: 99e12a8c1b5b54848be1e96bdf65e1e2, type: 3}

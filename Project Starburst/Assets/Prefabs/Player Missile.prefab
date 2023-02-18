@@ -96,6 +96,8 @@ GameObject:
   - component: {fileID: 5512458694092462939}
   - component: {fileID: -8650535024729223731}
   - component: {fileID: 473406268753257633}
+  - component: {fileID: 8758888415459853883}
+  - component: {fileID: -4160265208639666445}
   m_Layer: 7
   m_Name: Player Missile
   m_TagString: Player Projectile
@@ -272,6 +274,38 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &8758888415459853883
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5550583240862649229}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f211d21580c3e44488db0e133d776043, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-4160265208639666445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5550583240862649229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d336d24b30a2c84b822a1926cd90ed6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lerpTime: 0.15
 --- !u!1001 &2151005362731718043
 PrefabInstance:
   m_ObjectHideFlags: 0
