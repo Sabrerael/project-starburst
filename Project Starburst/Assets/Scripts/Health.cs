@@ -16,6 +16,8 @@ public class Health : MonoBehaviour {
     [Header("Player Specific Properties")]
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] ParticleSystem playerParticleSystem;
+    [SerializeField] GameObject sparkParticles;
+    [SerializeField] GameObject smokeParticles;
 
     private Animator animator;
     private AudioSource audioSource;
@@ -54,6 +56,7 @@ public class Health : MonoBehaviour {
         // TODO if adding health power-ups, will need to check if value is positive and ignore CameraShake if that's the case
         ShakeCamera();
         currentHealthPoints = Mathf.Clamp(currentHealthPoints + value, 0, totalHealthPoints);
+        EnableParticles();
         audioSource.Play();
         if (SettingsManager.GetColorSet() == 0) {
             GameObject particles = Instantiate(hitParticleEffect, transform.position, Quaternion.identity);
@@ -88,6 +91,18 @@ public class Health : MonoBehaviour {
         }
     }
 
+    private void EnableParticles() {
+        if (tag != "Player") { return; }
+
+        if (currentHealthPoints <= totalHealthPoints * 0.66) {
+            sparkParticles.SetActive(true);
+        }
+
+        if (currentHealthPoints <= totalHealthPoints / 3) {
+            smokeParticles.SetActive(true);
+        }
+    }
+
     private bool HandleShield(BulletType bulletType) {
         if (shieldObject == null || !shieldObject.activeInHierarchy) {
             return false;
@@ -115,6 +130,8 @@ public class Health : MonoBehaviour {
     private IEnumerator TriggerDeathTransition() {
         movement.enabled = false;
         spriteRenderer.color = new Color(0,0,0,0);
+        sparkParticles.SetActive(false);
+        smokeParticles.SetActive(false);
         playerParticleSystem.Stop();
         yield return new WaitForSeconds(1);
         Destroy(gameObject);
