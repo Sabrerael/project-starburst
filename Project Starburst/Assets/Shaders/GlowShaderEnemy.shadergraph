@@ -58,9 +58,6 @@
             "m_Id": "3929d4d314c844b39e3f929d348f8d76"
         },
         {
-            "m_Id": "71b020e505304bd6984d663910119082"
-        },
-        {
             "m_Id": "eb024f100527420abbfdc14c92386dcb"
         },
         {
@@ -541,31 +538,6 @@
 
 {
     "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.Vector4MaterialSlot",
-    "m_ObjectId": "18414ccb5363400dbecdb6e47cec31b6",
-    "m_Id": 0,
-    "m_DisplayName": "Emission Color",
-    "m_SlotType": 1,
-    "m_Hidden": false,
-    "m_ShaderOutputName": "Out",
-    "m_StageCapability": 3,
-    "m_Value": {
-        "x": 0.0,
-        "y": 0.0,
-        "z": 0.0,
-        "w": 0.0
-    },
-    "m_DefaultValue": {
-        "x": 0.0,
-        "y": 0.0,
-        "z": 0.0,
-        "w": 0.0
-    },
-    "m_Labels": []
-}
-
-{
-    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.Texture2DMaterialSlot",
     "m_ObjectId": "1894248448a04a48b8649ab1fc9a589d",
     "m_Id": 0,
@@ -848,10 +820,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -1111.9998779296875,
-            "y": 21.599994659423829,
-            "width": 161.5999755859375,
-            "height": 34.400001525878909
+            "x": -1163.199951171875,
+            "y": 8.800002098083496,
+            "width": 160.7999267578125,
+            "height": 33.60000228881836
         }
     },
     "m_Slots": [
@@ -1003,41 +975,6 @@
     "m_Value": 0.0,
     "m_DefaultValue": 0.0,
     "m_Labels": []
-}
-
-{
-    "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.PropertyNode",
-    "m_ObjectId": "71b020e505304bd6984d663910119082",
-    "m_Group": {
-        "m_Id": ""
-    },
-    "m_Name": "Property",
-    "m_DrawState": {
-        "m_Expanded": true,
-        "m_Position": {
-            "serializedVersion": "2",
-            "x": -525.5999755859375,
-            "y": 988.800048828125,
-            "width": 161.5999755859375,
-            "height": 34.39990234375
-        }
-    },
-    "m_Slots": [
-        {
-            "m_Id": "18414ccb5363400dbecdb6e47cec31b6"
-        }
-    ],
-    "synonyms": [],
-    "m_Precision": 0,
-    "m_PreviewExpanded": true,
-    "m_PreviewMode": 0,
-    "m_CustomColors": {
-        "m_SerializableColors": []
-    },
-    "m_Property": {
-        "m_Id": "3bf7f67de11745dfa4d83f910b22b9fa"
-    }
 }
 
 {

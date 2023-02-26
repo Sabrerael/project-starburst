@@ -81,6 +81,7 @@ public class BulletMagnet : MonoBehaviour {
         bulletToFire.GetComponent<Collider2D>().enabled = true;
         bulletToFire.GetComponent<Projectile>().enabled = true;
         bulletToFire.GetComponent<AudioSource>().enabled = true;
+        bulletToFire.GetComponent<MagnetMovement>().enabled = false;
         bulletArray[0] = null;
 
         ResetBulletArray();
