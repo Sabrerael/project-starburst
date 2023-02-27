@@ -50,7 +50,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 68bc255436f3dd04da8e13d64af6215f, type: 2}
+  - {fileID: 2100000, guid: c2648194c629f27408ef5cf084d17732, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -316,6 +316,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthPoints: 750
+  applyCameraShake: 0
   deathSoundEffectObject: {fileID: 3553197256188102150, guid: e1539ae132cebc94db5d3d695b5d9592, type: 3}
   hitParticleEffect: {fileID: 8760689742216663979, guid: d3e26136373d4f14888398ef7b8834ab, type: 3}
   hitParticleEffectColorBlind: {fileID: 8760689742216663979, guid: ca0bb5faa09a2f44caceb0f24bb827d2, type: 3}
@@ -324,6 +325,8 @@ MonoBehaviour:
   brokenShieldObject: {fileID: 0}
   spriteRenderer: {fileID: 0}
   playerParticleSystem: {fileID: 0}
+  sparkParticles: {fileID: 0}
+  smokeParticles: {fileID: 0}
 --- !u!114 &8938242818058098881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -341,14 +344,14 @@ MonoBehaviour:
   spriteRenderer: {fileID: 8418502353642908297}
   explosionSFX: {fileID: 8300000, guid: 834af7613e983234692de57764dbc706, type: 3}
   basicBullet: {fileID: 5437220429731685477, guid: f307648afc17da145904e1e4fc702028, type: 3}
-  basicEnemyMaterial: {fileID: 2100000, guid: 51adb4ec7af064340b933f1cb85e7207, type: 2}
+  basicEnemyMaterial: {fileID: 2100000, guid: c2648194c629f27408ef5cf084d17732, type: 2}
   basicEnemyMaterialColorBlind: {fileID: 2100000, guid: 4900947c0ec148a46bb0b8ec472ea582, type: 2}
   basicBulletFireInterval: 2
   basicBulletsToFire: 5
   basicEnemyParticles: {fileID: 8760689742216663979, guid: d3e26136373d4f14888398ef7b8834ab, type: 3}
   basicEnemyParticlesColorBlind: {fileID: 8760689742216663979, guid: ca0bb5faa09a2f44caceb0f24bb827d2, type: 3}
   missile: {fileID: 248572933423984896, guid: d07b18d970145ac4fbf8624db7dbe690, type: 3}
-  missileEnemyMaterial: {fileID: 2100000, guid: 1249bdb3ca7372643a207431d12e235a, type: 2}
+  missileEnemyMaterial: {fileID: 2100000, guid: f904e451fa421f84090e7ada9cbaf7c4, type: 2}
   missileEnemyMaterialColorBlind: {fileID: 2100000, guid: f73a99045c3a04043884e571820e68d6, type: 2}
   missileFireInterval: 2
   missilesToFire: 5
@@ -357,7 +360,7 @@ MonoBehaviour:
   missileEnemyParticles: {fileID: 8760689742216663979, guid: e0b607f0013e7634b816a23d7a9a2a73, type: 3}
   missileEnemyParticlesColorBlind: {fileID: 8760689742216663979, guid: c4a073f573b439341a682f13ff8b6781, type: 3}
   piercingBullet: {fileID: 3176741985367620412, guid: cda78298e07c89948bf7efbf1de0e87b, type: 3}
-  piercingEnemyMaterial: {fileID: 2100000, guid: c3398a0c794f0bd488a92d27c6b757e4, type: 2}
+  piercingEnemyMaterial: {fileID: 2100000, guid: ea84337f033bdd847b7cca5e755dd2fc, type: 2}
   piercingEnemyMaterialColorBlind: {fileID: 2100000, guid: ee08bb5da98c91241bedbe252d138abc, type: 2}
   piercingBulletFireInterval: 2
   piercingBulletsToFire: 5

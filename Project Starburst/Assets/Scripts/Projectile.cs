@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour {
     [SerializeField] protected bool isPlayerProjectile = false;
+    [SerializeField] GameObject magnetEffects;
     [SerializeField] float movementSpeed = -2.5f;
     [SerializeField] protected int damage = 50;
     [SerializeField] protected Material defaultMaterial;
@@ -38,6 +39,8 @@ public class Projectile : MonoBehaviour {
     public bool IsPlayerProjectile() { return isPlayerProjectile; }
 
     public int GetDamage() { return damage; }
+
+    public GameObject GetMagnetEffects() { return magnetEffects; }
 
     public void SetPlayerProjectile(bool isPlayerProjectile) { this.isPlayerProjectile = isPlayerProjectile; }
 

@@ -12,8 +12,7 @@ public class MagnetMovement : MonoBehaviour {
 
     private void Update() {
         if (lerping) {
-            Debug.Log("Lerping");
-            timer += .15f;
+            timer += lerpTime;
             transform.localPosition = Vector3.Lerp(initialLocation, movementLocation, timer);
             if (transform.localPosition == movementLocation) {
                 lerping = false;
@@ -25,7 +24,6 @@ public class MagnetMovement : MonoBehaviour {
     }
 
     public void SetMovementLocation(Vector3 movementLocation) {
-        Debug.Log("In SetMovementLocation");
         initialLocation = transform.localPosition;
         this.movementLocation = movementLocation;
         timer = 0;

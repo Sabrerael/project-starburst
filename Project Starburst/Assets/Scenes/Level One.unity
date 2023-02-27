@@ -181,11 +181,15 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 21cbeeee2dd3c014dae650bbfbc6b6d3, type: 2}
   - {fileID: 11400000, guid: 419d607b90d3158409b0b577a943becd, type: 2}
   - {fileID: 11400000, guid: b803ce6a87b0e43458d5674038d2b1aa, type: 2}
+  - {fileID: 11400000, guid: 5fd6784c432ae7a4f8841de1592059e1, type: 2}
+  - {fileID: 11400000, guid: 0d0d36d4c0770934184980e553f9286a, type: 2}
   - {fileID: 11400000, guid: d4dcd05d8e9512f46bfa6308d38d8a36, type: 2}
   - {fileID: 11400000, guid: 88238ebe1c96cbb4ca23ea5f7b1f7565, type: 2}
   - {fileID: 11400000, guid: d417d90cb6def3f44a509ff64ef85a95, type: 2}
   - {fileID: 11400000, guid: 027037e8c0f670b489d5f1d487bee7d7, type: 2}
   - {fileID: 11400000, guid: 70090c3851e4fe443b42e2c46e540b8e, type: 2}
+  - {fileID: 11400000, guid: 213db8d060d01244ea82e0fef9846a5d, type: 2}
+  - {fileID: 11400000, guid: 23096b467de9d7c419c830893fce6103, type: 2}
   - {fileID: 11400000, guid: aead99e96a7aa244484e452dd36479ed, type: 2}
   - {fileID: 11400000, guid: af8bc8faf8ad23047bafd3a01464118d, type: 2}
   - {fileID: 11400000, guid: 5dcaa75c42336b54a9ae36ffbd70e114, type: 2}
@@ -1156,7 +1160,7 @@ PrefabInstance:
     - target: {fileID: 5088654272187016561, guid: 2f212512d1eead04898772a68107063c, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 82a355410b6160a4c9e4b5ad2b7d84b7, type: 3}
+      objectReference: {fileID: 21300000, guid: 47ac6feb0b231c640be83ab201e004ac, type: 3}
     - target: {fileID: 5088654272187016562, guid: 2f212512d1eead04898772a68107063c, type: 3}
       propertyPath: m_Name
       value: Background
@@ -1180,7 +1184,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1682577739490508675, guid: b57d320a93d1bae4c8cc13ab85508611, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1835978542760565656, guid: b57d320a93d1bae4c8cc13ab85508611, type: 3}
       propertyPath: m_Enabled

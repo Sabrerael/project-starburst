@@ -88,6 +88,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayerProjectile: 1
+  magnetEffects: {fileID: 5548712439291770960}
   movementSpeed: 10
   damage: 50
   defaultMaterial: {fileID: 2100000, guid: 51adb4ec7af064340b933f1cb85e7207, type: 2}
@@ -222,7 +223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d336d24b30a2c84b822a1926cd90ed6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lerpTime: 0.15
+  lerpTime: 0.075
   movementMagnitude: 0.01
 --- !u!1 &5548712439291770960
 GameObject:
@@ -329,7 +330,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 1
+  moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0

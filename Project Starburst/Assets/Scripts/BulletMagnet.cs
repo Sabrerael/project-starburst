@@ -41,7 +41,7 @@ public class BulletMagnet : MonoBehaviour {
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {
+    private void OnTriggerStay2D(Collider2D other) {
         if (!magnetActive) {
             return;
         }
@@ -77,9 +77,10 @@ public class BulletMagnet : MonoBehaviour {
 
         GameObject bulletToFire = bulletArray[0];
         bulletToFire.transform.parent = null;
-        Debug.Log(bulletToFire.transform.position);
         bulletToFire.GetComponent<Collider2D>().enabled = true;
-        bulletToFire.GetComponent<Projectile>().enabled = true;
+        Projectile projectile = bulletToFire.GetComponent<Projectile>();
+        projectile.enabled = true;
+        projectile.GetMagnetEffects().SetActive(false);
         bulletToFire.GetComponent<AudioSource>().enabled = true;
         bulletToFire.GetComponent<MagnetMovement>().enabled = false;
         bulletArray[0] = null;
