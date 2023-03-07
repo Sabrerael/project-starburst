@@ -8,6 +8,7 @@ public class BulletMagnet : MonoBehaviour {
     [SerializeField] GameObject basicBulletPrefab;
     [SerializeField] GameObject missilePrefab;
     [SerializeField] GameObject piercingBulletPrefab;
+    [SerializeField] GameObject spreadshotPrefab;
 
     [Header("Magnet Properties")]
     [SerializeField] float magnetDrain = 2;
@@ -51,6 +52,8 @@ public class BulletMagnet : MonoBehaviour {
                 AddEnemyBulletToArray(Instantiate(missilePrefab, other.transform.position, Quaternion.identity));
             } else if (other.GetComponent<PiercingBullet>()) {
                 AddEnemyBulletToArray(Instantiate(piercingBulletPrefab, other.transform.position, Quaternion.identity));
+            } else if (other.GetComponent<Spreadshot>()) {
+                AddEnemyBulletToArray(Instantiate(spreadshotPrefab, other.transform.position, Quaternion.identity));
             } else {
                 AddEnemyBulletToArray(Instantiate(basicBulletPrefab, other.transform.position, Quaternion.identity));
             }

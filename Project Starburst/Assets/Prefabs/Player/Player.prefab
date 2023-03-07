@@ -5004,6 +5004,7 @@ MonoBehaviour:
   basicBulletPrefab: {fileID: 518050238800716108, guid: e904e37c812b21f4298a8e6cf86f62dd, type: 3}
   missilePrefab: {fileID: 5550583240862649229, guid: c3592a7d2d41d4d4f89cd0ace5e6fb22, type: 3}
   piercingBulletPrefab: {fileID: 465192876194954400, guid: 7e33f9caacd928d489246ff5dcf712dc, type: 3}
+  spreadshotPrefab: {fileID: 2046136655675650724, guid: 42a5bf8903e75bb4f93ae707b8cdae40, type: 3}
   magnetDrain: 0.3
   magnetRegen: 0.6
   bulletLocations:

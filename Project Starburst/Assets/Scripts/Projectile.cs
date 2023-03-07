@@ -17,7 +17,7 @@ public class Projectile : MonoBehaviour {
         SetMaterial();
     }
 
-    private void Start() {
+    protected virtual void Start() {
         audioSource = GetComponent<AudioSource>();
         SetVolume();
         SettingsManager.onSettingsChange += SetVolume;
