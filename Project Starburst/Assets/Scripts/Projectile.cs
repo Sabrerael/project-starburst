@@ -12,6 +12,8 @@ public class Projectile : MonoBehaviour {
     [SerializeField] protected BulletType bulletType = BulletType.Basic;
     
     private AudioSource audioSource;
+    private float xMovementSpeed;
+    private float yMovementSpeed;
 
     private void Awake() {
         SetMaterial();
@@ -22,10 +24,12 @@ public class Projectile : MonoBehaviour {
         SetVolume();
         SettingsManager.onSettingsChange += SetVolume;
         SettingsManager.onSettingsChange += SetMaterial;
+        xMovementSpeed = -1 * Mathf.Sin(transform.rotation.z) * movementSpeed;
+        yMovementSpeed = Mathf.Cos(transform.rotation.z) * movementSpeed;
     }
 
     private void Update() {
-        transform.position += new Vector3(0, movementSpeed * Time.deltaTime, 0);
+        transform.position += new Vector3(xMovementSpeed * Time.deltaTime, yMovementSpeed * Time.deltaTime, 0);
     }
 
     protected virtual void OnCollisionEnter2D(Collision2D other) {
