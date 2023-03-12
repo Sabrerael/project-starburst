@@ -6,6 +6,6 @@ public class ScoreTracker : MonoBehaviour {
     [SerializeField] TextMeshProUGUI scoreValue;
 
     private void Update() {
-        scoreValue.text = player.GetTotalScore().ToString();
+        scoreValue.text = player.GetTotalScore().ToString("000000000");
     }
 }
