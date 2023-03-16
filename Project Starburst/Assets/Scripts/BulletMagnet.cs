@@ -17,7 +17,7 @@ public class BulletMagnet : MonoBehaviour {
     [SerializeField] GameObject magnetBody;
 
     private bool magnetActive = false;
-    private float magnetPower = 1;
+    private float magnetPower = 1f;
     private AudioSource audioSource;
     private GameObject[] bulletArray = new GameObject[7];
     private SpriteRenderer spriteRenderer;
@@ -30,12 +30,15 @@ public class BulletMagnet : MonoBehaviour {
     }
 
     private void Update() {
+
         if (!magnetActive && magnetPower != 1) {
             magnetPower = Mathf.Clamp(magnetPower + (magnetRegen * Time.deltaTime), 0, 1);
             return;
-        } 
+        }
 
-        magnetPower = Mathf.Clamp(magnetPower - (magnetDrain * Time.deltaTime), 0, 1);
+        if (magnetActive) {
+            magnetPower = Mathf.Clamp(magnetPower - (magnetDrain * Time.deltaTime), 0, 1);
+        }
 
         if (magnetPower == 0) {
             SetMagnetActive(false);

@@ -6,10 +6,12 @@ public class MagnetBar : MonoBehaviour {
     [SerializeField] protected Canvas rootCanvas = null;
 
     protected virtual void Update() {
-        rootCanvas.enabled = true;
-
         if (bulletMagnet.GetMagnetPower() < 1) {
+            rootCanvas.enabled = true;
             foreground.localScale = new Vector3(bulletMagnet.GetMagnetPower(), 1, 1);
+        } else {
+            rootCanvas.enabled = false;
+            return;
         }
     }
 }
