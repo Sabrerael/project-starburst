@@ -14,11 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefabs:
   - {fileID: 1148360806595244785, guid: 793ccb6756532974999c935c36e723f1, type: 3}
-  pathPrefab: {fileID: 6865236033224870417, guid: e11d4ad3e9a902c43af863c0d9ae7e55, type: 3}
+  - {fileID: 1148360806595244785, guid: 793ccb6756532974999c935c36e723f1, type: 3}
+  path1Prefab: {fileID: 6865236033224870417, guid: e11d4ad3e9a902c43af863c0d9ae7e55, type: 3}
+  path2Prefab: {fileID: 7761142739011754623, guid: ee3cec31b3e59c54fa3cf1e7571fd78f, type: 3}
+  pathToSpawnEnemyOn: 0000000001000000
   moveSpeed: 1.35
-  timeBetweenEnemySpawns: 1
+  timeBetweenEnemySpawns: 0
   spawnTimeVariance: 0
-  minimumSpawnTime: 2
-  timeAfterWave: 1
+  minimumSpawnTime: 0
+  timeAfterWave: 1.5
   continuePathfinding: 1
   waypointIndexToReturnTo: 1

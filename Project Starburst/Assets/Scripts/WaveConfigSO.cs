@@ -4,7 +4,9 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Wave Config", fileName = "New Wave Config")]
 public class WaveConfigSO : ScriptableObject {
     [SerializeField] List<GameObject> enemyPrefabs;
-    [SerializeField] Transform pathPrefab;
+    [SerializeField] Transform path1Prefab;
+    [SerializeField] Transform path2Prefab;
+    [SerializeField] List<int> pathToSpawnEnemyOn;
     [SerializeField] float moveSpeed = 5;
     [SerializeField] float timeBetweenEnemySpawns = 1f;
     [SerializeField] float spawnTimeVariance = 0f;
@@ -17,7 +19,15 @@ public class WaveConfigSO : ScriptableObject {
 
     public GameObject GetEnemyPrefab(int index) { return enemyPrefabs[index]; }
 
-    public Transform GetStartingWaypoint() { return pathPrefab.GetChild(0); }
+    public Transform GetStartingWaypoint(int pathNumber) { 
+        if (pathNumber == 0) {
+            return path1Prefab.GetChild(0);
+        } else {
+            return path2Prefab.GetChild(0);
+        }
+    }
+
+    public int GetPathToSpawnEnemyOn(int index) { return pathToSpawnEnemyOn[index]; }
 
     public float GetMoveSpeed() { return moveSpeed; }
 
@@ -27,9 +37,17 @@ public class WaveConfigSO : ScriptableObject {
 
     public int GetWaypointIndexToReturnTo() { return waypointIndexToReturnTo;}
 
-    public List<Transform> GetWaypoints() {
+    public List<Transform> GetPath1Waypoints() {
         List<Transform> waypoints = new List<Transform>();
-        foreach (Transform child in pathPrefab) {
+        foreach (Transform child in path1Prefab) {
+            waypoints.Add(child);
+        }
+        return waypoints;
+    }
+
+    public List<Transform> GetPath2Waypoints() {
+        List<Transform> waypoints = new List<Transform>();
+        foreach (Transform child in path2Prefab) {
             waypoints.Add(child);
         }
         return waypoints;

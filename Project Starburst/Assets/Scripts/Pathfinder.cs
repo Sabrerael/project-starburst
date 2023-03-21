@@ -5,6 +5,7 @@ public class Pathfinder : MonoBehaviour {
     private EnemySpawner enemySpawner;
     private WaveConfigSO waveConfig;
     private List<Transform> waypoints;
+    private int pathToFollow;
     private int waypointIndex = 0;
     private bool continuePathfinding;
     private int waypointIndexToReturnTo;
@@ -15,7 +16,11 @@ public class Pathfinder : MonoBehaviour {
 
     private void Start() {
         waveConfig = enemySpawner.GetCurrentWave();
-        waypoints = waveConfig.GetWaypoints();
+        if (pathToFollow == 1) {
+            waypoints = waveConfig.GetPath2Waypoints();
+        } else {
+            waypoints = waveConfig.GetPath1Waypoints();
+        }
         transform.position = waypoints[waypointIndex].position;
         continuePathfinding = waveConfig.IsContinuePathfinding();
         waypointIndexToReturnTo = waveConfig.GetWaypointIndexToReturnTo();
@@ -39,4 +44,6 @@ public class Pathfinder : MonoBehaviour {
             Destroy(gameObject);
         }
     }
+
+    public void SetPathToFollow(int pathIndex) { pathToFollow = pathIndex; }
 }

@@ -9,7 +9,7 @@ public class EnemySpawner : MonoBehaviour {
     private WaveConfigSO currentWave;
 
     private void Start() {
-        //Time.timeScale = 5f;
+        Time.timeScale = 5f;
         StartCoroutine(SpawnEnemyWaves());
     }
 
@@ -20,20 +20,23 @@ public class EnemySpawner : MonoBehaviour {
             currentWave = wave;
 
             for(int j = 0; j < currentWave.GetEnemyCount(); j++) {
-                Instantiate(
+                int pathNumber = currentWave.GetPathToSpawnEnemyOn(j);
+                GameObject enemy = Instantiate(
                     currentWave.GetEnemyPrefab(j),
-                    currentWave.GetStartingWaypoint().position,
+                    currentWave.GetStartingWaypoint(pathNumber).position,
                     Quaternion.identity,
                     transform);
+                enemy.GetComponent<Pathfinder>().SetPathToFollow(pathNumber);
                 yield return new WaitForSeconds(currentWave.GetRandomSpawnTime());
             }
             yield return new WaitForSeconds(currentWave.GetTimeAfterWave());
         }
         currentWave = bossWaveConfig;
-        Instantiate(currentWave.GetEnemyPrefab(0),
-                    currentWave.GetStartingWaypoint().position,
+        GameObject boss = Instantiate(currentWave.GetEnemyPrefab(0),
+                    currentWave.GetStartingWaypoint(0).position,
                     Quaternion.identity,
                     transform);
+        boss.GetComponent<Pathfinder>().SetPathToFollow(0);
     }
 
     public WaveConfigSO GetCurrentWave() { return currentWave; }
