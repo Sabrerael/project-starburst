@@ -24,7 +24,7 @@ public class EnemySpawner : MonoBehaviour {
                 GameObject enemy = Instantiate(
                     currentWave.GetEnemyPrefab(j),
                     currentWave.GetStartingWaypoint(pathNumber).position,
-                    Quaternion.identity,
+                    currentWave.GetEnemyPrefab(j).transform.rotation,
                     transform);
                 enemy.GetComponent<Pathfinder>().SetPathToFollow(pathNumber);
                 yield return new WaitForSeconds(currentWave.GetRandomSpawnTime());

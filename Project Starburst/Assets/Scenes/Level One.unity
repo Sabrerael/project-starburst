@@ -192,6 +192,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: af8bc8faf8ad23047bafd3a01464118d, type: 2}
   - {fileID: 11400000, guid: 5dcaa75c42336b54a9ae36ffbd70e114, type: 2}
   - {fileID: 11400000, guid: e013f612b04ada445b507f0160138e70, type: 2}
+  - {fileID: 11400000, guid: 97a6e5b7421519340b013c452b076cf7, type: 2}
   bossWaveConfig: {fileID: 11400000, guid: 8dd663148d784fa4f94203bf6d5953b6, type: 2}
 --- !u!4 &275318602
 Transform:
@@ -640,11 +641,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3086039900105107593, guid: da70283afe7d85c4aadb42a8616ef983, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
-      value: 0.9996852
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3086039900105107593, guid: da70283afe7d85c4aadb42a8616ef983, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 0.99999994
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3086039900105107597, guid: da70283afe7d85c4aadb42a8616ef983, type: 3}
       propertyPath: m_Name
@@ -1138,7 +1139,7 @@ PrefabInstance:
       objectReference: {fileID: 966639238}
     - target: {fileID: 3228386882619515086, guid: 51d67cf9da843fd41b05c86ef773aabc, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -12.454681
+      value: -12.454651
       objectReference: {fileID: 0}
     - target: {fileID: 3689018797641098304, guid: 51d67cf9da843fd41b05c86ef773aabc, type: 3}
       propertyPath: m_LocalPosition.y

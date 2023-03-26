@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour {
     [SerializeField] GameObject projectile;
+    [SerializeField] Vector3 projectileSpawnPointModification;
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] int scoreValue = 100;
     [SerializeField] float fireInterval = 2;
@@ -16,6 +17,9 @@ public class Enemy : MonoBehaviour {
         SetMaterial();
         SettingsManager.onSettingsChange += SetMaterial;
         StartCoroutine(FireProjectiles(fireInterval));
+        if (projectileSpawnPointModification == null) {
+            projectileSpawnPointModification = new Vector3(0,-0.5f, 0);
+        }
     }
 
     public void AddScoreToPlayer() {
@@ -32,7 +36,7 @@ public class Enemy : MonoBehaviour {
 
     private IEnumerator FireProjectiles(float time) {
         while (true) {
-            Instantiate(projectile, transform.position + new Vector3(0,-0.5f, 0), Quaternion.identity);
+            Instantiate(projectile, transform.position + projectileSpawnPointModification, transform.rotation);
             yield return new WaitForSeconds(time);
         }
     }

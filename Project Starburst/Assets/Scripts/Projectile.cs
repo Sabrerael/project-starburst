@@ -24,8 +24,9 @@ public class Projectile : MonoBehaviour {
         SetVolume();
         SettingsManager.onSettingsChange += SetVolume;
         SettingsManager.onSettingsChange += SetMaterial;
-        xMovementSpeed = -1 * Mathf.Sin(transform.rotation.z) * movementSpeed;
-        yMovementSpeed = Mathf.Cos(transform.rotation.z) * movementSpeed;
+
+        xMovementSpeed = Mathf.Sin(Mathf.Deg2Rad * transform.rotation.eulerAngles.z) * movementSpeed * -1;
+        yMovementSpeed = Mathf.Cos(Mathf.Deg2Rad * transform.rotation.eulerAngles.z) * movementSpeed;
     }
 
     private void Update() {
