@@ -2,8 +2,8 @@ using System.Collections;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour {
-    [SerializeField] GameObject projectile;
-    [SerializeField] Vector3 projectileSpawnPointModification;
+    [SerializeField] protected GameObject projectile;
+    [SerializeField] protected Vector3 projectileSpawnPointModification;
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] int scoreValue = 100;
     [SerializeField] float fireInterval = 2;
@@ -34,7 +34,7 @@ public class Enemy : MonoBehaviour {
         }
     }
 
-    private IEnumerator FireProjectiles(float time) {
+    protected virtual IEnumerator FireProjectiles(float time) {
         while (true) {
             Instantiate(projectile, transform.position + projectileSpawnPointModification, transform.rotation);
             yield return new WaitForSeconds(time);

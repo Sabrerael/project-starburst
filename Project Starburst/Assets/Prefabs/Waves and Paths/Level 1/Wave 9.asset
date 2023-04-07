@@ -26,6 +26,6 @@ MonoBehaviour:
   timeBetweenEnemySpawns: 1.45
   spawnTimeVariance: 0
   minimumSpawnTime: 1.45
-  timeAfterWave: 4
+  timeAfterWave: 5.25
   continuePathfinding: 0
   waypointIndexToReturnTo: 1

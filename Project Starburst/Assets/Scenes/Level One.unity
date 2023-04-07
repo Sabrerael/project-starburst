@@ -189,13 +189,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 68e53aa2fc9d4bf4a82f79bcfb500399, type: 2}
   - {fileID: 11400000, guid: 027037e8c0f670b489d5f1d487bee7d7, type: 2}
   - {fileID: 11400000, guid: 70090c3851e4fe443b42e2c46e540b8e, type: 2}
+  - {fileID: 11400000, guid: 6e68191b517d5be4ba22da8e366b4b8f, type: 2}
   - {fileID: 11400000, guid: 213db8d060d01244ea82e0fef9846a5d, type: 2}
   - {fileID: 11400000, guid: aead99e96a7aa244484e452dd36479ed, type: 2}
   - {fileID: 11400000, guid: af8bc8faf8ad23047bafd3a01464118d, type: 2}
   - {fileID: 11400000, guid: 5dcaa75c42336b54a9ae36ffbd70e114, type: 2}
   - {fileID: 11400000, guid: e013f612b04ada445b507f0160138e70, type: 2}
   - {fileID: 11400000, guid: 97a6e5b7421519340b013c452b076cf7, type: 2}
-  - {fileID: 11400000, guid: 6e68191b517d5be4ba22da8e366b4b8f, type: 2}
   - {fileID: 11400000, guid: 5a9f68c90136a0546b566a8af258d089, type: 2}
   bossWaveConfig: {fileID: 11400000, guid: 8dd663148d784fa4f94203bf6d5953b6, type: 2}
 --- !u!4 &275318602
@@ -1063,6 +1063,10 @@ PrefabInstance:
     - target: {fileID: 5844647460688250632, guid: b57d320a93d1bae4c8cc13ab85508611, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5844647460688250632, guid: b57d320a93d1bae4c8cc13ab85508611, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5844647460688250634, guid: b57d320a93d1bae4c8cc13ab85508611, type: 3}
       propertyPath: m_RootOrder

@@ -222,7 +222,7 @@ GameObject:
   - component: {fileID: 8938242818058098881}
   - component: {fileID: -3746498318057572503}
   m_Layer: 6
-  m_Name: Boss
+  m_Name: Level 1 Boss
   m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -18,10 +18,10 @@ MonoBehaviour:
   path1Prefab: {fileID: 2983767370784067276, guid: 2669fbaa2f4e3d549beafd20390dbb79, type: 3}
   path2Prefab: {fileID: 6794765389178359599, guid: 33f36d84782b37c46b2b6041d41f1a6c, type: 3}
   pathToSpawnEnemyOn: 0000000001000000
-  moveSpeed: 1.35
+  moveSpeed: 1.55
   timeBetweenEnemySpawns: 0
   spawnTimeVariance: 0
   minimumSpawnTime: 0
-  timeAfterWave: 1.5
+  timeAfterWave: 3
   continuePathfinding: 1
   waypointIndexToReturnTo: 1

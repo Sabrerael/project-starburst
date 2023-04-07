@@ -26,7 +26,7 @@ public class Movement : MonoBehaviour {
         Vector2 delta = movementValues * movementSpeed * Time.deltaTime;
         Vector2 newPosition = new Vector2();
         newPosition.x = Mathf.Clamp(transform.position.x + delta.x, -xBoundary, xBoundary);
-        newPosition.y = Mathf.Clamp(transform.position.y + delta.y, -yBoundary, yBoundary);
+        newPosition.y = Mathf.Clamp(transform.position.y + delta.y, -yBoundary, yBoundary - 1f);
         transform.position = newPosition;
     }
 }
