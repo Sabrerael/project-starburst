@@ -58,13 +58,13 @@ public class Health : MonoBehaviour {
         currentHealthPoints = Mathf.Clamp(currentHealthPoints + value, 0, totalHealthPoints);
         EnableParticles();
         audioSource.Play();
-        if (SettingsManager.GetColorSet() == 0) {
-            GameObject particles = Instantiate(hitParticleEffect, transform.position, Quaternion.identity);
-            Destroy(particles, 0.5f);
-        } else {
-            GameObject particles = Instantiate(hitParticleEffectColorBlind, transform.position, Quaternion.identity);
-            Destroy(particles, 0.5f);
-        }
+        //if (SettingsManager.GetColorSet() == 0) {
+        GameObject particles = Instantiate(hitParticleEffect, transform.position, Quaternion.identity);
+        Destroy(particles, 0.5f);
+        //} else {
+            //GameObject particles = Instantiate(hitParticleEffectColorBlind, transform.position, Quaternion.identity);
+            //Destroy(particles, 0.5f);
+        //}
         if (currentHealthPoints == 0) {
             Death();
         }
@@ -82,13 +82,13 @@ public class Health : MonoBehaviour {
             GetComponent<Enemy>().AddScoreToPlayer();
             Destroy(gameObject);
         }
-        if (SettingsManager.GetColorSet() == 0) {
-            GameObject particles = Instantiate(hitParticleEffect, transform.position, Quaternion.identity);
-            Destroy(particles, 0.5f);
-        } else {
-            GameObject particles = Instantiate(hitParticleEffectColorBlind, transform.position, Quaternion.identity);
-            Destroy(particles, 0.5f);
-        }
+        //if (SettingsManager.GetColorSet() == 0) {
+        GameObject particles = Instantiate(hitParticleEffect, transform.position, Quaternion.identity);
+        Destroy(particles, 0.5f);
+        //} else {
+            //GameObject particles = Instantiate(hitParticleEffectColorBlind, transform.position, Quaternion.identity);
+            //Destroy(particles, 0.5f);
+        //}
     }
 
     private void EnableParticles() {

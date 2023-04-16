@@ -85,6 +85,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayerProjectile: 0
+  magnetEffects: {fileID: 0}
   movementSpeed: -12.5
   damage: 35
   defaultMaterial: {fileID: 2100000, guid: c3398a0c794f0bd488a92d27c6b757e4, type: 2}
@@ -102,7 +103,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 66d6f42991b26ad499d426d4c230e891, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 4aefed4b487b4c945808744069bef410, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

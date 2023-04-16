@@ -27,11 +27,11 @@ public class Enemy : MonoBehaviour {
     }
 
     private void SetMaterial() {
-        if (SettingsManager.GetColorSet() != 0) {
+        /*if (SettingsManager.GetColorSet() != 0) {
             spriteRenderer.material = colorblindMaterial;
         } else {
             spriteRenderer.material = defaultMaterial;
-        }
+        }*/
     }
 
     protected virtual IEnumerator FireProjectiles(float time) {

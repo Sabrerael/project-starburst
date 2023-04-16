@@ -60,11 +60,11 @@ public class Boss : MonoBehaviour {
     }
 
     private void SetMaterials() {
-        if (SettingsManager.GetColorSet() == 0) {
+        /*if (SettingsManager.GetColorSet() == 0) {
             useColorBlindScheme = false;
         } else {
             useColorBlindScheme = true;
-        }
+        }*/
     }
 
     private IEnumerator BossCycle() {

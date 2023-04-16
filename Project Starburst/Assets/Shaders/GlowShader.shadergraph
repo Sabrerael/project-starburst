@@ -727,7 +727,7 @@
     },
     "m_Name": "Color",
     "m_DefaultReferenceName": "Color_5927db88f145487e88f658a115da6afb",
-    "m_OverrideReferenceName": "",
+    "m_OverrideReferenceName": "_Color",
     "m_GeneratePropertyBlock": true,
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,

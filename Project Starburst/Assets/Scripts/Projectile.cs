@@ -50,13 +50,13 @@ public class Projectile : MonoBehaviour {
     public void SetPlayerProjectile(bool isPlayerProjectile) { this.isPlayerProjectile = isPlayerProjectile; }
 
     private void SetMaterial() {
-        if (SettingsManager.GetColorSet() != 0) {
-            spriteRenderer.material = colorblindMaterial;
-            trailRenderer.material = colorblindMaterial;
-        } else {
-            spriteRenderer.material = defaultMaterial;
-            trailRenderer.material = defaultMaterial;
-        }
+        //if (SettingsManager.GetColorSet() != 0) {
+            //spriteRenderer.material = colorblindMaterial;
+            //trailRenderer.material = colorblindMaterial;
+        //} else {
+        //    spriteRenderer.material = defaultMaterial;
+        //    trailRenderer.material = defaultMaterial;
+        //}
     }
 
     private void SetVolume() {
