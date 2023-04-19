@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fecdd6ef50c9694aaa6df0b37d7732e, type: 3}
+  m_Name: Shielded Wave 2-1
+  m_EditorClassIdentifier: 
+  enemyPrefabs:
+  - {fileID: 3489580800740858925, guid: 4bb8acd65442be147b1e917ac74f03fe, type: 3}
+  - {fileID: 3489580800740858925, guid: 4bb8acd65442be147b1e917ac74f03fe, type: 3}
+  path1Prefab: {fileID: 6596264734399283628, guid: 7bce5ec3d3b549f4d98c388e5bbb16df, type: 3}
+  path2Prefab: {fileID: 2499727810921890930, guid: e1bc3915bee8b8045837f2027a9395e1, type: 3}
+  pathToSpawnEnemyOn: 0000000001000000
+  moveSpeed: 1.6
+  timeBetweenEnemySpawns: 0
+  spawnTimeVariance: 0
+  minimumSpawnTime: 0
+  timeAfterWave: 2.5
+  continuePathfinding: 1
+  waypointIndexToReturnTo: 1

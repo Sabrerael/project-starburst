@@ -8770,6 +8770,16 @@ MonoBehaviour:
   - {fileID: 2100000, guid: a9b148715fbbd754d83a861bf8e75d6d, type: 2}
   - {fileID: 2100000, guid: 0075421453d20074babf945bf5291c38, type: 2}
   - {fileID: 2100000, guid: 4c56ef3614bacc84ab37dfdd2a5876fd, type: 2}
+  particleMaterials:
+  - {fileID: 2100000, guid: 01bce26ed5f5c194ab300287cb8a46fd, type: 2}
+  - {fileID: 2100000, guid: f59d5cb083234fb4f868c9c5134cac0d, type: 2}
+  - {fileID: 2100000, guid: ad67d1debf0f6a04a9132bd27df891a8, type: 2}
+  - {fileID: 2100000, guid: 7a974e7709c82284fa5b371b6f99057f, type: 2}
+  particleSystems:
+  - {fileID: 8760689742216663981, guid: d3e26136373d4f14888398ef7b8834ab, type: 3}
+  - {fileID: 8760689742216663981, guid: e0b607f0013e7634b816a23d7a9a2a73, type: 3}
+  - {fileID: 8760689742216663981, guid: cadbca1d454cce84289266f89805afef, type: 3}
+  - {fileID: 8760689742216663981, guid: f19cbf8a5db860b48a121b7a3ab1734c, type: 3}
   colors:
   - {r: 0.007843138, g: 0.007843138, b: 0.1882353, a: 0}
   - {r: 0.1882353, g: 0.007843138, b: 0.007843138, a: 0}

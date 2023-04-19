@@ -1505,7 +1505,7 @@
     },
     "m_Name": "Emission",
     "m_DefaultReferenceName": "Color_e1093a2a795342af985179a20790dbfb",
-    "m_OverrideReferenceName": "",
+    "m_OverrideReferenceName": "_Color",
     "m_GeneratePropertyBlock": true,
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,
