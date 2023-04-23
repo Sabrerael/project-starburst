@@ -4,7 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class SettingsSaver : MonoBehaviour {
+    [SerializeField] bool inPauseMenu = false;
     [SerializeField] LevelLoader levelLoader;
+    [SerializeField] GameObject optionCanvas;
     [SerializeField] Slider musicVolumeSlider;
     [SerializeField] Slider soundFxVolumeSlider;
     [SerializeField] TMP_Dropdown colorDropdown1;
@@ -154,7 +156,11 @@ public class SettingsSaver : MonoBehaviour {
                                         colorDropdown4.value,
                                         musicVolume,
                                         soundEffectsVolume);
-        levelLoader.LoadMainMenu();
+        if (inPauseMenu) {
+            optionCanvas.SetActive(false);
+        } else {
+            levelLoader.LoadMainMenu();
+        }
     }
 
     public void SetExampleColor(int value) {

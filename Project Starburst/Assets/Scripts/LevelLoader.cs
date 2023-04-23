@@ -7,7 +7,18 @@ public class LevelLoader : MonoBehaviour {
     [SerializeField] float transitionTime = 1f;
     [SerializeField] GameObject eolPlayerClone;
 
+    private void DestroyPlayerObjects() {
+        var player = GameObject.FindGameObjectWithTag("Player");
+        if (player) {
+            GameObject.Destroy(GameObject.Find("Pause Menu"));
+            GameObject.Destroy(GameObject.Find("HUD"));
+            GameObject.Destroy(player);
+        }
+    }
+
     public void LoadMainMenu() {
+        Time.timeScale = 1;
+        DestroyPlayerObjects();
         StartCoroutine(LoadLevel(0));
     }
 
@@ -23,12 +34,16 @@ public class LevelLoader : MonoBehaviour {
         StartCoroutine(LoadLevel(3));
     }
 
+    public void LoadLevelTwo() {
+        StartCoroutine(WinCelebration(4));
+    }
+
     public void LoadWinScreen() {
-        StartCoroutine(WinCelebration());
+        StartCoroutine(WinCelebration(5));
     }
 
     public void LoadGameOver() {   
-        StartCoroutine(LoadLevel(5));
+        StartCoroutine(LoadLevel(6));
     }
 
     public void QuitGame() {
@@ -41,9 +56,13 @@ public class LevelLoader : MonoBehaviour {
         SceneManager.LoadScene(sceneIndex);
     }
 
-    private IEnumerator WinCelebration() {
+    private IEnumerator WinCelebration(int levelIndex) {
         GameObject player = GameObject.Find("Player");
         player.transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
+        player.transform.GetChild(4).gameObject.SetActive(false);
+        player.transform.GetChild(5).gameObject.SetActive(false);
+        player.transform.GetChild(6).gameObject.SetActive(false);
+        // TODO Particles are still showing up
         player.transform.GetChild(3).gameObject.SetActive(false);
         GameObject playerClone = Instantiate(eolPlayerClone, new Vector3(0, -1, 0), Quaternion.identity);
         yield return new WaitForSeconds(1);

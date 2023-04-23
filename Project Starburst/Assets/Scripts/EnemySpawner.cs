@@ -7,9 +7,12 @@ public class EnemySpawner : MonoBehaviour {
     [SerializeField] WaveConfigSO bossWaveConfig;
     
     private WaveConfigSO currentWave;
+    private Player player;
 
     private void Start() {
         //Time.timeScale = 5f;
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        player.ResetPlayer();
         StartCoroutine(SpawnEnemyWaves());
     }
 

@@ -215,6 +215,7 @@ MonoBehaviour:
   deathSoundEffectObject: {fileID: 3553197256188102150, guid: e1539ae132cebc94db5d3d695b5d9592, type: 3}
   hitParticleEffect: {fileID: 8760689742216663979, guid: f19cbf8a5db860b48a121b7a3ab1734c, type: 3}
   hitParticleEffectColorBlind: {fileID: 8760689742216663979, guid: ca0bb5faa09a2f44caceb0f24bb827d2, type: 3}
+  weakness: 4
   shieldWeakness: 0
   shieldObject: {fileID: 0}
   brokenShieldObject: {fileID: 0}

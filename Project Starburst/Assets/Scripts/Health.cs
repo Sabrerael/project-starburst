@@ -9,6 +9,7 @@ public class Health : MonoBehaviour {
     [SerializeField] GameObject hitParticleEffectColorBlind;
 
     [Header("Enemy Specific Properties")]
+    [SerializeField] BulletType weakness = BulletType.Basic;
     [SerializeField] BulletType shieldWeakness = BulletType.None;
     [SerializeField] GameObject shieldObject;
     [SerializeField] GameObject brokenShieldObject;
@@ -23,6 +24,7 @@ public class Health : MonoBehaviour {
     private AudioSource audioSource;
     private CameraShake cameraShake;
     private Movement movement;
+    private Player player;
     private int totalHealthPoints;
     private int currentHealthPoints;
 
@@ -35,6 +37,7 @@ public class Health : MonoBehaviour {
         currentHealthPoints = healthPoints;
         animator = GetComponent<Animator>();
         movement = GetComponent<Movement>();
+        player = GetComponent<Player>();
         audioSource = GetComponent<AudioSource>();
         SetVolume();
         SettingsManager.onSettingsChange += SetVolume;
@@ -52,6 +55,9 @@ public class Health : MonoBehaviour {
     public void ModifyHealthPoints(int value, BulletType bulletType) {
         if (tag == "Boss" || tag == "Enemy") {
             if (HandleShield(bulletType)) { return; }
+            if (bulletType == weakness) { value *= 2; }
+        } else if (tag == "Player") {
+            player.ResetComboCounter();
         }
         // TODO if adding health power-ups, will need to check if value is positive and ignore CameraShake if that's the case
         ShakeCamera();

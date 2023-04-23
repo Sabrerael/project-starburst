@@ -22,7 +22,7 @@ public class Projectile : MonoBehaviour {
     protected virtual void Start() {
         audioSource = GetComponent<AudioSource>();
         SetVolume();
-        SettingsManager.onSettingsChange += SetVolume;
+        //SettingsManager.onSettingsChange += SetVolume;
         SettingsManager.onSettingsChange += SetMaterial;
 
         xMovementSpeed = Mathf.Sin(Mathf.Deg2Rad * transform.rotation.eulerAngles.z) * movementSpeed * -1;

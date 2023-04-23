@@ -146,6 +146,6 @@ public class Boss : MonoBehaviour {
             yield return new WaitForSeconds(0.125f);
         }
         Destroy(gameObject);
-        FindObjectOfType<LevelLoader>().LoadWinScreen();
+        FindObjectOfType<LevelLoader>().LoadLevelTwo();
     }
 }
