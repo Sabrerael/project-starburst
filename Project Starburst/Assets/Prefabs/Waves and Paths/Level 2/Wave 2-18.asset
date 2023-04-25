@@ -12,14 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fecdd6ef50c9694aaa6df0b37d7732e, type: 3}
   m_Name: Wave 2-18
   m_EditorClassIdentifier: 
-  enemyPrefabs: []
-  path1Prefab: {fileID: 0}
-  path2Prefab: {fileID: 0}
-  pathToSpawnEnemyOn: 
-  moveSpeed: 5
-  timeBetweenEnemySpawns: 1
+  enemyPrefabs:
+  - {fileID: 8595378095959261699, guid: 91fea427d041af44b89a6d87ffe6f70c, type: 3}
+  - {fileID: 6061667883139104746, guid: 52fca2083fcd87e4bbdb42d235e63da2, type: 3}
+  - {fileID: 8595378095959261699, guid: 91fea427d041af44b89a6d87ffe6f70c, type: 3}
+  - {fileID: 6061667883139104746, guid: 52fca2083fcd87e4bbdb42d235e63da2, type: 3}
+  - {fileID: 8595378095959261699, guid: 91fea427d041af44b89a6d87ffe6f70c, type: 3}
+  - {fileID: 6061667883139104746, guid: 52fca2083fcd87e4bbdb42d235e63da2, type: 3}
+  - {fileID: 8595378095959261699, guid: 91fea427d041af44b89a6d87ffe6f70c, type: 3}
+  - {fileID: 6061667883139104746, guid: 52fca2083fcd87e4bbdb42d235e63da2, type: 3}
+  path1Prefab: {fileID: 6727688075568146878, guid: 34a1965c7963dc34bb0756077e9387af, type: 3}
+  path2Prefab: {fileID: 1666443033231573865, guid: a551625740cbb384a988b21244ac93bd, type: 3}
+  pathToSpawnEnemyOn: 0000000001000000000000000100000000000000010000000000000001000000
+  moveSpeed: 1.7
+  timeBetweenEnemySpawns: 1.2
   spawnTimeVariance: 0
-  minimumSpawnTime: 2
-  timeAfterWave: 1
+  minimumSpawnTime: 1.2
+  timeAfterWave: 7
   continuePathfinding: 0
   waypointIndexToReturnTo: 1

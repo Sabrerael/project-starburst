@@ -12,14 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fecdd6ef50c9694aaa6df0b37d7732e, type: 3}
   m_Name: Wave 2-17
   m_EditorClassIdentifier: 
-  enemyPrefabs: []
-  path1Prefab: {fileID: 0}
+  enemyPrefabs:
+  - {fileID: 4788984358779460987, guid: 80be6df573e82a34a978ee8a9296c31f, type: 3}
+  - {fileID: 4788984358779460987, guid: 80be6df573e82a34a978ee8a9296c31f, type: 3}
+  - {fileID: 4788984358779460987, guid: 80be6df573e82a34a978ee8a9296c31f, type: 3}
+  path1Prefab: {fileID: 7433885920876822127, guid: ac721ed571f2d414686b491396985444, type: 3}
   path2Prefab: {fileID: 0}
-  pathToSpawnEnemyOn: 
-  moveSpeed: 5
-  timeBetweenEnemySpawns: 1
+  pathToSpawnEnemyOn: 000000000000000000000000
+  moveSpeed: 1
+  timeBetweenEnemySpawns: 1.75
   spawnTimeVariance: 0
-  minimumSpawnTime: 2
-  timeAfterWave: 1
-  continuePathfinding: 0
+  minimumSpawnTime: 1.75
+  timeAfterWave: 5.75
+  continuePathfinding: 1
   waypointIndexToReturnTo: 1

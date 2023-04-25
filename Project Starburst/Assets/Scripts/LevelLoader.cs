@@ -7,8 +7,11 @@ public class LevelLoader : MonoBehaviour {
     [SerializeField] float transitionTime = 1f;
     [SerializeField] GameObject eolPlayerClone;
 
+    private int score;
+
     private void DestroyPlayerObjects() {
         var player = GameObject.FindGameObjectWithTag("Player");
+        score = player.GetComponent<Player>().GetTotalScore();
         if (player) {
             GameObject.Destroy(GameObject.Find("Pause Menu"));
             GameObject.Destroy(GameObject.Find("HUD"));
@@ -39,10 +42,12 @@ public class LevelLoader : MonoBehaviour {
     }
 
     public void LoadWinScreen() {
+        DestroyPlayerObjects();
         StartCoroutine(WinCelebration(5));
     }
 
-    public void LoadGameOver() {   
+    public void LoadGameOver() {
+        DestroyPlayerObjects();
         StartCoroutine(LoadLevel(6));
     }
 
