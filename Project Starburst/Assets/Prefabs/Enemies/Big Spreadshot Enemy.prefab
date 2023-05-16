@@ -182,7 +182,7 @@ MonoBehaviour:
   projectileSpawnPointModification: {x: 0, y: 0, z: 0}
   spriteRenderer: {fileID: 6000945062835012722}
   scoreValue: 100
-  fireInterval: 2
+  fireInterval: 2.5
   defaultMaterial: {fileID: 2100000, guid: ab399c0724c380042b3387ca0985f011, type: 2}
   colorblindMaterial: {fileID: 2100000, guid: 4900947c0ec148a46bb0b8ec472ea582, type: 2}
   angle: 25

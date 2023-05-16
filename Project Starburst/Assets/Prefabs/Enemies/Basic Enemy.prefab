@@ -179,6 +179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 5437220429731685477, guid: f307648afc17da145904e1e4fc702028, type: 3}
+  projectileSpawnPointModification: {x: 0, y: 0, z: 0}
   spriteRenderer: {fileID: 4984673940254205667}
   scoreValue: 100
   fireInterval: 2
@@ -208,15 +209,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 366aa188abf0faf4facb52f9ed0b4d1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthPoints: 50
+  healthPoints: 75
+  applyCameraShake: 0
   deathSoundEffectObject: {fileID: 3553197256188102150, guid: e1539ae132cebc94db5d3d695b5d9592, type: 3}
   hitParticleEffect: {fileID: 8760689742216663979, guid: d3e26136373d4f14888398ef7b8834ab, type: 3}
   hitParticleEffectColorBlind: {fileID: 8760689742216663979, guid: ca0bb5faa09a2f44caceb0f24bb827d2, type: 3}
+  weakness: 1
   shieldWeakness: 0
   shieldObject: {fileID: 0}
   brokenShieldObject: {fileID: 0}
   spriteRenderer: {fileID: 0}
   playerParticleSystem: {fileID: 0}
+  sparkParticles: {fileID: 0}
+  smokeParticles: {fileID: 0}
 --- !u!82 &3987485414145864587
 AudioSource:
   m_ObjectHideFlags: 0

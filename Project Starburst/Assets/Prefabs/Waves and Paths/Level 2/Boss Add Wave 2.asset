@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fecdd6ef50c9694aaa6df0b37d7732e, type: 3}
+  m_Name: Boss Add Wave 2
+  m_EditorClassIdentifier: 
+  enemyPrefabs:
+  - {fileID: 1637183026255937088, guid: 236273df46e565c4f9256580a2f613a3, type: 3}
+  - {fileID: 1637183026255937088, guid: 236273df46e565c4f9256580a2f613a3, type: 3}
+  - {fileID: 1637183026255937088, guid: 236273df46e565c4f9256580a2f613a3, type: 3}
+  - {fileID: 1637183026255937088, guid: 236273df46e565c4f9256580a2f613a3, type: 3}
+  - {fileID: 1637183026255937088, guid: 236273df46e565c4f9256580a2f613a3, type: 3}
+  path1Prefab: {fileID: 1304896730587278065, guid: 80d31a49f727d904da9a987b48a05e27, type: 3}
+  path2Prefab: {fileID: 0}
+  pathToSpawnEnemyOn: 0000000000000000000000000000000000000000
+  moveSpeed: 1.5
+  timeBetweenEnemySpawns: 1.15
+  spawnTimeVariance: 0
+  minimumSpawnTime: 1.15
+  timeAfterWave: 1
+  continuePathfinding: 1
+  waypointIndexToReturnTo: 1

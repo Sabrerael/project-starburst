@@ -3,6 +3,8 @@ using UnityEngine;
 public class HUD : MonoBehaviour {
     public static HUD instance = null;
 
+    [SerializeField] Canvas canvas;
+
     private void Awake() {
         if (instance == null) {
             instance = this;
@@ -13,5 +15,11 @@ public class HUD : MonoBehaviour {
         }
 
         DontDestroyOnLoad(gameObject);
+    }
+
+    private void Update() {
+        if (canvas.worldCamera == null) {
+            canvas.worldCamera = Camera.main;
+        }
     }
 }

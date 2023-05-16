@@ -5016,6 +5016,8 @@ MonoBehaviour:
   - {fileID: 454696369555133842}
   - {fileID: 6789968769478571934}
   magnetBody: {fileID: 4770505461512032130}
+  magnetActivateSound: {fileID: 8300000, guid: 87a03ad92c74b6d46aff284f4f2ed1ee, type: 3}
+  magnetGrabSound: {fileID: 8300000, guid: a2f897c4645139541becc8c6d6d77127, type: 3}
 --- !u!58 &2523589688782449934
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5357,6 +5359,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletMagnet: {fileID: 2122771733882977346}
+  pauseMenu: {fileID: 0}
 --- !u!114 &8865931347629622181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5384,7 +5387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 366aa188abf0faf4facb52f9ed0b4d1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthPoints: 400
+  healthPoints: 600
   applyCameraShake: 1
   deathSoundEffectObject: {fileID: 3553197256188102150, guid: e1539ae132cebc94db5d3d695b5d9592, type: 3}
   hitParticleEffect: {fileID: 8760689742216663979, guid: 99e12a8c1b5b54848be1e96bdf65e1e2, type: 3}

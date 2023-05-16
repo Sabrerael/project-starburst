@@ -4,6 +4,8 @@ using UnityEngine;
 public class SettingsManager : MonoBehaviour {
     // Variables
 
+    private static Color level2BossColor;
+
     private const string BRIGHTNESS_LEVEL = "brightnessLevel";
     private const string COLOR_1 = "color1";
     private const string COLOR_2 = "color2";
@@ -19,9 +21,12 @@ public class SettingsManager : MonoBehaviour {
     private static int color4;
     private static float musicVolume;
     private static float soundEffectsVolume;
+
+    private static SettingsSaver settingsSaver;
     
     public static event Action onSettingsChange;
     public static SettingsManager instance = null;
+
 
     // Unity functions
 
@@ -38,8 +43,23 @@ public class SettingsManager : MonoBehaviour {
         SetupSettings();
     }
 
+    private void Start() {
+        settingsSaver = FindObjectOfType<SettingsSaver>();
+        if (settingsSaver != null) {
+            level2BossColor = settingsSaver.GetSpreadshotColor();
+        }
+    }
+
     // Getters
 
+    public static Color GetLevel2BossColor() {
+        if (settingsSaver != null) {
+            return settingsSaver.GetSpreadshotColor(color4);
+        } else {
+            settingsSaver = FindObjectOfType<SettingsSaver>();
+            return settingsSaver.GetSpreadshotColor(color4);
+        }
+    }
     public static int GetBrightnessLevel() { return brightnessLevel; }
     public static int GetColor1() { return color1; }
     public static int GetColor2() { return color2; }
@@ -49,6 +69,10 @@ public class SettingsManager : MonoBehaviour {
     public static float GetSoundEffectsVolume() { return soundEffectsVolume; }
 
     // Setters
+
+    public static void SetLevel2BossColor(Color color) { 
+        level2BossColor = color;
+    }
 
     public static void SetBrightnessLevel(int _brightnessLevel) {
         PlayerPrefs.SetInt(BRIGHTNESS_LEVEL, _brightnessLevel);

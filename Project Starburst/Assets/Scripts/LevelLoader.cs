@@ -7,13 +7,14 @@ public class LevelLoader : MonoBehaviour {
     [SerializeField] float transitionTime = 1f;
     [SerializeField] GameObject eolPlayerClone;
 
-    private int score;
-
     private void DestroyPlayerObjects() {
         var player = GameObject.FindGameObjectWithTag("Player");
-        score = player.GetComponent<Player>().GetTotalScore();
         if (player) {
-            GameObject.Destroy(GameObject.Find("Pause Menu"));
+            var score = player.GetComponent<Player>().GetTotalScore();
+            var highScore = PlayerPrefs.GetInt("HIGH_SCORE", 0);
+            PlayerPrefs.SetInt("RECENT_SCORE", score);
+            PlayerPrefs.SetInt("HIGH_SCORE", Mathf.Max(score, highScore));
+            GameObject.Destroy(GameObject.FindObjectOfType<PauseMenu>(true).gameObject);
             GameObject.Destroy(GameObject.Find("HUD"));
             GameObject.Destroy(player);
         }
@@ -21,8 +22,8 @@ public class LevelLoader : MonoBehaviour {
 
     public void LoadMainMenu() {
         Time.timeScale = 1;
-        DestroyPlayerObjects();
         StartCoroutine(LoadLevel(0));
+        DestroyPlayerObjects();
     }
 
     public void LoadOptions() {
@@ -42,7 +43,6 @@ public class LevelLoader : MonoBehaviour {
     }
 
     public void LoadWinScreen() {
-        DestroyPlayerObjects();
         StartCoroutine(WinCelebration(5));
     }
 
@@ -63,6 +63,9 @@ public class LevelLoader : MonoBehaviour {
 
     private IEnumerator WinCelebration(int levelIndex) {
         GameObject player = GameObject.Find("Player");
+        player.transform.GetChild(1).GetComponent<BulletMagnet>().ClearBulletArray();
+        player.GetComponent<BoxCollider2D>().enabled = false;
+        player.GetComponent<PlayerController>().enabled = false;
         player.transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
         player.transform.GetChild(4).gameObject.SetActive(false);
         player.transform.GetChild(5).gameObject.SetActive(false);
@@ -75,6 +78,7 @@ public class LevelLoader : MonoBehaviour {
         yield return new WaitForSeconds(2);
         animator.SetTrigger("Start");
         yield return new WaitForSeconds(transitionTime);
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene(levelIndex);
+        if (levelIndex == 5) { DestroyPlayerObjects(); }
     }
 }

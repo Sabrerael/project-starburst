@@ -17,6 +17,10 @@ public class TemporarySoundEffect : MonoBehaviour {
         if (timer >= lifetime) { Destroy(gameObject);}
     }
 
+    private void OnDestroy() {
+        SettingsManager.onSettingsChange -= SetVolume;
+    }
+
     private void SetVolume() {
         audioSource.volume = SettingsManager.GetSoundEffectsVolume();
     }

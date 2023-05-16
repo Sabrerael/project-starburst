@@ -9,19 +9,16 @@ public class SettingsSaver : MonoBehaviour {
     [SerializeField] GameObject optionCanvas;
     [SerializeField] Slider musicVolumeSlider;
     [SerializeField] Slider soundFxVolumeSlider;
-    [SerializeField] TMP_Dropdown colorDropdown1;
-    [SerializeField] TMP_Dropdown colorDropdown2;
-    [SerializeField] TMP_Dropdown colorDropdown3;
-    [SerializeField] TMP_Dropdown colorDropdown4;
-    [SerializeField] Image color1Example;
-    [SerializeField] Image color2Example;
-    [SerializeField] Image color3Example;
-    [SerializeField] Image color4Example;
+    [SerializeField] List<TMP_Dropdown> colorDropdowns;
+    [SerializeField] List<Image> colorExamples;
+    [SerializeField] Button saveButton;
+    [SerializeField] GameObject warningText;
     [SerializeField] List<Material> projectileMaterials;
     [SerializeField] List<Material> shieldMaterials;
     [SerializeField] List<Material> particleMaterials;
     [SerializeField] List<ParticleSystem> particleSystems;
 
+    // These might be need to be moved or duplicated into the SettingsManager.
     [SerializeField] List<Color> colors;
     [SerializeField] List<Color> brighterColors;
     //[SerializeField] Toggle brightnessToggle1;
@@ -33,52 +30,52 @@ public class SettingsSaver : MonoBehaviour {
     private void Start() {
         musicVolumeSlider.value = SettingsManager.GetMusicVolume() / musicVolumeMaxValue;
         soundFxVolumeSlider.value = SettingsManager.GetSoundEffectsVolume() / soundFxMaxVolume;
-        colorDropdown1.value = SettingsManager.GetColor1();
-        color1Example.material.SetColor("_ReplacedColor", colors[colorDropdown1.value]);
-        projectileMaterials[0].SetColor("_Color", brighterColors[colorDropdown1.value] * 6);
-        shieldMaterials[0].SetColor("_Color", brighterColors[colorDropdown1.value] * 6);
-        particleMaterials[0].SetColor("_BaseColor", brighterColors[colorDropdown1.value]);
+        colorDropdowns[0].value = SettingsManager.GetColor1();
+        colorExamples[0].material.SetColor("_ReplacedColor", colors[colorDropdowns[0].value]);
+        projectileMaterials[0].SetColor("_Color", brighterColors[colorDropdowns[0].value] * 6);
+        shieldMaterials[0].SetColor("_Color", brighterColors[colorDropdowns[0].value] * 6);
+        particleMaterials[0].SetColor("_BaseColor", brighterColors[colorDropdowns[0].value]);
         Gradient grad = new Gradient();
-        grad.SetKeys( new GradientColorKey[] { new GradientColorKey(brighterColors[colorDropdown1.value], 0.0f), 
+        grad.SetKeys( new GradientColorKey[] { new GradientColorKey(brighterColors[colorDropdowns[0].value], 0.0f), 
                                                new GradientColorKey(Color.white, 1.0f) }, 
                                                new GradientAlphaKey[] { new GradientAlphaKey(1.0f, 0.0f), 
                                                new GradientAlphaKey(0.0f, 1.0f) } );
         var col = particleSystems[0].colorOverLifetime;
         col.color = grad;
 
-        colorDropdown2.value = SettingsManager.GetColor2();
-        color2Example.material.SetColor("_ReplacedColor", colors[colorDropdown2.value]);
-        projectileMaterials[1].SetColor("_Color", brighterColors[colorDropdown2.value] * 6);
-        shieldMaterials[1].SetColor("_Color", brighterColors[colorDropdown2.value] * 6);
-        particleMaterials[1].SetColor("_BaseColor", brighterColors[colorDropdown2.value]);
+        colorDropdowns[1].value = SettingsManager.GetColor2();
+        colorExamples[1].material.SetColor("_ReplacedColor", colors[colorDropdowns[1].value]);
+        projectileMaterials[1].SetColor("_Color", brighterColors[colorDropdowns[1].value] * 6);
+        shieldMaterials[1].SetColor("_Color", brighterColors[colorDropdowns[1].value] * 6);
+        particleMaterials[1].SetColor("_BaseColor", brighterColors[colorDropdowns[1].value]);
         grad = new Gradient();
-        grad.SetKeys( new GradientColorKey[] { new GradientColorKey(brighterColors[colorDropdown2.value], 0.0f), 
+        grad.SetKeys( new GradientColorKey[] { new GradientColorKey(brighterColors[colorDropdowns[1].value], 0.0f), 
                                                new GradientColorKey(Color.white, 1.0f) }, 
                                                new GradientAlphaKey[] { new GradientAlphaKey(1.0f, 0.0f), 
                                                new GradientAlphaKey(0.0f, 1.0f) } );
         col = particleSystems[1].colorOverLifetime;
         col.color = grad;
 
-        colorDropdown3.value = SettingsManager.GetColor3();
-        color3Example.material.SetColor("_ReplacedColor", colors[colorDropdown3.value]);
-        projectileMaterials[2].SetColor("_Color", brighterColors[colorDropdown3.value] * 6);
-        shieldMaterials[2].SetColor("_Color", brighterColors[colorDropdown3.value] * 6);
-        particleMaterials[2].SetColor("_BaseColor", brighterColors[colorDropdown3.value]);
+        colorDropdowns[2].value = SettingsManager.GetColor3();
+        colorExamples[2].material.SetColor("_ReplacedColor", colors[colorDropdowns[2].value]);
+        projectileMaterials[2].SetColor("_Color", brighterColors[colorDropdowns[2].value] * 6);
+        shieldMaterials[2].SetColor("_Color", brighterColors[colorDropdowns[2].value] * 6);
+        particleMaterials[2].SetColor("_BaseColor", brighterColors[colorDropdowns[2].value]);
         grad = new Gradient();
-        grad.SetKeys( new GradientColorKey[] { new GradientColorKey(brighterColors[colorDropdown3.value], 0.0f), 
+        grad.SetKeys( new GradientColorKey[] { new GradientColorKey(brighterColors[colorDropdowns[2].value], 0.0f), 
                                                new GradientColorKey(Color.white, 1.0f) }, 
                                                new GradientAlphaKey[] { new GradientAlphaKey(1.0f, 0.0f), 
                                                new GradientAlphaKey(0.0f, 1.0f) } );
         col = particleSystems[2].colorOverLifetime;
         col.color = grad;
 
-        colorDropdown4.value = SettingsManager.GetColor4();
-        color4Example.material.SetColor("_ReplacedColor", colors[colorDropdown4.value]);
-        projectileMaterials[3].SetColor("_Color", brighterColors[colorDropdown4.value] * 6);
-        shieldMaterials[3].SetColor("_Color", brighterColors[colorDropdown4.value] * 6);
-        particleMaterials[3].SetColor("_BaseColor", brighterColors[colorDropdown4.value]);
+        colorDropdowns[3].value = SettingsManager.GetColor4();
+        colorExamples[3].material.SetColor("_ReplacedColor", colors[colorDropdowns[3].value]);
+        projectileMaterials[3].SetColor("_Color", brighterColors[colorDropdowns[3].value] * 6);
+        shieldMaterials[3].SetColor("_Color", brighterColors[colorDropdowns[3].value] * 6);
+        particleMaterials[3].SetColor("_BaseColor", brighterColors[colorDropdowns[3].value]);
         grad = new Gradient();
-        grad.SetKeys( new GradientColorKey[] { new GradientColorKey(brighterColors[colorDropdown4.value], 0.0f), 
+        grad.SetKeys( new GradientColorKey[] { new GradientColorKey(brighterColors[colorDropdowns[3].value], 0.0f), 
                                                new GradientColorKey(Color.white, 1.0f) }, 
                                                new GradientAlphaKey[] { new GradientAlphaKey(1.0f, 0.0f), 
                                                new GradientAlphaKey(0.0f, 1.0f) } );
@@ -86,11 +83,19 @@ public class SettingsSaver : MonoBehaviour {
         col.color = grad;
     }
 
+    public Color GetSpreadshotColor() {
+        return colors[PlayerPrefs.GetInt("color4")];
+    }
+
+    public Color GetSpreadshotColor(int color4Index) {
+        return colors[color4Index];
+    }
+
     public void ResetToDefaultValues() {
         musicVolumeSlider.value = 1;
         soundFxVolumeSlider.value = 1;
-        colorDropdown1.value = 0;
-        color1Example.material.SetColor("_ReplacedColor", colors[0]);
+        colorDropdowns[0].value = 0;
+        colorExamples[0].material.SetColor("_ReplacedColor", colors[0]);
         projectileMaterials[0].SetColor("_Color", brighterColors[0] * 6);
         shieldMaterials[0].SetColor("_Color", brighterColors[0] * 6);
         particleMaterials[0].SetColor("_BaseColor", brighterColors[0]);
@@ -102,8 +107,8 @@ public class SettingsSaver : MonoBehaviour {
         var col = particleSystems[0].colorOverLifetime;
         col.color = grad;
 
-        colorDropdown2.value = 1;
-        color2Example.material.SetColor("_ReplacedColor", colors[1]);
+        colorDropdowns[1].value = 1;
+        colorExamples[1].material.SetColor("_ReplacedColor", colors[1]);
         projectileMaterials[1].SetColor("_Color", brighterColors[1] * 6);
         shieldMaterials[1].SetColor("_Color", brighterColors[1] * 6);
         particleMaterials[1].SetColor("_BaseColor", brighterColors[1]);
@@ -115,8 +120,8 @@ public class SettingsSaver : MonoBehaviour {
         col = particleSystems[1].colorOverLifetime;
         col.color = grad;
 
-        colorDropdown3.value = 2;
-        color3Example.material.SetColor("_ReplacedColor", colors[2]);
+        colorDropdowns[2].value = 2;
+        colorExamples[2].material.SetColor("_ReplacedColor", colors[2]);
         projectileMaterials[2].SetColor("_Color", brighterColors[2] * 6);
         shieldMaterials[2].SetColor("_Color", brighterColors[2] * 6);
         particleMaterials[2].SetColor("_BaseColor", brighterColors[2]);
@@ -128,8 +133,8 @@ public class SettingsSaver : MonoBehaviour {
         col = particleSystems[2].colorOverLifetime;
         col.color = grad;
 
-        colorDropdown4.value = 3;
-        color4Example.material.SetColor("_ReplacedColor", colors[3]);
+        colorDropdowns[3].value = 3;
+        colorExamples[3].material.SetColor("_ReplacedColor", colors[3]);
         projectileMaterials[3].SetColor("_Color", brighterColors[3] * 6);
         shieldMaterials[3].SetColor("_Color", brighterColors[3] * 6);
         particleMaterials[3].SetColor("_BaseColor", brighterColors[3]);
@@ -150,12 +155,13 @@ public class SettingsSaver : MonoBehaviour {
         float musicVolume = musicVolumeSlider.value * musicVolumeMaxValue;
         float soundEffectsVolume = soundFxVolumeSlider.value * soundFxMaxVolume;
 
-        SettingsManager.SaveAllSettings(colorDropdown1.value,
-                                        colorDropdown2.value,
-                                        colorDropdown3.value,
-                                        colorDropdown4.value,
+        SettingsManager.SaveAllSettings(colorDropdowns[0].value,
+                                        colorDropdowns[1].value,
+                                        colorDropdowns[2].value,
+                                        colorDropdowns[3].value,
                                         musicVolume,
                                         soundEffectsVolume);
+        SettingsManager.SetLevel2BossColor(colors[colorDropdowns[3].value]);
         if (inPauseMenu) {
             optionCanvas.SetActive(false);
         } else {
@@ -164,59 +170,39 @@ public class SettingsSaver : MonoBehaviour {
     }
 
     public void SetExampleColor(int value) {
-        // TODO Reorder value to prevent setting the same color for mulitple ships
-        if (value == 0) {
-            int dropdownValue = colorDropdown1.value;
-            color1Example.material.SetColor("_ReplacedColor", colors[dropdownValue]);
-            projectileMaterials[0].SetColor("_Color", brighterColors[dropdownValue] * 6);
-            shieldMaterials[0].SetColor("_Color", brighterColors[dropdownValue] * 6);
-            particleMaterials[0].SetColor("_BaseColor", colors[dropdownValue]);
-            Gradient grad = new Gradient();
-            grad.SetKeys( new GradientColorKey[] { new GradientColorKey(brighterColors[dropdownValue], 0.0f), 
-                                                   new GradientColorKey(Color.white, 1.0f) }, 
-                          new GradientAlphaKey[] { new GradientAlphaKey(1.0f, 0.0f), 
-                                                   new GradientAlphaKey(0.0f, 1.0f) } );
-            var col = particleSystems[0].colorOverLifetime;
-            col.color = grad;
-        } else if (value == 1) {
-            int dropdownValue = colorDropdown2.value;
-            color2Example.material.SetColor("_ReplacedColor", colors[dropdownValue]);
-            projectileMaterials[1].SetColor("_Color", brighterColors[dropdownValue] * 6);
-            shieldMaterials[1].SetColor("_Color", brighterColors[dropdownValue] * 6);
-            particleMaterials[1].SetColor("_BaseColor", colors[dropdownValue]);
-            Gradient grad = new Gradient();
-            grad.SetKeys( new GradientColorKey[] { new GradientColorKey(brighterColors[dropdownValue], 0.0f), 
-                                                   new GradientColorKey(Color.white, 1.0f) }, 
-                          new GradientAlphaKey[] { new GradientAlphaKey(1.0f, 0.0f), 
-                                                   new GradientAlphaKey(0.0f, 1.0f) } );
-            var col = particleSystems[1].colorOverLifetime;
-            col.color = grad;
-        } else if (value == 2) {
-            int dropdownValue = colorDropdown3.value;
-            color3Example.material.SetColor("_ReplacedColor", colors[dropdownValue]);
-            projectileMaterials[2].SetColor("_Color", brighterColors[dropdownValue] * 6);
-            shieldMaterials[2].SetColor("_Color", brighterColors[dropdownValue] * 6);
-            particleMaterials[2].SetColor("_BaseColor", colors[dropdownValue]);
-            Gradient grad = new Gradient();
-            grad.SetKeys( new GradientColorKey[] { new GradientColorKey(brighterColors[dropdownValue], 0.0f), 
-                                                   new GradientColorKey(Color.white, 1.0f) }, 
-                          new GradientAlphaKey[] { new GradientAlphaKey(1.0f, 0.0f), 
-                                                   new GradientAlphaKey(0.0f, 1.0f) } );
-            var col = particleSystems[2].colorOverLifetime;
-            col.color = grad;
-        } if (value == 3) {
-            int dropdownValue = colorDropdown4.value;
-            color4Example.material.SetColor("_ReplacedColor", colors[dropdownValue]);
-            projectileMaterials[3].SetColor("_Color", brighterColors[dropdownValue] * 6);
-            shieldMaterials[3].SetColor("_Color", brighterColors[dropdownValue] * 6);
-            particleMaterials[3].SetColor("_BaseColor", colors[dropdownValue]);
-            Gradient grad = new Gradient();
-            grad.SetKeys( new GradientColorKey[] { new GradientColorKey(brighterColors[dropdownValue], 0.0f), 
-                                                   new GradientColorKey(Color.white, 1.0f) }, 
-                          new GradientAlphaKey[] { new GradientAlphaKey(1.0f, 0.0f), 
-                                                   new GradientAlphaKey(0.0f, 1.0f) } );
-            var col = particleSystems[3].colorOverLifetime;
-            col.color = grad;
+        int dropdownValue = colorDropdowns[value].value;
+        colorExamples[value].material.SetColor("_ReplacedColor", colors[dropdownValue]);
+        projectileMaterials[value].SetColor("_Color", brighterColors[dropdownValue] * 6);
+        shieldMaterials[value].SetColor("_Color", brighterColors[dropdownValue] * 6);
+        particleMaterials[value].SetColor("_BaseColor", colors[dropdownValue]);
+        Gradient grad = new Gradient();
+        grad.SetKeys( new GradientColorKey[] { new GradientColorKey(brighterColors[dropdownValue], 0.0f), 
+                                                  new GradientColorKey(Color.white, 1.0f) }, 
+                      new GradientAlphaKey[] { new GradientAlphaKey(1.0f, 0.0f), 
+                                               new GradientAlphaKey(0.0f, 1.0f) } );
+        var col = particleSystems[value].colorOverLifetime;
+        col.color = grad;
+        
+        UserEntryCheck();
+    }
+
+    private void UserEntryCheck() {
+        if (CheckForMatchingColors()) {
+            saveButton.interactable = false;
+            warningText.SetActive(true);
+        } else {
+            saveButton.interactable = true;
+            warningText.SetActive(false);
         }
+
+    }
+
+    private bool CheckForMatchingColors() {
+        for (int i = 0; i < colorDropdowns.Count; i++) {
+            for (int j = i+1; j < colorDropdowns.Count; j++) {
+                if (colorDropdowns[i].value == colorDropdowns[j].value) { return true; }
+            }
+        }
+        return false;
     }
 }

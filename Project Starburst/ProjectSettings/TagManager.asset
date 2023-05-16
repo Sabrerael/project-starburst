@@ -8,6 +8,7 @@ TagManager:
   - Enemy Projectile
   - Player Projectile
   - Boss
+  - Uncatchable Enemy Projectile
   layers:
   - Default
   - TransparentFX

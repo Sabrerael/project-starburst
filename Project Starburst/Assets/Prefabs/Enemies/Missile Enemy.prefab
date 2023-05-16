@@ -209,7 +209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 366aa188abf0faf4facb52f9ed0b4d1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthPoints: 50
+  healthPoints: 100
   applyCameraShake: 0
   deathSoundEffectObject: {fileID: 3553197256188102150, guid: e1539ae132cebc94db5d3d695b5d9592, type: 3}
   hitParticleEffect: {fileID: 8760689742216663979, guid: e0b607f0013e7634b816a23d7a9a2a73, type: 3}

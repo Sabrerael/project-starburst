@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class Boss : MonoBehaviour {
     [Header("General Properties")]
-    [SerializeField] int scoreValue = 10000;
-    [SerializeField] float timeBetweenPhases = 1.5f;
-    [SerializeField] SpriteRenderer spriteRenderer;
-    [SerializeField] AudioClip explosionSFX;
+    [SerializeField] protected int scoreValue = 10000;
+    [SerializeField] protected float timeBetweenPhases = 1.5f;
+    [SerializeField] protected SpriteRenderer spriteRenderer;
+    [SerializeField] protected AudioClip explosionSFX;
 
     [Header("Basic Bullet Properties")]
     [SerializeField] GameObject basicBullet;
@@ -39,9 +39,9 @@ public class Boss : MonoBehaviour {
     [SerializeField] GameObject piercingEnemyParticles;
     [SerializeField] GameObject piercingEnemyParticlesColorBlind;
 
-    private Health health;
+    protected Health health;
     private bool useColorBlindScheme = false;
-    private GameObject deathParticles;
+    protected GameObject deathParticles;
 
     private void Start() {
         health = GetComponent<Health>();
@@ -67,7 +67,7 @@ public class Boss : MonoBehaviour {
         }*/
     }
 
-    private IEnumerator BossCycle() {
+    protected virtual IEnumerator BossCycle() {
         while(true) {
             health.SetHitParticleEffects(basicEnemyParticles, basicEnemyParticlesColorBlind);
             if (useColorBlindScheme) {
@@ -125,7 +125,7 @@ public class Boss : MonoBehaviour {
         }
     }
 
-    private IEnumerator BossDeath() {
+    protected virtual IEnumerator BossDeath() {
         GameObject bossCrossFade = GameObject.Find("Boss Crossfade");
         GetComponent<Pathfinder>().enabled = false;
         AudioSource audioSource = GetComponent<AudioSource>();

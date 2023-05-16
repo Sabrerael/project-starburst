@@ -27,6 +27,7 @@ public class Health : MonoBehaviour {
     private Player player;
     private int totalHealthPoints;
     private int currentHealthPoints;
+    private bool isDead = false;
 
     private void Awake() {
         cameraShake = Camera.main.GetComponent<CameraShake>();
@@ -43,9 +44,16 @@ public class Health : MonoBehaviour {
         SettingsManager.onSettingsChange += SetVolume;
     }
 
+    private void OnDestroy() {
+        SettingsManager.onSettingsChange -= SetVolume;
+    }
+
     public int GetTotalHealthPoints() { return totalHealthPoints; }
     public int GetCurrentHealthPoints() { return currentHealthPoints; }
     public float GetFraction() { return (float)currentHealthPoints / (float)totalHealthPoints; }
+    public void SetShieldObject(GameObject shieldObject) { this.shieldObject = shieldObject; }
+    public void SetBrokenShieldObject(GameObject brokenShieldObject) { this.brokenShieldObject = brokenShieldObject; }
+    public void SetShieldWeakness(BulletType shieldWeakness) { this.shieldWeakness = shieldWeakness; }
 
     public void SetHitParticleEffects(GameObject defaultParticle, GameObject cbParticle) {
         hitParticleEffect = defaultParticle;
@@ -76,7 +84,15 @@ public class Health : MonoBehaviour {
         }
     }
 
+    public void ResetHealth() {
+        currentHealthPoints = totalHealthPoints;
+    }
+
     private void Death() {
+        if (isDead) { return;} 
+
+        isDead = true;
+
         Instantiate(deathSoundEffectObject, transform.position, Quaternion.identity);
         if (tag == "Player") {
             StartCoroutine(TriggerDeathTransition());
@@ -129,6 +145,9 @@ public class Health : MonoBehaviour {
 
     private void ShakeCamera() {
         if (cameraShake != null && applyCameraShake) {
+            cameraShake.Play();
+        } else if (applyCameraShake) {
+            cameraShake = Camera.main.GetComponent<CameraShake>();
             cameraShake.Play();
         }
     }

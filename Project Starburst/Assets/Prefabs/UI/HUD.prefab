@@ -1314,11 +1314,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7804936901195412717, guid: c48e7a4e923d4874bbcbc4953f4c78c4, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -590
+      value: -580
       objectReference: {fileID: 0}
     - target: {fileID: 7804936901195412717, guid: c48e7a4e923d4874bbcbc4953f4c78c4, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 295
+      value: 290
       objectReference: {fileID: 0}
     - target: {fileID: 7901267234024945389, guid: c48e7a4e923d4874bbcbc4953f4c78c4, type: 3}
       propertyPath: m_PresetInfoIsWorld

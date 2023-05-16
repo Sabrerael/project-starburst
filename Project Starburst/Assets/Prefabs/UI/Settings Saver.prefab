@@ -43,17 +43,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09c048b8eec8f3146ae151117fbf4fe9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inPauseMenu: 0
   levelLoader: {fileID: 0}
+  optionCanvas: {fileID: 0}
   musicVolumeSlider: {fileID: 0}
   soundFxVolumeSlider: {fileID: 0}
-  colorDropdown1: {fileID: 0}
-  colorDropdown2: {fileID: 0}
-  colorDropdown3: {fileID: 0}
-  colorDropdown4: {fileID: 0}
-  color1Example: {fileID: 0}
-  color2Example: {fileID: 0}
-  color3Example: {fileID: 0}
-  color4Example: {fileID: 0}
+  colorDropdowns: []
+  colorExamples: []
+  saveButton: {fileID: 0}
+  warningText: {fileID: 0}
   projectileMaterials:
   - {fileID: 2100000, guid: 51adb4ec7af064340b933f1cb85e7207, type: 2}
   - {fileID: 2100000, guid: 1249bdb3ca7372643a207431d12e235a, type: 2}
@@ -82,7 +80,11 @@ MonoBehaviour:
   - {r: 0.1882353, g: 0.007843138, b: 0.1882353, a: 0}
   - {r: 0.007843138, g: 0.1882353, b: 0.1882353, a: 0}
   - {r: 0.1882353, g: 0.09138719, b: 0.007843141, a: 0}
-  - {r: 0.1882353, g: 0.007843141, b: 0.112444, a: 0}
+  - {r: 0.26415092, g: 0, b: 0.20098451, a: 0}
+  - {r: 0.007843141, g: 0.1882353, b: 0.14495459, a: 0}
+  - {r: 0.09586667, g: 0.1882353, b: 0.007843141, a: 0}
+  - {r: 0.10986356, g: 0.007843141, b: 0.1882353, a: 0}
+  - {r: 0.09411765, g: 0.09411765, b: 0.09411765, a: 0}
   brighterColors:
   - {r: 0.023529412, g: 0.023529412, b: 0.7490196, a: 0}
   - {r: 0.7490196, g: 0.023529412, b: 0.023529412, a: 0}
@@ -91,6 +93,10 @@ MonoBehaviour:
   - {r: 0.7490196, g: 0.023529412, b: 0.7490196, a: 0}
   - {r: 0.023529412, g: 0.7490196, b: 0.7490196, a: 0}
   - {r: 0.7647059, g: 0.45295006, b: 0.02352941, a: 0}
-  - {r: 0.7490196, g: 0.023529414, b: 0.39564812, a: 0}
-  musicVolumeMaxValue: 0.325
+  - {r: 1, g: 0, b: 0.6919036, a: 0}
+  - {r: 0.023529414, g: 0.7490196, b: 0.5164918, a: 0}
+  - {r: 0.37869737, g: 0.7490196, b: 0.023529414, a: 0}
+  - {r: 0.4519268, g: 0.023529414, b: 0.7490196, a: 0}
+  - {r: 0.37254903, g: 0.37254903, b: 0.37254903, a: 0}
+  musicVolumeMaxValue: 0.75
   soundFxMaxVolume: 0.75

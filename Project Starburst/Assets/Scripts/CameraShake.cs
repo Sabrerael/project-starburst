@@ -7,6 +7,20 @@ public class CameraShake : MonoBehaviour {
 
     private Vector3 initialPosition;
 
+    public static CameraShake instance = null;
+
+    private void Awake() {
+        if (instance == null) {
+            instance = this;
+        }
+        else if (instance != this) {
+            Destroy(gameObject);
+            return;
+        }
+
+        DontDestroyOnLoad(gameObject);
+    }
+
     private void Start() {
         initialPosition = transform.position;
     }

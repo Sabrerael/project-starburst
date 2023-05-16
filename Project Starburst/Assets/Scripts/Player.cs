@@ -31,8 +31,11 @@ public class Player : MonoBehaviour {
 
     public void ResetPlayer() {
         transform.position = new Vector3(0, -4, 0);
+        GetComponent<BoxCollider2D>().enabled = true;
+        GetComponent<PlayerController>().enabled = true;
         transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = true;
+        transform.GetChild(3).gameObject.SetActive(true);
         transform.GetChild(4).gameObject.SetActive(true);
+        GetComponent<Health>().ResetHealth();
     }
-
 }

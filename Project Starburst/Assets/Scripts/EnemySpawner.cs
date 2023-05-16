@@ -42,5 +42,24 @@ public class EnemySpawner : MonoBehaviour {
         boss.GetComponent<Pathfinder>().SetPathToFollow(0);
     }
 
+    private IEnumerator SpawnSingleEnemyWave(WaveConfigSO waveConfig) {
+        currentWave = waveConfig;
+
+        for(int j = 0; j < currentWave.GetEnemyCount(); j++) {
+            int pathNumber = currentWave.GetPathToSpawnEnemyOn(j);
+            GameObject enemy = Instantiate(
+                currentWave.GetEnemyPrefab(j),
+                currentWave.GetStartingWaypoint(pathNumber).position,
+                currentWave.GetEnemyPrefab(j).transform.rotation,
+                transform);
+            enemy.GetComponent<Pathfinder>().SetPathToFollow(pathNumber);
+            yield return new WaitForSeconds(currentWave.GetRandomSpawnTime());
+        }
+    }
+
     public WaveConfigSO GetCurrentWave() { return currentWave; }
+
+    public void StartWaveConfig(WaveConfigSO waveConfig) {
+        StartCoroutine(SpawnSingleEnemyWave(waveConfig));
+    }
 }

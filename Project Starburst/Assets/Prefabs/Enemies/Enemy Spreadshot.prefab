@@ -87,7 +87,7 @@ MonoBehaviour:
   isPlayerProjectile: 0
   magnetEffects: {fileID: 0}
   movementSpeed: -7.5
-  damage: 150
+  damage: 100
   defaultMaterial: {fileID: 2100000, guid: 76ab8f5eb370ad44fb71ea74dd61c715, type: 2}
   colorblindMaterial: {fileID: 0}
   spriteRenderer: {fileID: 352298795596207656}

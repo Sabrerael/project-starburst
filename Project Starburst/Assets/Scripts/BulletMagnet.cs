@@ -15,6 +15,8 @@ public class BulletMagnet : MonoBehaviour {
     [SerializeField] float magnetRegen = 4;
     [SerializeField] Transform[] bulletLocations;
     [SerializeField] GameObject magnetBody;
+    [SerializeField] AudioClip magnetActivateSound;
+    [SerializeField] AudioClip magnetGrabSound;
 
     private bool magnetActive = false;
     private float magnetPower = 1f;
@@ -30,7 +32,6 @@ public class BulletMagnet : MonoBehaviour {
     }
 
     private void Update() {
-
         if (!magnetActive && magnetPower != 1) {
             magnetPower = Mathf.Clamp(magnetPower + (magnetRegen * Time.deltaTime), 0, 1);
             return;
@@ -43,6 +44,10 @@ public class BulletMagnet : MonoBehaviour {
         if (magnetPower == 0) {
             SetMagnetActive(false);
         }
+    }
+
+    private void OnDestroy() {
+        SettingsManager.onSettingsChange -= SetVolume;
     }
 
     private void OnTriggerStay2D(Collider2D other) {
@@ -68,6 +73,7 @@ public class BulletMagnet : MonoBehaviour {
 
     public void SetMagnetActive(bool magnetActive) {
         if (magnetActive) {
+            audioSource.clip = magnetActivateSound;
             audioSource.Play();
             spriteRenderer.enabled = magnetActive;
             StartCoroutine(ActivateMagnet());
@@ -94,9 +100,19 @@ public class BulletMagnet : MonoBehaviour {
         ResetBulletArray();
     }
 
+    public void ClearBulletArray() {
+        for (int i = 0; i < bulletArray.Length; i++) {
+            if (bulletArray[i] != null) {
+                GameObject.Destroy(bulletArray[i]);
+            }
+        }
+    }
+
     private void AddEnemyBulletToArray(GameObject gameObject) {
         for (int i = 0; i < bulletArray.Length; i++) {
             if (bulletArray[i] == null) {
+                audioSource.clip = magnetGrabSound;
+                audioSource.Play();
                 bulletArray[i] = gameObject;
                 gameObject.transform.parent = bulletParent;
                 gameObject.GetComponent<MagnetMovement>().SetMovementLocation(bulletLocations[i].localPosition);

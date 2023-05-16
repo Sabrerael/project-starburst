@@ -33,7 +33,12 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void OnPause(InputValue value) {
-        if (!pauseMenu.activeInHierarchy) {
+        if (pauseMenu == null) {
+            pauseMenu = GameObject.FindObjectOfType<PauseMenu>(true).gameObject;
+            Time.timeScale = 0;
+            pauseMenu.SetActive(!pauseMenu.activeInHierarchy);
+            SetIsPaused(true);
+        } else if (!pauseMenu.activeInHierarchy) {
             Time.timeScale = 0;
             pauseMenu.SetActive(!pauseMenu.activeInHierarchy);
             SetIsPaused(true);
