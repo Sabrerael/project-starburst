@@ -3,5 +3,6 @@ public enum BulletType {
     Basic,
     Missile,
     Piercing,
-    Spreadshot
+    Spreadshot,
+    Tracking
 }
