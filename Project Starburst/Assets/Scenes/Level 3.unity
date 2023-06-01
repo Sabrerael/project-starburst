@@ -156,17 +156,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b743370ac3e4ec2a1668f5455a8ef8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &104818466 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7711526023911821267, guid: 5e0c0efc683455b4cb17812326bfdf17, type: 3}
-  m_PrefabInstance: {fileID: 7711526023943071985}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &104818467 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4308974100831223479, guid: 5e0c0efc683455b4cb17812326bfdf17, type: 3}
   m_PrefabInstance: {fileID: 7711526023943071985}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 104818466}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04d60a092cf613e4ba278a9fc2b4bde9, type: 3}
@@ -1184,6 +1179,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d7b45b605b7c97449d2a77bf4c950d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1276874867 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5595705299981384587, guid: 84e80f7832178934b9d1f263cc86aabd, type: 3}
+  m_PrefabInstance: {fileID: 1276874864}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1292249457 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5595705300949787540, guid: 84e80f7832178934b9d1f263cc86aabd, type: 3}
@@ -1781,7 +1781,7 @@ PrefabInstance:
     - target: {fileID: 3918301685344090853, guid: b57d320a93d1bae4c8cc13ab85508611, type: 3}
       propertyPath: pauseMenu
       value: 
-      objectReference: {fileID: 104818466}
+      objectReference: {fileID: 104818467}
     - target: {fileID: 5024803929174983320, guid: b57d320a93d1bae4c8cc13ab85508611, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -2012,6 +2012,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4308974100831223479, guid: 5e0c0efc683455b4cb17812326bfdf17, type: 3}
+      propertyPath: optionsFirstObject
+      value: 
+      objectReference: {fileID: 1276874867}
     - target: {fileID: 7711526023320865357, guid: 5e0c0efc683455b4cb17812326bfdf17, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

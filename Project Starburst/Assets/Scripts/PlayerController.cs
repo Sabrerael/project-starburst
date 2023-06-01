@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour {
     [SerializeField] BulletMagnet bulletMagnet;
-    [SerializeField] GameObject pauseMenu;
+    [SerializeField] PauseMenu pauseMenu;
 
     // CACHE
     private Movement movement;
@@ -34,13 +34,15 @@ public class PlayerController : MonoBehaviour {
 
     private void OnPause(InputValue value) {
         if (pauseMenu == null) {
-            pauseMenu = GameObject.FindObjectOfType<PauseMenu>(true).gameObject;
+            pauseMenu = GameObject.FindObjectOfType<PauseMenu>(true);
             Time.timeScale = 0;
-            pauseMenu.SetActive(!pauseMenu.activeInHierarchy);
+            pauseMenu.gameObject.SetActive(!pauseMenu.gameObject.activeInHierarchy);
+            pauseMenu.SetButtonActive();
             SetIsPaused(true);
-        } else if (!pauseMenu.activeInHierarchy) {
+        } else if (!pauseMenu.gameObject.activeInHierarchy) {
             Time.timeScale = 0;
-            pauseMenu.SetActive(!pauseMenu.activeInHierarchy);
+            pauseMenu.gameObject.SetActive(!pauseMenu.gameObject.activeInHierarchy);
+            pauseMenu.SetButtonActive();
             SetIsPaused(true);
         }
     }
