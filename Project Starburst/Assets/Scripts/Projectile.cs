@@ -6,7 +6,9 @@ public class Projectile : MonoBehaviour {
     [SerializeField] float movementSpeed = -2.5f;
     [SerializeField] protected int damage = 50;
     [SerializeField] protected Material defaultMaterial;
+    // TODO Remove this variable
     [SerializeField] protected Material colorblindMaterial;
+    [SerializeField] protected GameObject particlePrefab;
     [SerializeField] protected SpriteRenderer spriteRenderer;
     [SerializeField] protected TrailRenderer trailRenderer;
     [SerializeField] protected BulletType bulletType = BulletType.Basic;
@@ -37,6 +39,10 @@ public class Projectile : MonoBehaviour {
         if ((isPlayerProjectile && (other.gameObject.tag == "Enemy" || other.gameObject.tag == "Boss")) ||  
              other.gameObject.tag == "Player") {
             other.gameObject.GetComponent<Health>().ModifyHealthPoints(-damage, bulletType);
+            if (particlePrefab) {
+                GameObject particles = Instantiate(particlePrefab, transform.position,Quaternion.identity);
+                Destroy(particles, 0.5f);
+            }
             Destroy(gameObject);
         }
     }
@@ -50,13 +56,7 @@ public class Projectile : MonoBehaviour {
     public void SetPlayerProjectile(bool isPlayerProjectile) { this.isPlayerProjectile = isPlayerProjectile; }
 
     private void SetMaterial() {
-        //if (SettingsManager.GetColorSet() != 0) {
-            //spriteRenderer.material = colorblindMaterial;
-            //trailRenderer.material = colorblindMaterial;
-        //} else {
-        //    spriteRenderer.material = defaultMaterial;
-        //    trailRenderer.material = defaultMaterial;
-        //}
+        // TODO Remove this
     }
 
     private void SetVolume() {

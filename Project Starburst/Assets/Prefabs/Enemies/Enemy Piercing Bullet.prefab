@@ -45,7 +45,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -90,6 +90,7 @@ MonoBehaviour:
   damage: 35
   defaultMaterial: {fileID: 2100000, guid: c3398a0c794f0bd488a92d27c6b757e4, type: 2}
   colorblindMaterial: {fileID: 2100000, guid: ee08bb5da98c91241bedbe252d138abc, type: 2}
+  particlePrefab: {fileID: 8760689742216663979, guid: 2d83dbcc173c9e241a234f11725d1664, type: 3}
   spriteRenderer: {fileID: 841540361724311867}
   trailRenderer: {fileID: 3108730488449054565}
   bulletType: 3
