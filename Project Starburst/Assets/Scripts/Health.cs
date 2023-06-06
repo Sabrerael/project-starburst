@@ -110,13 +110,13 @@ public class Health : MonoBehaviour {
     private void EnableParticles() {
         if (tag != "Player") { return; }
 
-        /*if (currentHealthPoints <= totalHealthPoints * 0.66) {
+        if (currentHealthPoints <= totalHealthPoints * 0.66) {
             sparkParticles.SetActive(true);
         }
 
         if (currentHealthPoints <= totalHealthPoints / 3) {
             smokeParticles.SetActive(true);
-        }*/
+        }
     }
 
     private bool HandleShield(BulletType bulletType) {

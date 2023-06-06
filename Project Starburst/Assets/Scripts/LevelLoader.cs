@@ -30,11 +30,13 @@ public class LevelLoader : MonoBehaviour {
             var highScore = PlayerPrefs.GetInt("HIGH_SCORE", 0);
             PlayerPrefs.SetInt("RECENT_SCORE", score);
             PlayerPrefs.SetInt("HIGH_SCORE", Mathf.Max(score, highScore));
-            Steamworks.SteamUserStats.UploadLeaderboardScore(leaderboard,
-                                                             ELeaderboardUploadScoreMethod.k_ELeaderboardUploadScoreMethodKeepBest,
-                                                             PlayerPrefs.GetInt("HIGH_SCORE"),
-                                                             null,
-                                                             0);
+            if (SteamManager.Initialized) {
+                Steamworks.SteamUserStats.UploadLeaderboardScore(leaderboard,
+                                                                ELeaderboardUploadScoreMethod.k_ELeaderboardUploadScoreMethodKeepBest,
+                                                                PlayerPrefs.GetInt("HIGH_SCORE"),
+                                                                null,
+                                                                0);
+            }
             GameObject.Destroy(GameObject.FindObjectOfType<PauseMenu>(true).gameObject);
             GameObject.Destroy(GameObject.Find("HUD"));
             GameObject.Destroy(player);
