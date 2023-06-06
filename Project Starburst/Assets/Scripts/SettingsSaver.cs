@@ -17,12 +17,11 @@ public class SettingsSaver : MonoBehaviour {
     [SerializeField] List<Material> shieldMaterials;
     [SerializeField] List<Material> particleMaterials;
     [SerializeField] List<ParticleSystem> particleSystems;
+    [SerializeField] List<ParticleSystem> projectileParticleSystems;
 
     // These might be need to be moved or duplicated into the SettingsManager.
     [SerializeField] List<Color> colors;
     [SerializeField] List<Color> brighterColors;
-    //[SerializeField] Toggle brightnessToggle1;
-    //[SerializeField] Toggle brightnessToggle2;
 
     [SerializeField] float musicVolumeMaxValue = 0.325f;
     [SerializeField] float soundFxMaxVolume = 1f;
@@ -41,6 +40,8 @@ public class SettingsSaver : MonoBehaviour {
                                                new GradientAlphaKey[] { new GradientAlphaKey(1.0f, 0.0f), 
                                                new GradientAlphaKey(0.0f, 1.0f) } );
         var col = particleSystems[0].colorOverLifetime;
+        col.color = grad;
+        col = projectileParticleSystems[0].colorOverLifetime;
         col.color = grad;
 
         colorDropdowns[1].value = SettingsManager.GetColor2();
@@ -68,6 +69,8 @@ public class SettingsSaver : MonoBehaviour {
                                                new GradientAlphaKey(0.0f, 1.0f) } );
         col = particleSystems[2].colorOverLifetime;
         col.color = grad;
+        col = projectileParticleSystems[2].colorOverLifetime;
+        col.color = grad;
 
         colorDropdowns[3].value = SettingsManager.GetColor4();
         colorExamples[3].material.SetColor("_ReplacedColor", colors[colorDropdowns[3].value]);
@@ -80,6 +83,8 @@ public class SettingsSaver : MonoBehaviour {
                                                new GradientAlphaKey[] { new GradientAlphaKey(1.0f, 0.0f), 
                                                new GradientAlphaKey(0.0f, 1.0f) } );
         col = particleSystems[3].colorOverLifetime;
+        col.color = grad;
+        col = projectileParticleSystems[3].colorOverLifetime;
         col.color = grad;
     }
 
@@ -105,6 +110,8 @@ public class SettingsSaver : MonoBehaviour {
                                                new GradientAlphaKey[] { new GradientAlphaKey(1.0f, 0.0f), 
                                                new GradientAlphaKey(0.0f, 1.0f) } );
         var col = particleSystems[0].colorOverLifetime;
+        col.color = grad;
+        col = projectileParticleSystems[0].colorOverLifetime;
         col.color = grad;
 
         colorDropdowns[1].value = 1;
@@ -132,6 +139,8 @@ public class SettingsSaver : MonoBehaviour {
                                                new GradientAlphaKey(0.0f, 1.0f) } );
         col = particleSystems[2].colorOverLifetime;
         col.color = grad;
+        col = projectileParticleSystems[2].colorOverLifetime;
+        col.color = grad;
 
         colorDropdowns[3].value = 3;
         colorExamples[3].material.SetColor("_ReplacedColor", colors[3]);
@@ -145,12 +154,15 @@ public class SettingsSaver : MonoBehaviour {
                                                new GradientAlphaKey(0.0f, 1.0f) } );
         col = particleSystems[3].colorOverLifetime;
         col.color = grad;
+        col = projectileParticleSystems[3].colorOverLifetime;
+        col.color = grad;
     }
 
     public void SaveButton() {
         //if (brightnessToggle2.isOn) {
         //    activeBrightnessToggleValue = 1;
         //}
+        Debug.Log("SaveButton Function hit");
 
         float musicVolume = musicVolumeSlider.value * musicVolumeMaxValue;
         float soundEffectsVolume = soundFxVolumeSlider.value * soundFxMaxVolume;
@@ -177,10 +189,12 @@ public class SettingsSaver : MonoBehaviour {
         particleMaterials[value].SetColor("_BaseColor", colors[dropdownValue]);
         Gradient grad = new Gradient();
         grad.SetKeys( new GradientColorKey[] { new GradientColorKey(brighterColors[dropdownValue], 0.0f), 
-                                                  new GradientColorKey(Color.white, 1.0f) }, 
+                                               new GradientColorKey(Color.white, 1.0f) }, 
                       new GradientAlphaKey[] { new GradientAlphaKey(1.0f, 0.0f), 
                                                new GradientAlphaKey(0.0f, 1.0f) } );
         var col = particleSystems[value].colorOverLifetime;
+        col.color = grad;
+        col = projectileParticleSystems[value].colorOverLifetime;
         col.color = grad;
         
         UserEntryCheck();

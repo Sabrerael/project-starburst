@@ -14,6 +14,7 @@ public class ButtonAudio : MonoBehaviour {
     }
 
     public void PlayAudio() {
+        Debug.Log("PlayAudio function hit");
         audioSource.Play();
     }
 

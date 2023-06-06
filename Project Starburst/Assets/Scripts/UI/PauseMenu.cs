@@ -42,6 +42,7 @@ public class PauseMenu : MonoBehaviour {
     }
 
     public void SetOptionsMenuInactive() {
+        Debug.Log("SetOptionsMenuInactive function hit");
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(optionsClosedButton);
     }

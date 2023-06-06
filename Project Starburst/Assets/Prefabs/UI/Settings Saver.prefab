@@ -72,6 +72,11 @@ MonoBehaviour:
   - {fileID: 8760689742216663981, guid: e0b607f0013e7634b816a23d7a9a2a73, type: 3}
   - {fileID: 8760689742216663981, guid: cadbca1d454cce84289266f89805afef, type: 3}
   - {fileID: 8760689742216663981, guid: f19cbf8a5db860b48a121b7a3ab1734c, type: 3}
+  projectileParticleSystems:
+  - {fileID: 8760689742216663981, guid: 8b699263267bced4fa928c52f1c0854a, type: 3}
+  - {fileID: 3037605363826149078, guid: 8e4bfa5f5a7d11c4b9862a24e2bc8f8c, type: 3}
+  - {fileID: 8760689742216663981, guid: 2d83dbcc173c9e241a234f11725d1664, type: 3}
+  - {fileID: 8760689742216663981, guid: a31153e5a5fabd64f85e783e680fe610, type: 3}
   colors:
   - {r: 0.007843138, g: 0.007843138, b: 0.1882353, a: 0}
   - {r: 0.1882353, g: 0.007843138, b: 0.007843138, a: 0}
