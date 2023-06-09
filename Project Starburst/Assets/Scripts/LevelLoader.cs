@@ -9,11 +9,13 @@ public class LevelLoader : MonoBehaviour {
     [SerializeField] GameObject eolPlayerClone;
 
 	private CallResult<LeaderboardFindResult_t> steamLeaderboard;
+    private CallResult<LeaderboardScoreUploaded_t> scoreUploaded;
     private SteamLeaderboard_t leaderboard;
 
 	private void OnEnable() {
 		if (SteamManager.Initialized) {
 			steamLeaderboard = CallResult<LeaderboardFindResult_t>.Create(OnSteamLeaderboard);
+            scoreUploaded = CallResult<LeaderboardScoreUploaded_t>.Create(OnLeaderboardScoreUploaded);
 		}
 	}
 
@@ -31,11 +33,13 @@ public class LevelLoader : MonoBehaviour {
             PlayerPrefs.SetInt("RECENT_SCORE", score);
             PlayerPrefs.SetInt("HIGH_SCORE", Mathf.Max(score, highScore));
             if (SteamManager.Initialized) {
-                Steamworks.SteamUserStats.UploadLeaderboardScore(leaderboard,
+                SteamAPICall_t handle = SteamUserStats.UploadLeaderboardScore(leaderboard,
                                                                 ELeaderboardUploadScoreMethod.k_ELeaderboardUploadScoreMethodKeepBest,
                                                                 PlayerPrefs.GetInt("HIGH_SCORE"),
                                                                 null,
                                                                 0);
+                scoreUploaded.Set(handle);
+                Debug.Log("Called UploadLeaderboardScore");
             }
             GameObject.Destroy(GameObject.FindObjectOfType<PauseMenu>(true).gameObject);
             GameObject.Destroy(GameObject.Find("HUD"));
@@ -84,6 +88,15 @@ public class LevelLoader : MonoBehaviour {
 		}
 		else {
 			Debug.Log("Steam Leaderboard name: " + pCallback.m_hSteamLeaderboard);
+		}
+	}
+
+    private void OnLeaderboardScoreUploaded(LeaderboardScoreUploaded_t pCallback, bool bIOFailure) {
+		if (pCallback.m_bSuccess != 1 || bIOFailure) {
+			Debug.Log("There was an error uploading to the Steam Leaderboard.");
+		}
+		else {
+			Debug.Log("Score of " + pCallback.m_nScore + " uploaded to " + pCallback.m_hSteamLeaderboard + " leaderboard");
 		}
 	} 
 
