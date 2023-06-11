@@ -33,9 +33,10 @@ public class LevelLoader : MonoBehaviour {
             PlayerPrefs.SetInt("RECENT_SCORE", score);
             PlayerPrefs.SetInt("HIGH_SCORE", Mathf.Max(score, highScore));
             if (SteamManager.Initialized) {
+                Debug.Log("");
                 SteamAPICall_t handle = SteamUserStats.UploadLeaderboardScore(leaderboard,
                                                                 ELeaderboardUploadScoreMethod.k_ELeaderboardUploadScoreMethodKeepBest,
-                                                                PlayerPrefs.GetInt("HIGH_SCORE"),
+                                                                score,
                                                                 null,
                                                                 0);
                 scoreUploaded.Set(handle);
@@ -79,6 +80,7 @@ public class LevelLoader : MonoBehaviour {
     }
 
     public void QuitGame() {
+        SteamAPI.Shutdown();
         Application.Quit();
     }
 
@@ -88,6 +90,7 @@ public class LevelLoader : MonoBehaviour {
 		}
 		else {
 			Debug.Log("Steam Leaderboard name: " + pCallback.m_hSteamLeaderboard);
+            leaderboard = pCallback.m_hSteamLeaderboard;
 		}
 	}
 
