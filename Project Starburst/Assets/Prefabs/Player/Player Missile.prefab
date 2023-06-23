@@ -176,6 +176,7 @@ MonoBehaviour:
   damage: 100
   defaultMaterial: {fileID: 2100000, guid: 1249bdb3ca7372643a207431d12e235a, type: 2}
   colorblindMaterial: {fileID: 2100000, guid: f73a99045c3a04043884e571820e68d6, type: 2}
+  particlePrefab: {fileID: 0}
   spriteRenderer: {fileID: 7691141619298732426}
   trailRenderer: {fileID: 6859038099231380407}
   bulletType: 2

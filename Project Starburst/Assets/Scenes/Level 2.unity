@@ -156,17 +156,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b743370ac3e4ec2a1668f5455a8ef8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &104818466 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7711526023911821267, guid: 5e0c0efc683455b4cb17812326bfdf17, type: 3}
-  m_PrefabInstance: {fileID: 7711526023943071985}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &104818467 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4308974100831223479, guid: 5e0c0efc683455b4cb17812326bfdf17, type: 3}
   m_PrefabInstance: {fileID: 7711526023943071985}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 104818466}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04d60a092cf613e4ba278a9fc2b4bde9, type: 3}
@@ -1337,6 +1332,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: Asteroid Particle System
       objectReference: {fileID: 0}
+    - target: {fileID: 3789076131534758715, guid: ed7ea893b2e0d134cb6072ece83ffbf8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: affa6d2a2f53f954caa2f887ad4a32a1, type: 2}
+    - target: {fileID: 3789076131534758716, guid: ed7ea893b2e0d134cb6072ece83ffbf8, type: 3}
+      propertyPath: UVModule.tilesX
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3789076131534758716, guid: ed7ea893b2e0d134cb6072ece83ffbf8, type: 3}
+      propertyPath: UVModule.animationType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3789076131534758716, guid: ed7ea893b2e0d134cb6072ece83ffbf8, type: 3}
+      propertyPath: UVModule.startFrame.scalar
+      value: 0.9999
+      objectReference: {fileID: 0}
+    - target: {fileID: 3789076131534758716, guid: ed7ea893b2e0d134cb6072ece83ffbf8, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 3789076131534758716, guid: ed7ea893b2e0d134cb6072ece83ffbf8, type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3789076131534758716, guid: ed7ea893b2e0d134cb6072ece83ffbf8, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3789076131534758717, guid: ed7ea893b2e0d134cb6072ece83ffbf8, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1771,10 +1794,6 @@ PrefabInstance:
       propertyPath: m_Icon
       value: 
       objectReference: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
-    - target: {fileID: 3918301685344090853, guid: b57d320a93d1bae4c8cc13ab85508611, type: 3}
-      propertyPath: pauseMenu
-      value: 
-      objectReference: {fileID: 104818466}
     - target: {fileID: 5024803929174983320, guid: b57d320a93d1bae4c8cc13ab85508611, type: 3}
       propertyPath: m_Enabled
       value: 0

@@ -88,8 +88,9 @@ MonoBehaviour:
   magnetEffects: {fileID: 0}
   movementSpeed: -10
   damage: 35
-  defaultMaterial: {fileID: 2100000, guid: 51adb4ec7af064340b933f1cb85e7207, type: 2}
+  defaultMaterial: {fileID: 2100000, guid: 9621434e023f30348982268e108f9e6f, type: 2}
   colorblindMaterial: {fileID: 2100000, guid: 51adb4ec7af064340b933f1cb85e7207, type: 2}
+  particlePrefab: {fileID: 8760689742216663979, guid: e707ecdda10543047b894745c2cb78d6, type: 3}
   spriteRenderer: {fileID: 1104714674970678475}
   trailRenderer: {fileID: 7860480569715331833}
   bulletType: 5
@@ -240,7 +241,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 51adb4ec7af064340b933f1cb85e7207, type: 2}
+  - {fileID: 2100000, guid: 9621434e023f30348982268e108f9e6f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -279,6 +280,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7164444628383735374}
     m_Modifications:
+    - target: {fileID: 4821619297104889388, guid: 0918d0cd70ac50e48b1d6d7c716af498, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9621434e023f30348982268e108f9e6f, type: 2}
     - target: {fileID: 4821619297104889389, guid: 0918d0cd70ac50e48b1d6d7c716af498, type: 3}
       propertyPath: m_RootOrder
       value: 0

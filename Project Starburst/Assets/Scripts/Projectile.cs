@@ -6,8 +6,6 @@ public class Projectile : MonoBehaviour {
     [SerializeField] float movementSpeed = -2.5f;
     [SerializeField] protected int damage = 50;
     [SerializeField] protected Material defaultMaterial;
-    // TODO Remove this variable
-    [SerializeField] protected Material colorblindMaterial;
     [SerializeField] protected GameObject particlePrefab;
     [SerializeField] protected SpriteRenderer spriteRenderer;
     [SerializeField] protected TrailRenderer trailRenderer;
@@ -17,15 +15,9 @@ public class Projectile : MonoBehaviour {
     private float xMovementSpeed;
     private float yMovementSpeed;
 
-    private void Awake() {
-        SetMaterial();
-    }
-
     protected virtual void Start() {
         audioSource = GetComponent<AudioSource>();
         SetVolume();
-        //SettingsManager.onSettingsChange += SetVolume;
-        SettingsManager.onSettingsChange += SetMaterial;
 
         xMovementSpeed = Mathf.Sin(Mathf.Deg2Rad * transform.rotation.eulerAngles.z) * movementSpeed * -1;
         yMovementSpeed = Mathf.Cos(Mathf.Deg2Rad * transform.rotation.eulerAngles.z) * movementSpeed;
@@ -54,10 +46,6 @@ public class Projectile : MonoBehaviour {
     public GameObject GetMagnetEffects() { return magnetEffects; }
 
     public void SetPlayerProjectile(bool isPlayerProjectile) { this.isPlayerProjectile = isPlayerProjectile; }
-
-    private void SetMaterial() {
-        // TODO Remove this
-    }
 
     private void SetVolume() {
         audioSource.volume = SettingsManager.GetSoundEffectsVolume();

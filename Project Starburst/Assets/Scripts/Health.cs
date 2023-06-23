@@ -65,7 +65,7 @@ public class Health : MonoBehaviour {
             if (HandleShield(bulletType)) { return; }
             if (bulletType == weakness) { value *= 2; }
         } else if (tag == "Player") {
-            player.ResetComboCounter();
+            //player.ResetComboCounter();
         }
         // TODO if adding health power-ups, will need to check if value is positive and ignore CameraShake if that's the case
         ShakeCamera();
