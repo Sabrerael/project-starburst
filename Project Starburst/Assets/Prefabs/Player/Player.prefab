@@ -5005,6 +5005,9 @@ MonoBehaviour:
   missilePrefab: {fileID: 5550583240862649229, guid: c3592a7d2d41d4d4f89cd0ace5e6fb22, type: 3}
   piercingBulletPrefab: {fileID: 465192876194954400, guid: 7e33f9caacd928d489246ff5dcf712dc, type: 3}
   spreadshotPrefab: {fileID: 2046136655675650724, guid: 42a5bf8903e75bb4f93ae707b8cdae40, type: 3}
+  trackingPrefab: {fileID: 5047592020434839335, guid: b7fbecb8137ff60449a50f6e1a98b360, type: 3}
+  minePrefab: {fileID: 0}
+  boomerangPrefab: {fileID: 0}
   magnetDrain: 0.3
   magnetRegen: 0.6
   bulletLocations:
@@ -5018,6 +5021,7 @@ MonoBehaviour:
   magnetBody: {fileID: 4770505461512032130}
   magnetActivateSound: {fileID: 8300000, guid: 87a03ad92c74b6d46aff284f4f2ed1ee, type: 3}
   magnetGrabSound: {fileID: 8300000, guid: a2f897c4645139541becc8c6d6d77127, type: 3}
+  targetMarker: {fileID: 5968889985513084009, guid: 57c8de28225fc0c42b9e98e550da4a2b, type: 3}
 --- !u!58 &2523589688782449934
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5392,7 +5396,7 @@ MonoBehaviour:
   deathSoundEffectObject: {fileID: 3553197256188102150, guid: e1539ae132cebc94db5d3d695b5d9592, type: 3}
   hitParticleEffect: {fileID: 8760689742216663979, guid: 99e12a8c1b5b54848be1e96bdf65e1e2, type: 3}
   hitParticleEffectColorBlind: {fileID: 8760689742216663979, guid: 99e12a8c1b5b54848be1e96bdf65e1e2, type: 3}
-  weakness: 1
+  weakness: 0
   shieldWeakness: 0
   shieldObject: {fileID: 0}
   brokenShieldObject: {fileID: 0}

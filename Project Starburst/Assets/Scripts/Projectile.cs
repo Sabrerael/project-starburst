@@ -3,7 +3,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour {
     [SerializeField] protected bool isPlayerProjectile = false;
     [SerializeField] GameObject magnetEffects;
-    [SerializeField] float movementSpeed = -2.5f;
+    [SerializeField] protected float movementSpeed = -2.5f;
     [SerializeField] protected int damage = 50;
     [SerializeField] protected Material defaultMaterial;
     [SerializeField] protected GameObject particlePrefab;
@@ -12,8 +12,8 @@ public class Projectile : MonoBehaviour {
     [SerializeField] protected BulletType bulletType = BulletType.Basic;
     
     private AudioSource audioSource;
-    private float xMovementSpeed;
-    private float yMovementSpeed;
+    protected float xMovementSpeed;
+    protected float yMovementSpeed;
 
     protected virtual void Start() {
         audioSource = GetComponent<AudioSource>();
@@ -23,7 +23,7 @@ public class Projectile : MonoBehaviour {
         yMovementSpeed = Mathf.Cos(Mathf.Deg2Rad * transform.rotation.eulerAngles.z) * movementSpeed;
     }
 
-    private void Update() {
+    protected virtual void Update() {
         transform.position += new Vector3(xMovementSpeed * Time.deltaTime, yMovementSpeed * Time.deltaTime, 0);
     }
 

@@ -86,14 +86,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlayerProjectile: 0
   magnetEffects: {fileID: 0}
-  movementSpeed: -10
+  movementSpeed: -5
   damage: 35
   defaultMaterial: {fileID: 2100000, guid: 9621434e023f30348982268e108f9e6f, type: 2}
-  colorblindMaterial: {fileID: 2100000, guid: 51adb4ec7af064340b933f1cb85e7207, type: 2}
   particlePrefab: {fileID: 8760689742216663979, guid: e707ecdda10543047b894745c2cb78d6, type: 3}
   spriteRenderer: {fileID: 1104714674970678475}
   trailRenderer: {fileID: 7860480569715331833}
   bulletType: 5
+  fired: 1
 --- !u!82 &3462934008728934706
 AudioSource:
   m_ObjectHideFlags: 0
@@ -262,10 +262,10 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4427912e264add348b84981a87d5091f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 08d22800a2a7d1c4188dd0048371cbd7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
-  m_FlipY: 1
+  m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.2, y: 0.2}
   m_AdaptiveModeThreshold: 0.5

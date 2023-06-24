@@ -20,21 +20,31 @@ public class BulletMagnet : MonoBehaviour {
     [SerializeField] GameObject magnetBody;
     [SerializeField] AudioClip magnetActivateSound;
     [SerializeField] AudioClip magnetGrabSound;
+    [SerializeField] GameObject targetMarker;
 
     private bool magnetActive = false;
     private float magnetPower = 1f;
     private AudioSource audioSource;
     private GameObject[] bulletArray = new GameObject[7];
     private SpriteRenderer spriteRenderer;
+    private GameObject target;
+    private bool targetChanged = true;
+    private GameObject markerInstance;
+    private GameObject enemySpawner;
 
     private void Start() {
         spriteRenderer = magnetBody.GetComponent<SpriteRenderer>();
         audioSource = GetComponent<AudioSource>();
         SetVolume();
         SettingsManager.onSettingsChange += SetVolume;
+        enemySpawner = GameObject.Find("Enemy Spawner");
     }
 
     private void Update() {
+        if (bulletArray[0] && bulletArray[0].GetComponent<TrackingBullet>()) {
+            SetTarget();
+        }
+
         if (!magnetActive && magnetPower != 1) {
             magnetPower = Mathf.Clamp(magnetPower + (magnetRegen * Time.deltaTime), 0, 1);
             return;
@@ -93,6 +103,11 @@ public class BulletMagnet : MonoBehaviour {
         }
 
         GameObject bulletToFire = bulletArray[0];
+        var trackingBullet = bulletToFire.GetComponent<TrackingBullet>();
+        if (trackingBullet && !trackingBullet.HasTarget()) {
+            return;
+        }
+
         bulletToFire.transform.parent = null;
         bulletToFire.GetComponent<Collider2D>().enabled = true;
         Projectile projectile = bulletToFire.GetComponent<Projectile>();
@@ -100,8 +115,11 @@ public class BulletMagnet : MonoBehaviour {
         projectile.GetMagnetEffects().SetActive(false);
         bulletToFire.GetComponent<AudioSource>().enabled = true;
         bulletToFire.GetComponent<MagnetMovement>().enabled = false;
+        bulletToFire.GetComponent<Animator>().enabled = false;
+        if (trackingBullet) { trackingBullet.HasFired(); }
         bulletArray[0] = null;
 
+        targetChanged = true;
         ResetBulletArray();
     }
 
@@ -139,7 +157,41 @@ public class BulletMagnet : MonoBehaviour {
                 j--;
                 if (j == -1) { break; }
             } while(bulletArray[j] == null);
+            if (i == 1 && bulletArray[i-1].GetComponent<TrackingBullet>()) {
+                SetTarget();
+            } else if (i == 1 && !bulletArray[i-1].GetComponent<TrackingBullet>()) {
+                Destroy(markerInstance);
+            }
+        }
+    }
 
+    private void SetTarget() {
+        foreach (var enemy in enemySpawner.transform.GetComponentsInChildren<Transform>()) {
+            if (enemy.name == "Enemy Spawner") {
+                continue;
+            } else if (target == null) {
+                target = enemy.gameObject;
+                targetChanged = true;
+            } else {
+                var currentTargetDistance = (target.transform.position - transform.position).magnitude;
+                var newTargetDistance = (enemy.transform.position - transform.position).magnitude;
+                if (currentTargetDistance > newTargetDistance) {
+                    target = enemy.gameObject;
+                    targetChanged = true;
+                }
+            }
+        }
+            
+        if (targetChanged && target) {
+            var trackingBullet = bulletArray[0].GetComponent<TrackingBullet>();
+            trackingBullet.SetTarget(target);
+            if (markerInstance) {
+                markerInstance.transform.position = target.transform.position;
+                markerInstance.transform.parent = target.transform;
+            } else {
+                markerInstance = Instantiate(targetMarker, target.transform.position, Quaternion.identity, target.transform);
+            }
+            targetChanged = false;
         }
     }
 

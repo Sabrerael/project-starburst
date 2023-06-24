@@ -157,7 +157,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!114 &260316384446156793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,14 +172,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlayerProjectile: 1
   magnetEffects: {fileID: 7295778163396264606}
-  movementSpeed: 8
+  movementSpeed: -5
   damage: 40
   defaultMaterial: {fileID: 2100000, guid: 9621434e023f30348982268e108f9e6f, type: 2}
-  colorblindMaterial: {fileID: 0}
   particlePrefab: {fileID: 8760689742216663979, guid: e707ecdda10543047b894745c2cb78d6, type: 3}
   spriteRenderer: {fileID: 7041211657158239520}
   trailRenderer: {fileID: 6069505331112263453}
   bulletType: 5
+  fired: 0
 --- !u!82 &980346840383522827
 AudioSource:
   m_ObjectHideFlags: 0
