@@ -33,8 +33,10 @@ public class Pathfinder : MonoBehaviour {
     private void FollowPath() {
         if (waypointIndex < waypoints.Count) {
             Vector3 targetPosition = waypoints[waypointIndex].position;
+            Quaternion targetRotation = waypoints[waypointIndex].rotation;
             float delta = waveConfig.GetMoveSpeed() * Time.deltaTime;
             transform.position = Vector2.MoveTowards(transform.position, targetPosition, delta);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, .75f);
             if (transform.position == targetPosition) {
                 waypointIndex++;
             }
