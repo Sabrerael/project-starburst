@@ -70,13 +70,37 @@ public class LevelLoader : MonoBehaviour {
         StartCoroutine(WinCelebration(4));
     }
 
-    public void LoadWinScreen() {
+    public void LoadLevelThree() {
         StartCoroutine(WinCelebration(5));
+    }
+
+    public void LoadLevelFour() {
+        StartCoroutine(WinCelebration(6));
+    }
+
+    public void LoadLevelFive() {
+        StartCoroutine(WinCelebration(7));
+    }
+
+    public void LoadLevelSix() {
+        StartCoroutine(WinCelebration(8));
+    }
+
+    public void LoadLevelSeven() {
+        StartCoroutine(WinCelebration(9));
+    }
+
+    public void LoadEndlessMode() {
+        StartCoroutine(WinCelebration(12));
+    }
+
+    public void LoadWinScreen() {
+        StartCoroutine(WinCelebration(10));
     }
 
     public void LoadGameOver() {
         DestroyPlayerObjects();
-        StartCoroutine(LoadLevel(6));
+        StartCoroutine(LoadLevel(11));
     }
 
     public void QuitGame() {

@@ -11,6 +11,9 @@ public class SettingsManager : MonoBehaviour {
     private const string COLOR_2 = "color2";
     private const string COLOR_3 = "color3";
     private const string COLOR_4 = "color4";
+    private const string COLOR_5 = "color5";
+    private const string COLOR_6 = "color6";
+    private const string COLOR_7 = "color7";
     private const string MUSIC_VOLUME = "musicVolume";
     private const string SOUND_EFFECTS_VOLUME = "soundEffectsVolume";
 
@@ -19,6 +22,9 @@ public class SettingsManager : MonoBehaviour {
     private static int color2;
     private static int color3;
     private static int color4;
+    private static int color5;
+    private static int color6;
+    private static int color7;
     private static float musicVolume;
     private static float soundEffectsVolume;
 
@@ -60,11 +66,34 @@ public class SettingsManager : MonoBehaviour {
             return settingsSaver.GetSpreadshotColor(color4);
         }
     }
+
+    public static Color GetMissileColor() {
+        if (settingsSaver != null) {
+            return settingsSaver.GetMissileColor(color2);
+        } else {
+            settingsSaver = FindObjectOfType<SettingsSaver>();
+            return settingsSaver.GetMissileColor(color2);
+        }
+    }
+
+    
+    public static Color GetTrackingColor() {
+        if (settingsSaver != null) {
+            return settingsSaver.GetTrackingColor(color5);
+        } else {
+            settingsSaver = FindObjectOfType<SettingsSaver>();
+            return settingsSaver.GetTrackingColor(color5);
+        }
+    }
+
     public static int GetBrightnessLevel() { return brightnessLevel; }
     public static int GetColor1() { return color1; }
     public static int GetColor2() { return color2; }
     public static int GetColor3() { return color3; }
     public static int GetColor4() { return color4; }
+    public static int GetColor5() { return color5; }
+    public static int GetColor6() { return color6; }
+    public static int GetColor7() { return color7; }
     public static float GetMusicVolume() { return musicVolume; }
     public static float GetSoundEffectsVolume() { return soundEffectsVolume; }
 
@@ -99,6 +128,21 @@ public class SettingsManager : MonoBehaviour {
         color4 = _color4;
     }
 
+    public static void SetColor5(int _color5) { 
+        PlayerPrefs.SetInt(COLOR_5, _color5);
+        color5 = _color5;
+    }
+
+    public static void SetColor6(int _color6) { 
+        PlayerPrefs.SetInt(COLOR_6, _color6);
+        color6 = _color6;
+    }
+
+    public static void SetColor7(int _color7) { 
+        PlayerPrefs.SetInt(COLOR_7, _color7);
+        color7 = _color7;
+    }
+
     public static void SetMusicVolume(float _musicVolume) { 
         PlayerPrefs.SetFloat(MUSIC_VOLUME, _musicVolume);
         musicVolume = _musicVolume;
@@ -112,12 +156,16 @@ public class SettingsManager : MonoBehaviour {
     // Public Functions
 
     public static void SaveAllSettings(int color1, int color2, int color3, int color4,
+                                       int color5, int color6, int color7,
                                        float musicVolume, float soundEffectsVolume) {
         //SetBrightnessLevel(brightnessLevel);
         SetColor1(color1);
         SetColor2(color2);
         SetColor3(color3);
         SetColor4(color4);
+        SetColor5(color5);
+        SetColor6(color6);
+        SetColor7(color7);
         SetMusicVolume(musicVolume);
         SetSoundEffectsVolume(soundEffectsVolume);
         if (onSettingsChange != null) { onSettingsChange(); }
@@ -131,6 +179,9 @@ public class SettingsManager : MonoBehaviour {
         color2 = PlayerPrefs.GetInt(COLOR_2, 1);
         color3 = PlayerPrefs.GetInt(COLOR_3, 2);
         color4 = PlayerPrefs.GetInt(COLOR_4, 3);
+        color5 = PlayerPrefs.GetInt(COLOR_5, 4);
+        color6 = PlayerPrefs.GetInt(COLOR_6, 5);
+        color7 = PlayerPrefs.GetInt(COLOR_7, 6);
         musicVolume = PlayerPrefs.GetFloat(MUSIC_VOLUME, 0.325f);
         soundEffectsVolume = PlayerPrefs.GetFloat(SOUND_EFFECTS_VOLUME, 1f);
     }

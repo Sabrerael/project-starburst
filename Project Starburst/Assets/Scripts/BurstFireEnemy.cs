@@ -6,9 +6,9 @@ public class BurstFireEnemy : Enemy {
 
     protected override IEnumerator FireProjectiles(float time) {
         while (true) {
-            Instantiate(projectile, transform.position + projectileSpawnPointModification, Quaternion.identity);
+            Instantiate(projectile, transform.position + projectileSpawnPointModification, transform.rotation);
             yield return new WaitForSeconds(timeBetweenShotsInBurst);
-            Instantiate(projectile, transform.position + projectileSpawnPointModification, Quaternion.identity);
+            Instantiate(projectile, transform.position + projectileSpawnPointModification, transform.rotation);
             yield return new WaitForSeconds(time);
         }
     }

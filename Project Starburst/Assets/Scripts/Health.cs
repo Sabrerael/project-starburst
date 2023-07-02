@@ -6,7 +6,6 @@ public class Health : MonoBehaviour {
     [SerializeField] bool applyCameraShake = false;
     [SerializeField] GameObject deathSoundEffectObject;
     [SerializeField] GameObject hitParticleEffect;
-    [SerializeField] GameObject hitParticleEffectColorBlind;
 
     [Header("Enemy Specific Properties")]
     [SerializeField] BulletType weakness = BulletType.Basic;
@@ -55,9 +54,8 @@ public class Health : MonoBehaviour {
     public void SetBrokenShieldObject(GameObject brokenShieldObject) { this.brokenShieldObject = brokenShieldObject; }
     public void SetShieldWeakness(BulletType shieldWeakness) { this.shieldWeakness = shieldWeakness; }
 
-    public void SetHitParticleEffects(GameObject defaultParticle, GameObject cbParticle) {
+    public void SetHitParticleEffects(GameObject defaultParticle) {
         hitParticleEffect = defaultParticle;
-        hitParticleEffectColorBlind = cbParticle;
     }
 
     public void ModifyHealthPoints(int value, BulletType bulletType) {
@@ -65,9 +63,8 @@ public class Health : MonoBehaviour {
             if (HandleShield(bulletType)) { return; }
             if (bulletType == weakness) { value *= 2; }
         } else if (tag == "Player") {
-            //player.ResetComboCounter();
+            player.ResetComboCounter();
         }
-        // TODO if adding health power-ups, will need to check if value is positive and ignore CameraShake if that's the case
         ShakeCamera();
         currentHealthPoints = Mathf.Clamp(currentHealthPoints + value, 0, totalHealthPoints);
         EnableParticles();
@@ -98,13 +95,9 @@ public class Health : MonoBehaviour {
             GetComponent<Enemy>().AddScoreToPlayer();
             Destroy(gameObject);
         }
-        //if (SettingsManager.GetColorSet() == 0) {
+
         GameObject particles = Instantiate(hitParticleEffect, transform.position, Quaternion.identity);
         Destroy(particles, 0.5f);
-        //} else {
-            //GameObject particles = Instantiate(hitParticleEffectColorBlind, transform.position, Quaternion.identity);
-            //Destroy(particles, 0.5f);
-        //}
     }
 
     private void EnableParticles() {

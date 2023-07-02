@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fecdd6ef50c9694aaa6df0b37d7732e, type: 3}
+  m_Name: Minion Wave 3
+  m_EditorClassIdentifier: 
+  enemyPrefabs:
+  - {fileID: 1565195953810769152, guid: 2f19bf6d375e5aa41823cb417eed93d3, type: 3}
+  - {fileID: 4474684917615665816, guid: dfa38e27ee8dcb545a34b9d654dc8295, type: 3}
+  - {fileID: 1565195953810769152, guid: 2f19bf6d375e5aa41823cb417eed93d3, type: 3}
+  - {fileID: 4474684917615665816, guid: dfa38e27ee8dcb545a34b9d654dc8295, type: 3}
+  - {fileID: 1565195953810769152, guid: 2f19bf6d375e5aa41823cb417eed93d3, type: 3}
+  path1Prefab: {fileID: 5459583934759096516, guid: 2555cc2c8a1195f498ed171f91736a8f, type: 3}
+  path2Prefab: {fileID: 0}
+  pathToSpawnEnemyOn: 0000000000000000000000000000000000000000
+  moveSpeed: 1.45
+  timeBetweenEnemySpawns: 1.75
+  spawnTimeVariance: 0
+  minimumSpawnTime: 1.75
+  timeAfterWave: 0
+  continuePathfinding: 1
+  waypointIndexToReturnTo: 1

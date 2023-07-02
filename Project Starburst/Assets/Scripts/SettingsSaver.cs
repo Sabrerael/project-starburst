@@ -92,8 +92,16 @@ public class SettingsSaver : MonoBehaviour {
         return colors[PlayerPrefs.GetInt("color4")];
     }
 
+    public Color GetMissileColor(int color2Index) {
+        return colors[color2Index];
+    }
+
     public Color GetSpreadshotColor(int color4Index) {
         return colors[color4Index];
+    }
+
+    public Color GetTrackingColor(int color5Index) {
+        return colors[color5Index];
     }
 
     public void ResetToDefaultValues() {
@@ -171,6 +179,7 @@ public class SettingsSaver : MonoBehaviour {
                                         colorDropdowns[1].value,
                                         colorDropdowns[2].value,
                                         colorDropdowns[3].value,
+                                        5, 6, 7,
                                         musicVolume,
                                         soundEffectsVolume);
         SettingsManager.SetLevel2BossColor(colors[colorDropdowns[3].value]);

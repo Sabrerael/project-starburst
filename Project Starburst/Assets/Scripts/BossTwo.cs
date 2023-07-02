@@ -51,7 +51,6 @@ public class BossTwo : Boss {
 
     protected override IEnumerator BossCycle() {
         // TODO This needs to be updated to not just be Yellow
-        Debug.Log(SettingsManager.GetLevel2BossColor());
         bossMaterial.SetColor("_ReplacedColor", SettingsManager.GetLevel2BossColor());
         enemySpawner = FindObjectOfType<EnemySpawner>();
         deathParticles = hitParticles;
@@ -95,6 +94,6 @@ public class BossTwo : Boss {
             yield return new WaitForSeconds(0.125f);
         }
         Destroy(gameObject);
-        FindObjectOfType<LevelLoader>().LoadWinScreen();
+        FindObjectOfType<LevelLoader>().LoadLevelThree();
     }
 }

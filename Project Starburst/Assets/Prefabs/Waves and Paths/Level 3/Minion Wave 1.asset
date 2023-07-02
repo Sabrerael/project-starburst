@@ -10,17 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0fecdd6ef50c9694aaa6df0b37d7732e, type: 3}
-  m_Name: Boss Wave 3
+  m_Name: Minion Wave 1
   m_EditorClassIdentifier: 
   enemyPrefabs:
-  - {fileID: 6275589065970470680, guid: cde24b334f0f9e74db334e67769a6453, type: 3}
-  path1Prefab: {fileID: 5409475876119747681, guid: 47a6528dcba1de44882f4baba2502489, type: 3}
+  - {fileID: 1565195953810769152, guid: 2f19bf6d375e5aa41823cb417eed93d3, type: 3}
+  - {fileID: 1565195953810769152, guid: 2f19bf6d375e5aa41823cb417eed93d3, type: 3}
+  - {fileID: 1565195953810769152, guid: 2f19bf6d375e5aa41823cb417eed93d3, type: 3}
+  path1Prefab: {fileID: 178710473903600656, guid: 331f00e033703364d9e58903e30d05cc, type: 3}
   path2Prefab: {fileID: 0}
-  pathToSpawnEnemyOn: 00000000
-  moveSpeed: 1.35
-  timeBetweenEnemySpawns: 0
+  pathToSpawnEnemyOn: 000000000000000000000000
+  moveSpeed: 1.45
+  timeBetweenEnemySpawns: 1.75
   spawnTimeVariance: 0
-  minimumSpawnTime: 0
+  minimumSpawnTime: 1.75
   timeAfterWave: 0
   continuePathfinding: 1
   waypointIndexToReturnTo: 1
