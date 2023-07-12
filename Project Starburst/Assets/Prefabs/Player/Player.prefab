@@ -5006,7 +5006,7 @@ MonoBehaviour:
   piercingBulletPrefab: {fileID: 465192876194954400, guid: 7e33f9caacd928d489246ff5dcf712dc, type: 3}
   spreadshotPrefab: {fileID: 2046136655675650724, guid: 42a5bf8903e75bb4f93ae707b8cdae40, type: 3}
   trackingPrefab: {fileID: 5047592020434839335, guid: b7fbecb8137ff60449a50f6e1a98b360, type: 3}
-  minePrefab: {fileID: 0}
+  minePrefab: {fileID: 5034845416006617391, guid: d761261fc5d78b64a87536f4788aa1cc, type: 3}
   boomerangPrefab: {fileID: 0}
   magnetDrain: 0.3
   magnetRegen: 0.6
@@ -5395,7 +5395,6 @@ MonoBehaviour:
   applyCameraShake: 1
   deathSoundEffectObject: {fileID: 3553197256188102150, guid: e1539ae132cebc94db5d3d695b5d9592, type: 3}
   hitParticleEffect: {fileID: 8760689742216663979, guid: 99e12a8c1b5b54848be1e96bdf65e1e2, type: 3}
-  hitParticleEffectColorBlind: {fileID: 8760689742216663979, guid: 99e12a8c1b5b54848be1e96bdf65e1e2, type: 3}
   weakness: 0
   shieldWeakness: 0
   shieldObject: {fileID: 0}

@@ -11,7 +11,7 @@ public class Projectile : MonoBehaviour {
     [SerializeField] protected TrailRenderer trailRenderer;
     [SerializeField] protected BulletType bulletType = BulletType.Basic;
     
-    private AudioSource audioSource;
+    protected AudioSource audioSource;
     protected float xMovementSpeed;
     protected float yMovementSpeed;
 

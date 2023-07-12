@@ -133,6 +133,7 @@ public class BossThree : Boss {
             audioSource.Play();
             yield return new WaitForSeconds(0.125f);
         }
+        UnlockAchievement("BEAT_LEVEL_3");
         Destroy(gameObject);
         FindObjectOfType<LevelLoader>().LoadLevelFour();
     }

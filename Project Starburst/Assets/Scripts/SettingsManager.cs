@@ -33,7 +33,6 @@ public class SettingsManager : MonoBehaviour {
     public static event Action onSettingsChange;
     public static SettingsManager instance = null;
 
-
     // Unity functions
 
     private void Awake() {
@@ -76,13 +75,21 @@ public class SettingsManager : MonoBehaviour {
         }
     }
 
-    
     public static Color GetTrackingColor() {
         if (settingsSaver != null) {
             return settingsSaver.GetTrackingColor(color5);
         } else {
             settingsSaver = FindObjectOfType<SettingsSaver>();
             return settingsSaver.GetTrackingColor(color5);
+        }
+    }
+
+    public static Color GetProxyMineColor() {
+        if (settingsSaver != null) {
+            return settingsSaver.GetProxyMineColor(color6);
+        } else {
+            settingsSaver = FindObjectOfType<SettingsSaver>();
+            return settingsSaver.GetProxyMineColor(color6);
         }
     }
 

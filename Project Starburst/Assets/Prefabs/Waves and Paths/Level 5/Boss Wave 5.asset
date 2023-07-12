@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Boss Wave 5
   m_EditorClassIdentifier: 
   enemyPrefabs: []
-  path1Prefab: {fileID: 0}
+  path1Prefab: {fileID: 8490203243014417501, guid: 3517c409ad69bc94881b391e6b10696d, type: 3}
   path2Prefab: {fileID: 0}
-  pathToSpawnEnemyOn: 
+  pathToSpawnEnemyOn: 00000000
   moveSpeed: 5
   timeBetweenEnemySpawns: 1
   spawnTimeVariance: 0

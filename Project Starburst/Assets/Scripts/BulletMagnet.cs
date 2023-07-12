@@ -77,6 +77,8 @@ public class BulletMagnet : MonoBehaviour {
                 AddEnemyBulletToArray(Instantiate(spreadshotPrefab, other.transform.position, Quaternion.identity));
             } else if (other.GetComponent<TrackingBullet>()) {
                 AddEnemyBulletToArray(Instantiate(trackingPrefab, other.transform.position, Quaternion.identity));
+            } else if (other.GetComponent<ProxyMine>()) {
+                AddEnemyBulletToArray(Instantiate(minePrefab, other.transform.position, Quaternion.identity));
             } else {
                 AddEnemyBulletToArray(Instantiate(basicBulletPrefab, other.transform.position, Quaternion.identity));
             }

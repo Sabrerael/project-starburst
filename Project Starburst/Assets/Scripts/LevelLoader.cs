@@ -33,7 +33,6 @@ public class LevelLoader : MonoBehaviour {
             PlayerPrefs.SetInt("RECENT_SCORE", score);
             PlayerPrefs.SetInt("HIGH_SCORE", Mathf.Max(score, highScore));
             if (SteamManager.Initialized) {
-                Debug.Log("");
                 SteamAPICall_t handle = SteamUserStats.UploadLeaderboardScore(leaderboard,
                                                                 ELeaderboardUploadScoreMethod.k_ELeaderboardUploadScoreMethodKeepBest,
                                                                 score,

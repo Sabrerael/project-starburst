@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fecdd6ef50c9694aaa6df0b37d7732e, type: 3}
+  m_Name: Shielded Wave 4-1
+  m_EditorClassIdentifier: 
+  enemyPrefabs: []
+  path1Prefab: {fileID: 3987508631929477386, guid: 61c5722aff2ec60439fe54f52b575498, type: 3}
+  path2Prefab: {fileID: 3987508631929477386, guid: dad92460b9a3b1c40bb0c71c57f98be6, type: 3}
+  pathToSpawnEnemyOn: 0000000001000000
+  moveSpeed: 1.5
+  timeBetweenEnemySpawns: 0
+  spawnTimeVariance: 0
+  minimumSpawnTime: 0
+  timeAfterWave: 4.5
+  continuePathfinding: 1
+  waypointIndexToReturnTo: 1

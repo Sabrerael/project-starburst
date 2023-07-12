@@ -86,6 +86,51 @@ public class SettingsSaver : MonoBehaviour {
         col.color = grad;
         col = projectileParticleSystems[3].colorOverLifetime;
         col.color = grad;
+
+        colorDropdowns[4].value = SettingsManager.GetColor5();
+        colorExamples[4].material.SetColor("_ReplacedColor", colors[colorDropdowns[4].value]);
+        projectileMaterials[4].SetColor("_Color", brighterColors[colorDropdowns[4].value] * 6);
+        shieldMaterials[4].SetColor("_Color", brighterColors[colorDropdowns[4].value] * 6);
+        particleMaterials[4].SetColor("_BaseColor", brighterColors[colorDropdowns[4].value]);
+        grad = new Gradient();
+        grad.SetKeys( new GradientColorKey[] { new GradientColorKey(brighterColors[colorDropdowns[4].value], 0.0f), 
+                                               new GradientColorKey(Color.white, 1.0f) }, 
+                                               new GradientAlphaKey[] { new GradientAlphaKey(1.0f, 0.0f), 
+                                               new GradientAlphaKey(0.0f, 1.0f) } );
+        col = particleSystems[4].colorOverLifetime;
+        col.color = grad;
+        col = projectileParticleSystems[4].colorOverLifetime;
+        col.color = grad;
+
+        colorDropdowns[5].value = SettingsManager.GetColor6();
+        colorExamples[5].material.SetColor("_ReplacedColor", colors[colorDropdowns[5].value]);
+        projectileMaterials[5].SetColor("_Color", brighterColors[colorDropdowns[5].value] * 6);
+        shieldMaterials[5].SetColor("_Color", brighterColors[colorDropdowns[5].value] * 6);
+        particleMaterials[5].SetColor("_BaseColor", brighterColors[colorDropdowns[5].value]);
+        grad = new Gradient();
+        grad.SetKeys( new GradientColorKey[] { new GradientColorKey(brighterColors[colorDropdowns[5].value], 0.0f), 
+                                               new GradientColorKey(Color.white, 1.0f) }, 
+                                               new GradientAlphaKey[] { new GradientAlphaKey(1.0f, 0.0f), 
+                                               new GradientAlphaKey(0.0f, 1.0f) } );
+        col = particleSystems[5].colorOverLifetime;
+        col.color = grad;
+        col = projectileParticleSystems[5].colorOverLifetime;
+        col.color = grad;
+
+        colorDropdowns[6].value = SettingsManager.GetColor7();
+        colorExamples[6].material.SetColor("_ReplacedColor", colors[colorDropdowns[6].value]);
+        projectileMaterials[6].SetColor("_Color", brighterColors[colorDropdowns[6].value] * 6);
+        shieldMaterials[6].SetColor("_Color", brighterColors[colorDropdowns[6].value] * 6);
+        particleMaterials[6].SetColor("_BaseColor", brighterColors[colorDropdowns[6].value]);
+        grad = new Gradient();
+        grad.SetKeys( new GradientColorKey[] { new GradientColorKey(brighterColors[colorDropdowns[6].value], 0.0f), 
+                                               new GradientColorKey(Color.white, 1.0f) }, 
+                                               new GradientAlphaKey[] { new GradientAlphaKey(1.0f, 0.0f), 
+                                               new GradientAlphaKey(0.0f, 1.0f) } );
+        col = particleSystems[6].colorOverLifetime;
+        col.color = grad;
+        col = projectileParticleSystems[6].colorOverLifetime;
+        col.color = grad;
     }
 
     public Color GetSpreadshotColor() {
@@ -102,6 +147,10 @@ public class SettingsSaver : MonoBehaviour {
 
     public Color GetTrackingColor(int color5Index) {
         return colors[color5Index];
+    }
+
+    public Color GetProxyMineColor(int color6Index) {
+        return colors[color6Index];
     }
 
     public void ResetToDefaultValues() {
@@ -164,12 +213,54 @@ public class SettingsSaver : MonoBehaviour {
         col.color = grad;
         col = projectileParticleSystems[3].colorOverLifetime;
         col.color = grad;
+
+        colorDropdowns[4].value = 4;
+        colorExamples[4].material.SetColor("_ReplacedColor", colors[4]);
+        projectileMaterials[4].SetColor("_Color", brighterColors[4] * 6);
+        shieldMaterials[4].SetColor("_Color", brighterColors[4] * 6);
+        particleMaterials[4].SetColor("_BaseColor", brighterColors[4]);
+        grad = new Gradient();
+        grad.SetKeys( new GradientColorKey[] { new GradientColorKey(brighterColors[4], 0.0f), 
+                                               new GradientColorKey(Color.white, 1.0f) }, 
+                                               new GradientAlphaKey[] { new GradientAlphaKey(1.0f, 0.0f), 
+                                               new GradientAlphaKey(0.0f, 1.0f) } );
+        col = particleSystems[4].colorOverLifetime;
+        col.color = grad;
+        col = projectileParticleSystems[4].colorOverLifetime;
+        col.color = grad;
+
+        colorDropdowns[5].value = 5;
+        colorExamples[5].material.SetColor("_ReplacedColor", colors[5]);
+        projectileMaterials[5].SetColor("_Color", brighterColors[5] * 6);
+        shieldMaterials[5].SetColor("_Color", brighterColors[5] * 6);
+        particleMaterials[5].SetColor("_BaseColor", brighterColors[5]);
+        grad = new Gradient();
+        grad.SetKeys( new GradientColorKey[] { new GradientColorKey(brighterColors[5], 0.0f), 
+                                               new GradientColorKey(Color.white, 1.0f) }, 
+                                               new GradientAlphaKey[] { new GradientAlphaKey(1.0f, 0.0f), 
+                                               new GradientAlphaKey(0.0f, 1.0f) } );
+        col = particleSystems[5].colorOverLifetime;
+        col.color = grad;
+        col = projectileParticleSystems[5].colorOverLifetime;
+        col.color = grad;
+
+        colorDropdowns[6].value = 6;
+        colorExamples[6].material.SetColor("_ReplacedColor", colors[6]);
+        projectileMaterials[6].SetColor("_Color", brighterColors[6] * 6);
+        shieldMaterials[6].SetColor("_Color", brighterColors[6] * 6);
+        particleMaterials[6].SetColor("_BaseColor", brighterColors[6]);
+        grad = new Gradient();
+        grad.SetKeys( new GradientColorKey[] { new GradientColorKey(brighterColors[6], 0.0f), 
+                                               new GradientColorKey(Color.white, 1.0f) }, 
+                                               new GradientAlphaKey[] { new GradientAlphaKey(1.0f, 0.0f), 
+                                               new GradientAlphaKey(0.0f, 1.0f) } );
+        col = particleSystems[6].colorOverLifetime;
+        col.color = grad;
+        col = projectileParticleSystems[6].colorOverLifetime;
+        col.color = grad;
     }
 
     public void SaveButton() {
-        //if (brightnessToggle2.isOn) {
-        //    activeBrightnessToggleValue = 1;
-        //}
         Debug.Log("SaveButton Function hit");
 
         float musicVolume = musicVolumeSlider.value * musicVolumeMaxValue;
@@ -179,7 +270,9 @@ public class SettingsSaver : MonoBehaviour {
                                         colorDropdowns[1].value,
                                         colorDropdowns[2].value,
                                         colorDropdowns[3].value,
-                                        5, 6, 7,
+                                        colorDropdowns[4].value,
+                                        colorDropdowns[5].value,
+                                        colorDropdowns[6].value,
                                         musicVolume,
                                         soundEffectsVolume);
         SettingsManager.SetLevel2BossColor(colors[colorDropdowns[3].value]);

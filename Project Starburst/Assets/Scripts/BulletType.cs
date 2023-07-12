@@ -4,5 +4,7 @@ public enum BulletType {
     Missile,
     Piercing,
     Spreadshot,
-    Tracking
+    Tracking,
+    ProxyMine,
+    Boomerang
 }

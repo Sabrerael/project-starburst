@@ -4,7 +4,6 @@ public class MissileExplosion : MonoBehaviour {
     [SerializeField] float lifetime = 0.25f;
     [SerializeField] protected Material defaultMaterial;
     [SerializeField] protected Material colorblindMaterial;
-    [SerializeField] protected SpriteRenderer spriteRenderer;
  
     private BulletType bulletType = BulletType.Missile;
     private int damage = 100;

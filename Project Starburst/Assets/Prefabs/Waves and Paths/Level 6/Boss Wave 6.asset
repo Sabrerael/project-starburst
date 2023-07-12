@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Boss Wave 6
   m_EditorClassIdentifier: 
   enemyPrefabs: []
-  path1Prefab: {fileID: 0}
+  path1Prefab: {fileID: 3153634633874504142, guid: 2fc328ffe174b854fa26e3ab8b3f4a11, type: 3}
   path2Prefab: {fileID: 0}
   pathToSpawnEnemyOn: 
   moveSpeed: 5
