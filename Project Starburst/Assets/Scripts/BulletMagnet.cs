@@ -79,6 +79,8 @@ public class BulletMagnet : MonoBehaviour {
                 AddEnemyBulletToArray(Instantiate(trackingPrefab, other.transform.position, Quaternion.identity));
             } else if (other.GetComponent<ProxyMine>()) {
                 AddEnemyBulletToArray(Instantiate(minePrefab, other.transform.position, Quaternion.identity));
+            } else if (other.GetComponent<BoomerangBullet>()) {
+                AddEnemyBulletToArray(Instantiate(boomerangPrefab, other.transform.position, Quaternion.identity));
             } else {
                 AddEnemyBulletToArray(Instantiate(basicBulletPrefab, other.transform.position, Quaternion.identity));
             }
@@ -117,7 +119,11 @@ public class BulletMagnet : MonoBehaviour {
         projectile.GetMagnetEffects().SetActive(false);
         bulletToFire.GetComponent<AudioSource>().enabled = true;
         bulletToFire.GetComponent<MagnetMovement>().enabled = false;
-        bulletToFire.GetComponent<Animator>().enabled = false;
+        if (bulletToFire.GetComponent<BoomerangBullet>()) {
+            bulletToFire.GetComponent<Animator>().SetTrigger("Boomerang");
+        } else {
+            bulletToFire.GetComponent<Animator>().enabled = false;
+        }
         if (trackingBullet) { trackingBullet.HasFired(); }
         bulletArray[0] = null;
 

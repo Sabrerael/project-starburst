@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Wave 6-4
   m_EditorClassIdentifier: 
   enemyPrefabs:
-  - {fileID: 6061667883139104746, guid: 52fca2083fcd87e4bbdb42d235e63da2, type: 3}
   - {fileID: 2479605061283298976, guid: 7f2e65ff22aa5c74e98cd76993822d23, type: 3}
-  - {fileID: 6061667883139104746, guid: 52fca2083fcd87e4bbdb42d235e63da2, type: 3}
   - {fileID: 2479605061283298976, guid: 7f2e65ff22aa5c74e98cd76993822d23, type: 3}
-  - {fileID: 6061667883139104746, guid: 52fca2083fcd87e4bbdb42d235e63da2, type: 3}
+  - {fileID: 2479605061283298976, guid: 7f2e65ff22aa5c74e98cd76993822d23, type: 3}
+  - {fileID: 2479605061283298976, guid: 7f2e65ff22aa5c74e98cd76993822d23, type: 3}
+  - {fileID: 2479605061283298976, guid: 7f2e65ff22aa5c74e98cd76993822d23, type: 3}
   - {fileID: 2479605061283298976, guid: 7f2e65ff22aa5c74e98cd76993822d23, type: 3}
   path1Prefab: {fileID: 432372958415269418, guid: 51fa605a5a707264fa5be2751b18f004, type: 3}
   path2Prefab: {fileID: 0}

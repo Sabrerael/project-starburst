@@ -27,7 +27,7 @@ public class EnemySpawner : MonoBehaviour {
                 GameObject enemy = Instantiate(
                     currentWave.GetEnemyPrefab(j),
                     currentWave.GetStartingWaypoint(pathNumber).position,
-                    currentWave.GetEnemyPrefab(j).transform.rotation,
+                    currentWave.GetStartingWaypoint(pathNumber).rotation,
                     transform);
                 enemy.GetComponent<Pathfinder>().SetPathToFollow(pathNumber);
                 yield return new WaitForSeconds(currentWave.GetRandomSpawnTime());
@@ -50,7 +50,7 @@ public class EnemySpawner : MonoBehaviour {
             GameObject enemy = Instantiate(
                 currentWave.GetEnemyPrefab(j),
                 currentWave.GetStartingWaypoint(pathNumber).position,
-                currentWave.GetEnemyPrefab(j).transform.rotation,
+                currentWave.GetStartingWaypoint(pathNumber).rotation,
                 transform);
             enemy.GetComponent<Pathfinder>().SetPathToFollow(pathNumber);
             yield return new WaitForSeconds(currentWave.GetRandomSpawnTime());

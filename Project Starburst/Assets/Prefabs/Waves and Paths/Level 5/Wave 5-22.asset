@@ -14,14 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefabs:
   - {fileID: 6061667883139104746, guid: 52fca2083fcd87e4bbdb42d235e63da2, type: 3}
-  - {fileID: 2479605061283298976, guid: 7f2e65ff22aa5c74e98cd76993822d23, type: 3}
+  - {fileID: 7418544848269127510, guid: 6f1efda2004b3674fb2fa21f6f3feec2, type: 3}
   - {fileID: 6061667883139104746, guid: 52fca2083fcd87e4bbdb42d235e63da2, type: 3}
-  - {fileID: 2479605061283298976, guid: 7f2e65ff22aa5c74e98cd76993822d23, type: 3}
+  - {fileID: 7418544848269127510, guid: 6f1efda2004b3674fb2fa21f6f3feec2, type: 3}
   - {fileID: 6061667883139104746, guid: 52fca2083fcd87e4bbdb42d235e63da2, type: 3}
-  - {fileID: 2479605061283298976, guid: 7f2e65ff22aa5c74e98cd76993822d23, type: 3}
+  - {fileID: 7418544848269127510, guid: 6f1efda2004b3674fb2fa21f6f3feec2, type: 3}
+  - {fileID: 6061667883139104746, guid: 52fca2083fcd87e4bbdb42d235e63da2, type: 3}
   path1Prefab: {fileID: 7783048058059479356, guid: 7f1af994fec1ccf45ad3f44d4a534202, type: 3}
   path2Prefab: {fileID: 0}
-  pathToSpawnEnemyOn: 000000000000000000000000000000000000000000000000
+  pathToSpawnEnemyOn: 00000000000000000000000000000000000000000000000000000000
   moveSpeed: 1.5
   timeBetweenEnemySpawns: 1.5
   spawnTimeVariance: 0

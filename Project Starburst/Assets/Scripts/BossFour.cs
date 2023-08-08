@@ -15,11 +15,13 @@ public class BossFour : Boss {
     [SerializeField] Transform trackingSpawn1;
     [SerializeField] Transform trackingSpawn2;
     [SerializeField] GameObject trackingParticles;
-    [SerializeField] GameObject uncatchableBullet;
     [SerializeField] GameObject lazerPrefab;
-    [SerializeField] float uncatchableBulletFireInterval = 2;
-    [SerializeField] int uncatchableBulletsToFire = 5;
+    [SerializeField] Transform lazerSpawn1;
+    [SerializeField] Transform lazerSpawn2;
+    [SerializeField] Transform lazerSpawn3;
     [SerializeField] Material bossMaterial;
+
+    private int laserType = 1;
 
     // Coroutines
     protected override IEnumerator BossCycle() {
@@ -27,7 +29,6 @@ public class BossFour : Boss {
             bossMaterial.SetColor("_ReplacedColor", SettingsManager.GetProxyMineColor());
             deathParticles = proxyMineParticles;
             health.SetHitParticleEffects(proxyMineParticles);
-
             yield return new WaitForSeconds(timeBetweenPhases);
             for (int i = 0; i < proxyMinesToFire; i++) {
                 Instantiate(proxyMinePrefab, proxyMineSpawn1.position, Quaternion.identity);
@@ -35,6 +36,9 @@ public class BossFour : Boss {
                 yield return new WaitForSeconds(proxyMineFireInterval);
             }
 
+            bossMaterial.SetColor("_ReplacedColor", SettingsManager.GetTrackingColor());
+            deathParticles = trackingParticles;
+            health.SetHitParticleEffects(trackingParticles);
             yield return new WaitForSeconds(timeBetweenPhases);
             for (int i = 0; i < trackingBulletsToFire; i++) {
                 Instantiate(trackingPrefab, trackingSpawn1.position, Quaternion.identity);
@@ -43,11 +47,31 @@ public class BossFour : Boss {
             }
 
             yield return new WaitForSeconds(timeBetweenPhases);
-            for (int i = 0; i < uncatchableBulletsToFire; i++) {
-                Instantiate(uncatchableBullet, transform.position, Quaternion.identity);
-                Instantiate(uncatchableBullet, transform.position, Quaternion.identity);
-                yield return new WaitForSeconds(uncatchableBulletFireInterval);
+            SpawnLasers(laserType);
+
+            if (laserType == 2) {
+                yield return new WaitForSeconds(timeBetweenPhases);
+                for (int i = 0; i < 7; i++) {
+                    Instantiate(trackingPrefab, trackingSpawn1.position, Quaternion.identity);
+                    yield return new WaitForSeconds(trackingFireInterval / 4);
+                    Instantiate(trackingPrefab, trackingSpawn2.position, Quaternion.identity);
+                    yield return new WaitForSeconds(trackingFireInterval / 4);
+                }
+            } else if (laserType == 1) {
+                bossMaterial.SetColor("_ReplacedColor", SettingsManager.GetProxyMineColor());
+                deathParticles = proxyMineParticles;
+                health.SetHitParticleEffects(proxyMineParticles);
+                yield return new WaitForSeconds(timeBetweenPhases);
+
+                for (int i = 0; i < 8; i++) {
+                    Instantiate(proxyMinePrefab,
+                                transform.position + new Vector3(Random.Range(-1.5f, 1.5f), 0, 0),
+                                Quaternion.identity);
+                    yield return new WaitForSeconds(proxyMineFireInterval / 2);
+                }
             }
+
+            yield return new WaitForSeconds(timeBetweenPhases);
         }
     }
 
@@ -74,5 +98,16 @@ public class BossFour : Boss {
         UnlockAchievement("BEAT_LEVEL_4");
         Destroy(gameObject);
         FindObjectOfType<LevelLoader>().LoadLevelFive();
+    }
+
+    private void SpawnLasers(int spawnType) {
+        if (spawnType == 1) {
+            Instantiate(lazerPrefab, lazerSpawn1.position, Quaternion.identity);
+            laserType = 2;
+        } else if (spawnType == 2) {
+            Instantiate(lazerPrefab, lazerSpawn2.position, Quaternion.identity);
+            Instantiate(lazerPrefab, lazerSpawn3.position, Quaternion.identity);
+            laserType = 1;
+        }
     }
 }

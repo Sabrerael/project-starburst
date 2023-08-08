@@ -98,6 +98,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   finalLength: 20
   extensionTime: 0.5
+  damagePerTick: 20
+  timeBetweenTicks: 1
+  lifetime: 10
 --- !u!61 &9048194124309498169
 BoxCollider2D:
   m_ObjectHideFlags: 0

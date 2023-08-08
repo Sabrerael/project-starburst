@@ -94,7 +94,8 @@ GameObject:
   - component: {fileID: 3374613443339364998}
   - component: {fileID: 4561487930382822434}
   - component: {fileID: 6415450032611602215}
-  - component: {fileID: 6645674880546934236}
+  - component: {fileID: 6592107436869842635}
+  - component: {fileID: -6190953667242061590}
   - component: {fileID: 4642769911869321231}
   m_Layer: 6
   m_Name: Enemy Boomerang Bullet
@@ -132,7 +133,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.2, y: 0.4}
+  m_Size: {x: 0.2, y: 0.25}
   m_Direction: 0
 --- !u!50 &6415450032611602215
 Rigidbody2D:
@@ -155,7 +156,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &6645674880546934236
+--- !u!114 &6592107436869842635
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -164,18 +165,39 @@ MonoBehaviour:
   m_GameObject: {fileID: 6381543657092874225}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f99efb4062622242a920797cbabed35, type: 3}
+  m_Script: {fileID: 11500000, guid: 7399f0aa5c352eb4c86e285f41910552, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayerProjectile: 0
   magnetEffects: {fileID: 0}
-  movementSpeed: -10
-  damage: 50
-  defaultMaterial: {fileID: 2100000, guid: 51adb4ec7af064340b933f1cb85e7207, type: 2}
-  particlePrefab: {fileID: 8760689742216663979, guid: 8b699263267bced4fa928c52f1c0854a, type: 3}
+  movementSpeed: -3.5
+  damage: 40
+  defaultMaterial: {fileID: 2100000, guid: 9d9bfdfbe2fd14a4091095e38c999da6, type: 2}
+  particlePrefab: {fileID: 8760689742216663979, guid: 0790fab0554120744ab0a2c0773a8e02, type: 3}
   spriteRenderer: {fileID: 9165954045405707766}
   trailRenderer: {fileID: 2123086510361279428}
-  bulletType: 1
+  bulletType: 7
+  timeToGoForward: 1.65
+  timeToReverse: 0.5
+--- !u!95 &-6190953667242061590
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6381543657092874225}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a50c19435b091cf4ab09650141ac5c9f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!82 &4642769911869321231
 AudioSource:
   m_ObjectHideFlags: 0

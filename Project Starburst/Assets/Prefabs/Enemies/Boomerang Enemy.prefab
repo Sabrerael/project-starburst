@@ -178,7 +178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 495e6be2100a23343a08faf87b49270f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 5437220429731685477, guid: f307648afc17da145904e1e4fc702028, type: 3}
+  projectile: {fileID: 6381543657092874225, guid: 3b07b2e120314504d8f1af90e966688f, type: 3}
   projectileSpawnPointModification: {x: 0, y: 0, z: 0}
   spriteRenderer: {fileID: 6013095041299139968}
   scoreValue: 100

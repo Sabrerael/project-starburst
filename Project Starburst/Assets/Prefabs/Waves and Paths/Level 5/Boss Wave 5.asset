@@ -12,14 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fecdd6ef50c9694aaa6df0b37d7732e, type: 3}
   m_Name: Boss Wave 5
   m_EditorClassIdentifier: 
-  enemyPrefabs: []
+  enemyPrefabs:
+  - {fileID: 4196740494968524202, guid: c321518f58d60a544ba741a8c9924195, type: 3}
   path1Prefab: {fileID: 8490203243014417501, guid: 3517c409ad69bc94881b391e6b10696d, type: 3}
   path2Prefab: {fileID: 0}
   pathToSpawnEnemyOn: 00000000
-  moveSpeed: 5
-  timeBetweenEnemySpawns: 1
+  moveSpeed: 1.35
+  timeBetweenEnemySpawns: 0
   spawnTimeVariance: 0
-  minimumSpawnTime: 2
-  timeAfterWave: 1
-  continuePathfinding: 0
+  minimumSpawnTime: 0
+  timeAfterWave: 0
+  continuePathfinding: 1
   waypointIndexToReturnTo: 1

@@ -12,14 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fecdd6ef50c9694aaa6df0b37d7732e, type: 3}
   m_Name: Shielded Wave 7-6
   m_EditorClassIdentifier: 
-  enemyPrefabs: []
-  path1Prefab: {fileID: 0}
-  path2Prefab: {fileID: 0}
-  pathToSpawnEnemyOn: 
-  moveSpeed: 5
-  timeBetweenEnemySpawns: 1
+  enemyPrefabs:
+  - {fileID: 774539625816783299, guid: c871b4a699bb87b46a66cd1f7c591944, type: 3}
+  - {fileID: 6159974544976304228, guid: bf3b0f926e7b07c458aff45b15c0b01f, type: 3}
+  path1Prefab: {fileID: 8733307227565514021, guid: 44a2298acd1b76c4bb9b16da3cef0db1, type: 3}
+  path2Prefab: {fileID: 8733307227565514021, guid: 90de1ff089421bd4b97ea639ffbddbac, type: 3}
+  pathToSpawnEnemyOn: 0000000001000000
+  moveSpeed: 1.5
+  timeBetweenEnemySpawns: 0
   spawnTimeVariance: 0
-  minimumSpawnTime: 2
-  timeAfterWave: 1
-  continuePathfinding: 0
+  minimumSpawnTime: 0
+  timeAfterWave: 4.5
+  continuePathfinding: 1
   waypointIndexToReturnTo: 1

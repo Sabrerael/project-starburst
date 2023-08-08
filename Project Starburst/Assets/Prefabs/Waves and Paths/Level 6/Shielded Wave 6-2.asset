@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fecdd6ef50c9694aaa6df0b37d7732e, type: 3}
   m_Name: Shielded Wave 6-2
   m_EditorClassIdentifier: 
-  enemyPrefabs: []
+  enemyPrefabs:
+  - {fileID: 6909390417157281940, guid: b24dfbd149efb624d98344e77da1aa0c, type: 3}
+  - {fileID: 6909390417157281940, guid: b24dfbd149efb624d98344e77da1aa0c, type: 3}
   path1Prefab: {fileID: 2043239055897022575, guid: 22eac92ffe1df994db4a2d9f6586a819, type: 3}
   path2Prefab: {fileID: 2043239055897022575, guid: 4d52bf27d458d6546a522fa2322a2477, type: 3}
   pathToSpawnEnemyOn: 0000000001000000

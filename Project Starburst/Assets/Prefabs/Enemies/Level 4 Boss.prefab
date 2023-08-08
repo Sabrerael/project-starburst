@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1041162903310885917
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7397804694905078475}
+  m_Layer: 6
+  m_Name: Laser Spawn 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7397804694905078475
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1041162903310885917}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3261381899478550689}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1569399764523643340
 GameObject:
   m_ObjectHideFlags: 0
@@ -137,6 +167,23 @@ MonoBehaviour:
   timeBetweenPhases: 1.5
   spriteRenderer: {fileID: 357438716301191365}
   explosionSFX: {fileID: 8300000, guid: 834af7613e983234692de57764dbc706, type: 3}
+  proxyMinePrefab: {fileID: 405191540006383876, guid: 7e22aeaeb53206a49bff331067a230b0, type: 3}
+  proxyMineFireInterval: 2
+  proxyMinesToFire: 5
+  proxyMineSpawn1: {fileID: 7981590853573364776}
+  proxyMineSpawn2: {fileID: 3803369579898764364}
+  proxyMineParticles: {fileID: 8760689742216663979, guid: f76ad1395e75df14f88f9dd89589d9af, type: 3}
+  trackingPrefab: {fileID: 2949702337898550988, guid: 90a72490b57ba4c4cbb6488a522400d5, type: 3}
+  trackingFireInterval: 2
+  trackingBulletsToFire: 5
+  trackingSpawn1: {fileID: 8557997496998071936}
+  trackingSpawn2: {fileID: 7442389107564590688}
+  trackingParticles: {fileID: 8760689742216663979, guid: 1f4ee0bc919fc01438bbd705ef7e478d, type: 3}
+  lazerPrefab: {fileID: 6639812245250030257, guid: 5d4d0d60f3bc40d4b83fe1e1ac9e8b79, type: 3}
+  lazerSpawn1: {fileID: 7397804694905078475}
+  lazerSpawn2: {fileID: 4098214038280561765}
+  lazerSpawn3: {fileID: 5483587317300520771}
+  bossMaterial: {fileID: 2100000, guid: c2011d9d57eeeef4b963e63288fb1c44, type: 2}
 --- !u!82 &4332643671785747749
 AudioSource:
   m_ObjectHideFlags: 0
@@ -243,7 +290,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3803369579898764364}
   m_Layer: 6
-  m_Name: Missile Spawn 2
+  m_Name: Proxy Mine Spawn 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -257,11 +304,41 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1991513005970193581}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.6, y: -0.3, z: 0}
+  m_LocalPosition: {x: 0.57, y: -0.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3261381899478550689}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2339417627059083154
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5483587317300520771}
+  m_Layer: 6
+  m_Name: Laser Spawn 3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5483587317300520771
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2339417627059083154}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.72, y: -0.4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3261381899478550689}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2423521273558264423
 GameObject:
@@ -287,7 +364,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2423521273558264423}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.85, y: -0.4, z: 0}
+  m_LocalPosition: {x: -0.88, y: -0.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3261381899478550689}
@@ -324,6 +401,9 @@ Transform:
   - {fileID: 3803369579898764364}
   - {fileID: 8557997496998071936}
   - {fileID: 7442389107564590688}
+  - {fileID: 7397804694905078475}
+  - {fileID: 4098214038280561765}
+  - {fileID: 5483587317300520771}
   m_Father: {fileID: 1600682849192430146}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -337,7 +417,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7981590853573364776}
   m_Layer: 6
-  m_Name: Missile Spawn 1
+  m_Name: Proxy Mine Spawn 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -351,7 +431,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5013917266692921829}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.6, y: -0.3, z: 0}
+  m_LocalPosition: {x: -0.57, y: -0.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3261381899478550689}
@@ -381,7 +461,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6646846909703153103}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.85, y: -0.4, z: 0}
+  m_LocalPosition: {x: 0.88, y: -0.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3261381899478550689}
@@ -469,3 +549,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &9129236917824557595
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4098214038280561765}
+  m_Layer: 6
+  m_Name: Laser Spawn 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4098214038280561765
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9129236917824557595}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.72, y: -0.4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3261381899478550689}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

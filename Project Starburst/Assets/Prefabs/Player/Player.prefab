@@ -5007,7 +5007,7 @@ MonoBehaviour:
   spreadshotPrefab: {fileID: 2046136655675650724, guid: 42a5bf8903e75bb4f93ae707b8cdae40, type: 3}
   trackingPrefab: {fileID: 5047592020434839335, guid: b7fbecb8137ff60449a50f6e1a98b360, type: 3}
   minePrefab: {fileID: 5034845416006617391, guid: d761261fc5d78b64a87536f4788aa1cc, type: 3}
-  boomerangPrefab: {fileID: 0}
+  boomerangPrefab: {fileID: 6461373212152053257, guid: 0ecb6bc059c53004ebd7dc54693e2654, type: 3}
   magnetDrain: 0.3
   magnetRegen: 0.6
   bulletLocations:
