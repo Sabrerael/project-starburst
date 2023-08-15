@@ -57,6 +57,15 @@ public class SettingsManager : MonoBehaviour {
 
     // Getters
 
+    public static Color GetBasicColor() {
+        if (settingsSaver != null) {
+            return settingsSaver.GetBasicColor(color1);
+        } else {
+            settingsSaver = FindObjectOfType<SettingsSaver>();
+            return settingsSaver.GetBasicColor(color1);
+        }
+    }
+
     public static Color GetLevel2BossColor() {
         if (settingsSaver != null) {
             return settingsSaver.GetSpreadshotColor(color4);
@@ -75,6 +84,15 @@ public class SettingsManager : MonoBehaviour {
         }
     }
 
+    public static Color GetPiercingColor() {
+        if (settingsSaver != null) {
+            return settingsSaver.GetPiercingColor(color3);
+        } else {
+            settingsSaver = FindObjectOfType<SettingsSaver>();
+            return settingsSaver.GetPiercingColor(color3);
+        }
+    }
+
     public static Color GetTrackingColor() {
         if (settingsSaver != null) {
             return settingsSaver.GetTrackingColor(color5);
@@ -90,6 +108,15 @@ public class SettingsManager : MonoBehaviour {
         } else {
             settingsSaver = FindObjectOfType<SettingsSaver>();
             return settingsSaver.GetProxyMineColor(color6);
+        }
+    }
+
+    public static Color GetBoomerangColor() {
+        if (settingsSaver != null) {
+            return settingsSaver.GetBoomerangColor(color7);
+        } else {
+            settingsSaver = FindObjectOfType<SettingsSaver>();
+            return settingsSaver.GetBoomerangColor(color7);
         }
     }
 

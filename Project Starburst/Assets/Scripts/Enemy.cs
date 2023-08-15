@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour {
     [SerializeField] int scoreValue = 100;
     [SerializeField] float fireInterval = 2;
     [SerializeField] Material defaultMaterial;
+    [SerializeField] bool firing = true;
 
     private Health health;
 
@@ -23,10 +24,18 @@ public class Enemy : MonoBehaviour {
         FindObjectOfType<Player>().AddToTotalScore(scoreValue);
     }
 
+    public void ToggleFiring() {
+        firing = !firing;
+    }
+
     protected virtual IEnumerator FireProjectiles(float time) {
         while (true) {
-            Instantiate(projectile, transform.position + projectileSpawnPointModification, transform.rotation);
-            yield return new WaitForSeconds(time);
+            if (firing) {
+                Instantiate(projectile, transform.position + projectileSpawnPointModification, transform.rotation);
+                yield return new WaitForSeconds(time);
+            } else {
+                yield return new WaitForSeconds(time);
+            }
         }
     }
 }

@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour {
-    [SerializeField] List<WaveConfigSO> waveConfigs;
+    [SerializeField] protected List<WaveConfigSO> waveConfigs;
     [SerializeField] WaveConfigSO bossWaveConfig;
     
-    private WaveConfigSO currentWave;
-    private Player player;
+    protected WaveConfigSO currentWave;
+    protected Player player;
 
     private void Start() {
         //Time.timeScale = 5f;
@@ -16,7 +16,7 @@ public class EnemySpawner : MonoBehaviour {
         StartCoroutine(SpawnEnemyWaves());
     }
 
-    private IEnumerator SpawnEnemyWaves() {
+    protected virtual IEnumerator SpawnEnemyWaves() {
         // Just an initial wait
         yield return new WaitForSeconds(1);
         foreach (WaveConfigSO wave in waveConfigs) {

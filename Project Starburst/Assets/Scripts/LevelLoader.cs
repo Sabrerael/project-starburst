@@ -9,12 +9,18 @@ public class LevelLoader : MonoBehaviour {
     [SerializeField] GameObject eolPlayerClone;
 
 	private CallResult<LeaderboardFindResult_t> steamLeaderboard;
+    private CallResult<LeaderboardFindResult_t> wavesLeaderboard;
+    private CallResult<LeaderboardFindResult_t> endlessLeaderboard;
     private CallResult<LeaderboardScoreUploaded_t> scoreUploaded;
     private SteamLeaderboard_t leaderboard;
+    private SteamLeaderboard_t w_Leaderboard;
+    private SteamLeaderboard_t e_Leaderboard;
 
 	private void OnEnable() {
 		if (SteamManager.Initialized) {
 			steamLeaderboard = CallResult<LeaderboardFindResult_t>.Create(OnSteamLeaderboard);
+            wavesLeaderboard = CallResult<LeaderboardFindResult_t>.Create(OnWavesLeaderboard);
+            endlessLeaderboard = CallResult<LeaderboardFindResult_t>.Create(OnEndlessLeaderboard);
             scoreUploaded = CallResult<LeaderboardScoreUploaded_t>.Create(OnLeaderboardScoreUploaded);
 		}
 	}
@@ -22,24 +28,54 @@ public class LevelLoader : MonoBehaviour {
     private void Start() {
         SteamAPICall_t handle = SteamUserStats.FindLeaderboard("High Score");
 		steamLeaderboard.Set(handle);
+        handle = SteamUserStats.FindLeaderboard("Endless Mode Waves Survived");
+        wavesLeaderboard.Set(handle);
+        handle = SteamUserStats.FindLeaderboard("Endless Mode High Score");
+        endlessLeaderboard.Set(handle);
 		Debug.Log("Called FindLeaderboard()");
     }
 
     private void DestroyPlayerObjects() {
         var player = GameObject.FindGameObjectWithTag("Player");
         if (player) {
-            var score = player.GetComponent<Player>().GetTotalScore();
-            var highScore = PlayerPrefs.GetInt("HIGH_SCORE", 0);
-            PlayerPrefs.SetInt("RECENT_SCORE", score);
-            PlayerPrefs.SetInt("HIGH_SCORE", Mathf.Max(score, highScore));
+            Player playerComp = player.GetComponent<Player>();
+            var wavesSurvived = playerComp.GetWavesSurvived();
+            
             if (SteamManager.Initialized) {
-                SteamAPICall_t handle = SteamUserStats.UploadLeaderboardScore(leaderboard,
-                                                                ELeaderboardUploadScoreMethod.k_ELeaderboardUploadScoreMethodKeepBest,
-                                                                score,
-                                                                null,
-                                                                0);
-                scoreUploaded.Set(handle);
-                Debug.Log("Called UploadLeaderboardScore");
+                if (wavesSurvived == 0) {
+                    var score = playerComp.GetTotalScore();
+                    var highScore = PlayerPrefs.GetInt("HIGH_SCORE", 0);
+                    PlayerPrefs.SetInt("RECENT_SCORE", score);
+                    PlayerPrefs.SetInt("HIGH_SCORE", Mathf.Max(score, highScore));
+                    SteamAPICall_t handle = SteamUserStats.UploadLeaderboardScore(leaderboard,
+                                                                    ELeaderboardUploadScoreMethod.k_ELeaderboardUploadScoreMethodKeepBest,
+                                                                    score,
+                                                                    null,
+                                                                    0);
+                    scoreUploaded.Set(handle);
+                    Debug.Log("Called UploadLeaderboardScore");
+                } else {
+                    PlayerPrefs.SetInt("WAVES_SURVIVED", wavesSurvived);
+                    var score = playerComp.GetTotalScore();
+                    var highScore = PlayerPrefs.GetInt("ENDLESS_HIGH_SCORE", 0);
+                    PlayerPrefs.SetInt("RECENT_SCORE", score);
+                    PlayerPrefs.SetInt("ENDLESS_HIGH_SCORE", Mathf.Max(score, highScore));
+                    SteamAPICall_t handle = SteamUserStats.UploadLeaderboardScore(w_Leaderboard,
+                                                                    ELeaderboardUploadScoreMethod.k_ELeaderboardUploadScoreMethodKeepBest,
+                                                                    wavesSurvived,
+                                                                    null,
+                                                                    0);
+                    scoreUploaded.Set(handle);
+                    Debug.Log("Called UploadLeaderboardScore");
+
+                    handle = SteamUserStats.UploadLeaderboardScore(e_Leaderboard,
+                                                                    ELeaderboardUploadScoreMethod.k_ELeaderboardUploadScoreMethodKeepBest,
+                                                                    score,
+                                                                    null,
+                                                                    0);
+                    scoreUploaded.Set(handle);
+                    Debug.Log("Called UploadLeaderboardScore");
+                }
             }
             GameObject.Destroy(GameObject.FindObjectOfType<PauseMenu>(true).gameObject);
             GameObject.Destroy(GameObject.Find("HUD"));
@@ -102,6 +138,11 @@ public class LevelLoader : MonoBehaviour {
         StartCoroutine(LoadLevel(11));
     }
 
+    public void LoadGameOverEndlessMode() {
+        DestroyPlayerObjects();
+        StartCoroutine(LoadLevel(13));
+    }
+
     public void QuitGame() {
         SteamAPI.Shutdown();
         Application.Quit();
@@ -114,6 +155,26 @@ public class LevelLoader : MonoBehaviour {
 		else {
 			Debug.Log("Steam Leaderboard name: " + pCallback.m_hSteamLeaderboard);
             leaderboard = pCallback.m_hSteamLeaderboard;
+		}
+	}
+
+    private void OnWavesLeaderboard(LeaderboardFindResult_t pCallback, bool bIOFailure) {
+		if (pCallback.m_bLeaderboardFound != 1 || bIOFailure) {
+			Debug.Log("There was an error retrieving the Steam Leaderboard.");
+		}
+		else {
+			Debug.Log("Steam Leaderboard name: " + pCallback.m_hSteamLeaderboard);
+            w_Leaderboard = pCallback.m_hSteamLeaderboard;
+		}
+	}
+
+    private void OnEndlessLeaderboard(LeaderboardFindResult_t pCallback, bool bIOFailure) {
+		if (pCallback.m_bLeaderboardFound != 1 || bIOFailure) {
+			Debug.Log("There was an error retrieving the Steam Leaderboard.");
+		}
+		else {
+			Debug.Log("Steam Leaderboard name: " + pCallback.m_hSteamLeaderboard);
+            e_Leaderboard = pCallback.m_hSteamLeaderboard;
 		}
 	}
 

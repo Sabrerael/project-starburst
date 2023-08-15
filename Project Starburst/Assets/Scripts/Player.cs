@@ -5,6 +5,7 @@ public class Player : MonoBehaviour {
 
     private int totalScore = 0;
     private int comboCounter = 0;
+    private int wavesSurvived = 0;
 
     // Unity Functions
     private void Awake() {
@@ -20,11 +21,16 @@ public class Player : MonoBehaviour {
     }
 
     public int GetTotalScore() { return totalScore; }
+    public int GetWavesSurvived() { return wavesSurvived; }
 
     public void AddToTotalScore(int value) { 
         value += (comboCounter * 10);
         comboCounter++; 
         totalScore += value; 
+    }
+
+    public void IncrementWavesSurvived() { 
+        wavesSurvived++;
     }
 
     public void ResetComboCounter() { comboCounter = 0; }

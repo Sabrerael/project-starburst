@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: Sabre Rael
-  productName: 'Magnetron Rebellion: Fully Loaded Demo'
+  productName: 'Magnetron Rebellion: Fully Loaded'
   defaultCursor: {fileID: 2800000, guid: 223255ee325aa644bbc0cb69bd8fdfb8, type: 3}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -127,7 +127,7 @@ PlayerSettings:
     16:10: 0
     16:9: 1
     Others: 0
-  bundleVersion: 1.1
+  bundleVersion: 1
   preloadedAssets:
   - {fileID: 11400000, guid: 82a590688dbda5d4aac4156ac1e3d330, type: 2}
   metroInputSource: 0
@@ -147,7 +147,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Standalone: com.SabreRael.MagnetronRebellionFullyLoadedDemo
+    Standalone: com.SabreRael.MagnetronRebellionFullyLoaded
   buildNumber:
     Standalone: 0
     iPhone: 0

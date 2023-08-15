@@ -16,7 +16,7 @@ public class ProxyMineExplosion : MonoBehaviour {
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        if (other.gameObject.tag == "Enemy" || other.gameObject.tag == "Player") {
+        if (other.gameObject.tag == "Enemy" || other.gameObject.tag == "Player" || other.gameObject.tag == "Boss") {
             other.gameObject.GetComponent<Health>().ModifyHealthPoints(-damage, bulletType);
         }
     }

@@ -18,6 +18,7 @@ public class Health : MonoBehaviour {
     [SerializeField] ParticleSystem playerParticleSystem;
     [SerializeField] GameObject sparkParticles;
     [SerializeField] GameObject smokeParticles;
+    [SerializeField] bool isEndless;
 
     private Animator animator;
     private AudioSource audioSource;
@@ -147,6 +148,10 @@ public class Health : MonoBehaviour {
         playerParticleSystem.Stop();
         yield return new WaitForSeconds(1);
         Destroy(gameObject);
-        FindObjectOfType<LevelLoader>().LoadGameOver();
+        if (!isEndless) {
+            FindObjectOfType<LevelLoader>().LoadGameOver();
+        } else {
+            FindObjectOfType<LevelLoader>().LoadGameOverEndlessMode();
+        }
     }
 }

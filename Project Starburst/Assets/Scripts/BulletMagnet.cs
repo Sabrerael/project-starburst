@@ -17,6 +17,8 @@ public class BulletMagnet : MonoBehaviour {
     [SerializeField] float magnetDrain = 2;
     [SerializeField] float magnetRegen = 4;
     [SerializeField] Transform[] bulletLocations;
+    [SerializeField] SpriteRenderer[] ammoIcons;
+    [SerializeField] Sprite[] ammoIconSprites;
     [SerializeField] GameObject magnetBody;
     [SerializeField] AudioClip magnetActivateSound;
     [SerializeField] AudioClip magnetGrabSound;
@@ -147,6 +149,7 @@ public class BulletMagnet : MonoBehaviour {
                 bulletArray[i] = gameObject;
                 gameObject.transform.parent = bulletParent;
                 gameObject.GetComponent<MagnetMovement>().SetMovementLocation(bulletLocations[i].localPosition);
+                ammoIcons[i].sprite = ammoIconSprites[1];
                 return;
             }
         }
@@ -154,9 +157,13 @@ public class BulletMagnet : MonoBehaviour {
 
     private void ResetBulletArray() {
         for (int i = 1; i < bulletArray.Length; i++) {
-            if (i != 0 && bulletArray[i] == null) {
+            if (bulletArray[i] == null) {
+                ammoIcons[i-1].sprite = ammoIconSprites[0];
                 return;
+            } else if (i == 6) {
+                ammoIcons[i].sprite = ammoIconSprites[0];
             }
+            
             int j = i-1;
             do {
                 bulletArray[i-1] = bulletArray[i];

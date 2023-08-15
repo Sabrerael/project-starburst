@@ -48,4 +48,10 @@ public class Pathfinder : MonoBehaviour {
     }
 
     public void SetPathToFollow(int pathIndex) { pathToFollow = pathIndex; }
+    public void SetWaypoints(Transform waypointParent) { 
+        waypoints = new List<Transform>();
+        foreach (Transform child in waypointParent) {
+            waypoints.Add(child);
+        }
+    }
 }

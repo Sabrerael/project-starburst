@@ -137,8 +137,16 @@ public class SettingsSaver : MonoBehaviour {
         return colors[PlayerPrefs.GetInt("color4")];
     }
 
+    public Color GetBasicColor(int color1Index) {
+        return colors[color1Index];
+    }
+
     public Color GetMissileColor(int color2Index) {
         return colors[color2Index];
+    }
+
+    public Color GetPiercingColor(int color3Index) {
+        return colors[color3Index];
     }
 
     public Color GetSpreadshotColor(int color4Index) {
@@ -151,6 +159,10 @@ public class SettingsSaver : MonoBehaviour {
 
     public Color GetProxyMineColor(int color6Index) {
         return colors[color6Index];
+    }
+
+    public Color GetBoomerangColor(int color7Index) {
+        return colors[color7Index];
     }
 
     public void ResetToDefaultValues() {

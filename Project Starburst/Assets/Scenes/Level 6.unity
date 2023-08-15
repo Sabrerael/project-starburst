@@ -618,6 +618,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level 6 Boss
       objectReference: {fileID: 0}
+    - target: {fileID: 4708209860017482562, guid: a531940a07bbb7644a61c5bc6e7dccd3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4802965562705236172, guid: a531940a07bbb7644a61c5bc6e7dccd3, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -2038,6 +2042,10 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7514571309220767042, guid: b57d320a93d1bae4c8cc13ab85508611, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -8288761794400576313, guid: c75629ebbec9c084b90db31b9dba2d9e, type: 3}
     - target: {fileID: 7726112277989511049, guid: b57d320a93d1bae4c8cc13ab85508611, type: 3}
       propertyPath: m_IsActive
       value: 1

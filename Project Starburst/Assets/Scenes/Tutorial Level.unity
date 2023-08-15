@@ -174,30 +174,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f202cfba0884584698080077dce236e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveConfigs:
-  - {fileID: 11400000, guid: 1de7f293d909e9c4c90148a2f11adc2e, type: 2}
-  - {fileID: 11400000, guid: 769535c988df62340abbfe71cb636d53, type: 2}
-  - {fileID: 11400000, guid: 9499228c6e23c5145878e0b4f8cffb86, type: 2}
-  - {fileID: 11400000, guid: 21cbeeee2dd3c014dae650bbfbc6b6d3, type: 2}
-  - {fileID: 11400000, guid: 419d607b90d3158409b0b577a943becd, type: 2}
-  - {fileID: 11400000, guid: b803ce6a87b0e43458d5674038d2b1aa, type: 2}
-  - {fileID: 11400000, guid: 5fd6784c432ae7a4f8841de1592059e1, type: 2}
-  - {fileID: 11400000, guid: d569c50160162944e99aa799ba111d4a, type: 2}
-  - {fileID: 11400000, guid: d4dcd05d8e9512f46bfa6308d38d8a36, type: 2}
-  - {fileID: 11400000, guid: 88238ebe1c96cbb4ca23ea5f7b1f7565, type: 2}
-  - {fileID: 11400000, guid: d417d90cb6def3f44a509ff64ef85a95, type: 2}
-  - {fileID: 11400000, guid: 68e53aa2fc9d4bf4a82f79bcfb500399, type: 2}
-  - {fileID: 11400000, guid: 027037e8c0f670b489d5f1d487bee7d7, type: 2}
-  - {fileID: 11400000, guid: 70090c3851e4fe443b42e2c46e540b8e, type: 2}
-  - {fileID: 11400000, guid: 6e68191b517d5be4ba22da8e366b4b8f, type: 2}
-  - {fileID: 11400000, guid: 213db8d060d01244ea82e0fef9846a5d, type: 2}
-  - {fileID: 11400000, guid: aead99e96a7aa244484e452dd36479ed, type: 2}
-  - {fileID: 11400000, guid: af8bc8faf8ad23047bafd3a01464118d, type: 2}
-  - {fileID: 11400000, guid: 5dcaa75c42336b54a9ae36ffbd70e114, type: 2}
-  - {fileID: 11400000, guid: e013f612b04ada445b507f0160138e70, type: 2}
-  - {fileID: 11400000, guid: 97a6e5b7421519340b013c452b076cf7, type: 2}
-  - {fileID: 11400000, guid: 5a9f68c90136a0546b566a8af258d089, type: 2}
-  bossWaveConfig: {fileID: 11400000, guid: 8dd663148d784fa4f94203bf6d5953b6, type: 2}
+  waveConfigs: []
+  bossWaveConfig: {fileID: 11400000, guid: 551c06dd5802ee64ab691b08dcf52260, type: 2}
 --- !u!4 &275318602
 Transform:
   m_ObjectHideFlags: 0
