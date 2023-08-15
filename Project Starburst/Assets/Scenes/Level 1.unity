@@ -208,7 +208,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e013f612b04ada445b507f0160138e70, type: 2}
   - {fileID: 11400000, guid: 97a6e5b7421519340b013c452b076cf7, type: 2}
   - {fileID: 11400000, guid: 5a9f68c90136a0546b566a8af258d089, type: 2}
-  - {fileID: 0}
   bossWaveConfig: {fileID: 11400000, guid: 8dd663148d784fa4f94203bf6d5953b6, type: 2}
 --- !u!4 &275318602
 Transform:
@@ -2075,6 +2074,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1121599244797466937, guid: b57d320a93d1bae4c8cc13ab85508611, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1682577739490508675, guid: b57d320a93d1bae4c8cc13ab85508611, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1835978542760565656, guid: b57d320a93d1bae4c8cc13ab85508611, type: 3}
       propertyPath: m_Enabled
       value: 0
