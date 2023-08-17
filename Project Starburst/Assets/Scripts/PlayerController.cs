@@ -47,5 +47,20 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
+    public void ForcePaused() {
+        if (pauseMenu == null) {
+            pauseMenu = GameObject.FindObjectOfType<PauseMenu>(true);
+            Time.timeScale = 0;
+            pauseMenu.gameObject.SetActive(!pauseMenu.gameObject.activeInHierarchy);
+            pauseMenu.SetButtonActive();
+            SetIsPaused(true);
+        } else if (!pauseMenu.gameObject.activeInHierarchy) {
+            Time.timeScale = 0;
+            pauseMenu.gameObject.SetActive(!pauseMenu.gameObject.activeInHierarchy);
+            pauseMenu.SetButtonActive();
+            SetIsPaused(true);
+        }
+    }
+
     public void SetIsPaused(bool isPaused) { this.isPaused = isPaused; }
 }

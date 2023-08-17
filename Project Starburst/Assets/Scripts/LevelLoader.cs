@@ -16,12 +16,20 @@ public class LevelLoader : MonoBehaviour {
     private SteamLeaderboard_t w_Leaderboard;
     private SteamLeaderboard_t e_Leaderboard;
 
+    protected bool currentStatsGood = false;
+    private CallResult<UserStatsReceived_t> userStatsRecieved;
+    private CallResult<UserStatsStored_t> userStatsStored;
+    private CallResult<UserAchievementStored_t> userAchievementStored;
+
 	private void OnEnable() {
 		if (SteamManager.Initialized) {
 			steamLeaderboard = CallResult<LeaderboardFindResult_t>.Create(OnSteamLeaderboard);
             wavesLeaderboard = CallResult<LeaderboardFindResult_t>.Create(OnWavesLeaderboard);
             endlessLeaderboard = CallResult<LeaderboardFindResult_t>.Create(OnEndlessLeaderboard);
             scoreUploaded = CallResult<LeaderboardScoreUploaded_t>.Create(OnLeaderboardScoreUploaded);
+            userStatsRecieved = CallResult<UserStatsReceived_t>.Create(OnUserStatsReceived);
+            userStatsStored = CallResult<UserStatsStored_t>.Create(OnUserStatsStored);
+            userAchievementStored = CallResult<UserAchievementStored_t>.Create(OnUserAchievementStored);
 		}
 	}
 
@@ -32,7 +40,7 @@ public class LevelLoader : MonoBehaviour {
         wavesLeaderboard.Set(handle);
         handle = SteamUserStats.FindLeaderboard("Endless Mode High Score");
         endlessLeaderboard.Set(handle);
-		Debug.Log("Called FindLeaderboard()");
+        currentStatsGood = SteamUserStats.RequestCurrentStats();
     }
 
     private void DestroyPlayerObjects() {
@@ -75,6 +83,15 @@ public class LevelLoader : MonoBehaviour {
                                                                     0);
                     scoreUploaded.Set(handle);
                     Debug.Log("Called UploadLeaderboardScore");
+
+                    if (currentStatsGood) {
+                        Debug.Log("Attempting to unlock PLAY_ENDLESS_MODE");
+                        var unlocked = SteamUserStats.SetAchievement("PLAY_ENDLESS_MODE");
+                        var stored = SteamUserStats.StoreStats();
+                        if (unlocked && stored) {
+                            Debug.Log("PLAY_ENDLESS_MODE should be unlocked");
+                        }
+                    }
                 }
             }
             GameObject.Destroy(GameObject.FindObjectOfType<PauseMenu>(true).gameObject);
@@ -126,7 +143,7 @@ public class LevelLoader : MonoBehaviour {
     }
 
     public void LoadEndlessMode() {
-        StartCoroutine(WinCelebration(12));
+        StartCoroutine(LoadLevel(12));
     }
 
     public void LoadWinScreen() {
@@ -185,7 +202,34 @@ public class LevelLoader : MonoBehaviour {
 		else {
 			Debug.Log("Score of " + pCallback.m_nScore + " uploaded to " + pCallback.m_hSteamLeaderboard + " leaderboard");
 		}
-	} 
+	}
+
+        private void OnUserStatsReceived(UserStatsReceived_t pCallback, bool bIOFailure) {
+		if (pCallback.m_eResult != EResult.k_EResultOK || bIOFailure) {
+			Debug.Log("There was an error retrieving User Stats, error# " + pCallback.m_eResult);
+		}
+		else {
+			Debug.Log("User stats retrieved.");
+		}
+	}
+
+    private void OnUserStatsStored(UserStatsStored_t pCallback, bool bIOFailure) {
+		if (pCallback.m_eResult != EResult.k_EResultOK || bIOFailure) {
+			Debug.Log("There was an error storing User Stats, error# " + pCallback.m_eResult);
+		}
+		else {
+			Debug.Log("User stats stored.");
+		}
+	}
+
+    private void OnUserAchievementStored(UserAchievementStored_t pCallback, bool bIOFailure) {
+		if ((pCallback.m_nCurProgress != 0 && pCallback.m_nMaxProgress != 0) || bIOFailure) {
+			Debug.Log("There was an error unlocking the Achievement: " + pCallback.m_rgchAchievementName);
+		}
+		else {
+			Debug.Log("Achievement Unlocked.");
+		}
+	}
 
     private IEnumerator LoadLevel(int sceneIndex) {
         animator.SetTrigger("Start");
@@ -202,7 +246,6 @@ public class LevelLoader : MonoBehaviour {
         player.transform.GetChild(4).gameObject.SetActive(false);
         player.transform.GetChild(5).gameObject.SetActive(false);
         player.transform.GetChild(6).gameObject.SetActive(false);
-        // TODO Particles are still showing up
         player.transform.GetChild(3).gameObject.SetActive(false);
         GameObject playerClone = Instantiate(eolPlayerClone, new Vector3(0, -1, 0), Quaternion.identity);
         yield return new WaitForSeconds(1);
@@ -211,6 +254,6 @@ public class LevelLoader : MonoBehaviour {
         animator.SetTrigger("Start");
         yield return new WaitForSeconds(transitionTime);
         SceneManager.LoadScene(levelIndex);
-        if (levelIndex == 5) { DestroyPlayerObjects(); }
+        if (levelIndex == 10) { DestroyPlayerObjects(); }
     }
 }

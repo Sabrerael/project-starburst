@@ -60,7 +60,10 @@ public class ScrollRectAutoScroll : MonoBehaviour, IPointerEnterHandler, IPointe
             }
 
             if (currentGamepad != null) {
-                if (Gamepad.current.dpad.up.isPressed || Gamepad.current.dpad.down.isPressed) {
+                if (Gamepad.current.dpad.up.isPressed ||
+                    Gamepad.current.dpad.down.isPressed ||
+                    Gamepad.current.leftStick.up.isPressed || 
+                    Gamepad.current.leftStick.down.isPressed) {
                     ScrollToSelected(false);
                 }
             }

@@ -1,5 +1,9 @@
+using Steamworks;
 using System;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Users;
 
 public class SettingsManager : MonoBehaviour {
     // Variables
@@ -33,6 +37,8 @@ public class SettingsManager : MonoBehaviour {
     public static event Action onSettingsChange;
     public static SettingsManager instance = null;
 
+    protected Callback<GameOverlayActivated_t> m_GameOverlayActivated;
+
     // Unity functions
 
     private void Awake() {
@@ -53,7 +59,14 @@ public class SettingsManager : MonoBehaviour {
         if (settingsSaver != null) {
             level2BossColor = settingsSaver.GetSpreadshotColor();
         }
+        InputUser.onChange += onInputDeviceChange;
     }
+
+    private void OnEnable() {
+		if (SteamManager.Initialized) {
+			m_GameOverlayActivated = Callback<GameOverlayActivated_t>.Create(OnGameOverlayActivated);
+		}
+	}
 
     // Getters
 
@@ -219,4 +232,28 @@ public class SettingsManager : MonoBehaviour {
         musicVolume = PlayerPrefs.GetFloat(MUSIC_VOLUME, 0.325f);
         soundEffectsVolume = PlayerPrefs.GetFloat(SOUND_EFFECTS_VOLUME, 1f);
     }
+
+    void onInputDeviceChange(InputUser user, InputUserChange change, InputDevice device) {
+        if (change == InputUserChange.ControlSchemeChanged) {
+            updateButtonImage(user.controlScheme.Value.name);
+        } else if (change == InputUserChange.DeviceLost) {
+            FindObjectOfType<PlayerController>().ForcePaused();
+        }
+    }
+ 
+    void updateButtonImage(string schemeName) {
+       // assuming you have only 2 schemes: keyboard and gamepad
+        if (schemeName.Equals("Gamepad")) {
+            Cursor.visible = false;
+        }
+        else {
+            Cursor.visible = true;
+        }
+    }
+
+    private void OnGameOverlayActivated(GameOverlayActivated_t pCallback) {
+		if(pCallback.m_bActive != 0) {
+            FindObjectOfType<PlayerController>().ForcePaused();
+		}
+	}
 }

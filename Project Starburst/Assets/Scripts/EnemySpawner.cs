@@ -10,7 +10,6 @@ public class EnemySpawner : MonoBehaviour {
     protected Player player;
 
     private void Start() {
-        //Time.timeScale = 5f;
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         player.ResetPlayer();
         StartCoroutine(SpawnEnemyWaves());

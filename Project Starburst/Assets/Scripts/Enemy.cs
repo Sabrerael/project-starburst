@@ -29,6 +29,7 @@ public class Enemy : MonoBehaviour {
     }
 
     protected virtual IEnumerator FireProjectiles(float time) {
+        yield return new WaitForSeconds(0.5f);
         while (true) {
             if (firing) {
                 Instantiate(projectile, transform.position + projectileSpawnPointModification, transform.rotation);
