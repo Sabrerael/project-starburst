@@ -270,6 +270,7 @@ MonoBehaviour:
   playerParticleSystem: {fileID: 0}
   sparkParticles: {fileID: 0}
   smokeParticles: {fileID: 0}
+  isEndless: 0
 --- !u!114 &4413927988026938428
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -973,7 +974,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8410910467097950605, guid: 91fea427d041af44b89a6d87ffe6f70c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.08
+      value: -0.85
       objectReference: {fileID: 0}
     - target: {fileID: 8410910467097950605, guid: 91fea427d041af44b89a6d87ffe6f70c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1051,7 +1052,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8410910467097950605, guid: 91fea427d041af44b89a6d87ffe6f70c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.08
+      value: -0.85
       objectReference: {fileID: 0}
     - target: {fileID: 8410910467097950605, guid: 91fea427d041af44b89a6d87ffe6f70c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1387,7 +1388,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8410910467097950605, guid: 91fea427d041af44b89a6d87ffe6f70c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.3
+      value: 0.55
       objectReference: {fileID: 0}
     - target: {fileID: 8410910467097950605, guid: 91fea427d041af44b89a6d87ffe6f70c, type: 3}
       propertyPath: m_LocalPosition.z

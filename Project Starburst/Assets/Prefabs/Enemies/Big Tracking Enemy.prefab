@@ -100,8 +100,9 @@ MonoBehaviour:
   projectileSpawnPointModification: {x: 0, y: 0, z: 0}
   spriteRenderer: {fileID: 3790106713624612773}
   scoreValue: 300
-  fireInterval: 1.35
+  fireInterval: 2.5
   defaultMaterial: {fileID: 2100000, guid: 4d17ea214d364f74faaf3e1bff21e00d, type: 2}
+  firing: 1
 --- !u!114 &4980687897326131009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,7 +131,6 @@ MonoBehaviour:
   applyCameraShake: 0
   deathSoundEffectObject: {fileID: 3553197256188102150, guid: e1539ae132cebc94db5d3d695b5d9592, type: 3}
   hitParticleEffect: {fileID: 8760689742216663979, guid: 1f4ee0bc919fc01438bbd705ef7e478d, type: 3}
-  hitParticleEffectColorBlind: {fileID: 8760689742216663979, guid: ca0bb5faa09a2f44caceb0f24bb827d2, type: 3}
   weakness: 5
   shieldWeakness: 0
   shieldObject: {fileID: 0}
@@ -139,6 +139,7 @@ MonoBehaviour:
   playerParticleSystem: {fileID: 0}
   sparkParticles: {fileID: 0}
   smokeParticles: {fileID: 0}
+  isEndless: 0
 --- !u!82 &5107736924628687565
 AudioSource:
   m_ObjectHideFlags: 0

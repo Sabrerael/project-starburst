@@ -1,25 +1,28 @@
 fileFormatVersion: 2
-guid: 6b98776708edd1e439a566f41820c712
+guid: 0bd6315dc13ce7a4e8cf109a7a5e2b01
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3701328138461500906
-    second: BackgroundCometLevel5_0
+      213: 124526243400195748
+    second: BackgroundFleets_0
   - first:
-      213: -1496012014274405354
-    second: BackgroundCometLevel5_1
+      213: -6591136277359341884
+    second: BackgroundFleets_1
   - first:
-      213: -5793400380008686524
-    second: BackgroundCometLevel5_2
+      213: 4572401067891165928
+    second: BackgroundFleets_2
   - first:
-      213: 596102994739800521
-    second: BackgroundCometLevel5_3
+      213: 4164715898251046641
+    second: BackgroundFleets_3
   - first:
-      213: 6997206570792784408
-    second: BackgroundCometLevel5_4
+      213: 1887115825493613450
+    second: BackgroundFleets_4
   - first:
-      213: -4167630186244880311
-    second: BackgroundCometLevel5_5
+      213: -4922333276265360385
+    second: BackgroundFleets_5
+  - first:
+      213: -926114724236476341
+    second: BackgroundFleets_6
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -109,13 +112,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BackgroundCometLevel5_0
+      name: BackgroundFleets_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -123,41 +126,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 61a28d52bad32acc0800000000000000
-      internalID: -3701328138461500906
+      spriteID: 4ae151765f76ab100800000000000000
+      internalID: 124526243400195748
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BackgroundCometLevel5_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 61c157dcff81d3be0800000000000000
-      internalID: -1496012014274405354
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BackgroundCometLevel5_2
+      name: BackgroundFleets_1
       rect:
         serializedVersion: 2
         x: 64
         y: 0
-        width: 32
-        height: 32
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -165,41 +147,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 44c18f39c05b99fa0800000000000000
-      internalID: -5793400380008686524
+      spriteID: 4ce4ec12a749784a0800000000000000
+      internalID: -6591136277359341884
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BackgroundCometLevel5_3
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9c92303f388c54800800000000000000
-      internalID: 596102994739800521
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BackgroundCometLevel5_4
+      name: BackgroundFleets_2
       rect:
         serializedVersion: 2
         x: 128
         y: 0
-        width: 32
-        height: 32
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -207,20 +168,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8121228ad421b1160800000000000000
-      internalID: 6997206570792784408
+      spriteID: 8ea054eab8e647f30800000000000000
+      internalID: 4572401067891165928
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BackgroundCometLevel5_5
+      name: BackgroundFleets_3
       rect:
         serializedVersion: 2
-        x: 160
+        x: 192
         y: 0
-        width: 32
-        height: 32
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -228,8 +189,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 948cda93d6a9926c0800000000000000
-      internalID: -4167630186244880311
+      spriteID: 1feeca93b0b0cc930800000000000000
+      internalID: 4164715898251046641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BackgroundFleets_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8b909c48d1603a10800000000000000
+      internalID: 1887115825493613450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BackgroundFleets_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff35e1207fb50bbb0800000000000000
+      internalID: -4922333276265360385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BackgroundFleets_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4040a8a097c523f0800000000000000
+      internalID: -926114724236476341
       vertices: []
       indices: 
       edges: []

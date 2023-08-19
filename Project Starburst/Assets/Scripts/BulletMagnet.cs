@@ -181,6 +181,10 @@ public class BulletMagnet : MonoBehaviour {
     }
 
     private void SetTarget() {
+        if (enemySpawner == null) {
+            enemySpawner = GameObject.Find("Enemy Spawner");
+        }
+
         foreach (var enemy in enemySpawner.transform.GetComponentsInChildren<Transform>()) {
             if (enemy.name == "Enemy Spawner") {
                 continue;

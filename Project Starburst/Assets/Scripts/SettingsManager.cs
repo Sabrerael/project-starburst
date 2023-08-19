@@ -244,10 +244,12 @@ public class SettingsManager : MonoBehaviour {
     void updateButtonImage(string schemeName) {
        // assuming you have only 2 schemes: keyboard and gamepad
         if (schemeName.Equals("Gamepad")) {
-            Cursor.visible = false;
+            UnityEngine.Cursor.lockState = CursorLockMode.Locked;
+            UnityEngine.Cursor.visible = false;
         }
         else {
-            Cursor.visible = true;
+            UnityEngine.Cursor.lockState = CursorLockMode.None;
+            UnityEngine.Cursor.visible = true;
         }
     }
 

@@ -100,8 +100,9 @@ MonoBehaviour:
   projectileSpawnPointModification: {x: 0, y: 0, z: 0}
   spriteRenderer: {fileID: 3700573446167914409}
   scoreValue: 100
-  fireInterval: 2.75
+  fireInterval: 4
   defaultMaterial: {fileID: 2100000, guid: 4d17ea214d364f74faaf3e1bff21e00d, type: 2}
+  firing: 1
 --- !u!114 &4817953609579364173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,6 +139,7 @@ MonoBehaviour:
   playerParticleSystem: {fileID: 0}
   sparkParticles: {fileID: 0}
   smokeParticles: {fileID: 0}
+  isEndless: 0
 --- !u!82 &4692866961541722817
 AudioSource:
   m_ObjectHideFlags: 0
