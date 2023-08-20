@@ -255,6 +255,6 @@ public class LevelLoader : MonoBehaviour {
         animator.SetTrigger("Start");
         yield return new WaitForSeconds(transitionTime);
         SceneManager.LoadScene(levelIndex);
-        if (levelIndex == 10) { DestroyPlayerObjects(); }
+        if (levelIndex == 4) { DestroyPlayerObjects(); }
     }
 }

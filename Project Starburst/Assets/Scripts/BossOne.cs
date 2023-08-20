@@ -93,7 +93,7 @@ public class BossOne : Boss {
             audioSource.Play();
             yield return new WaitForSeconds(0.125f);
         }
-        UnlockAchievement("BEAT_LEVEL_1");
+        //UnlockAchievement("BEAT_LEVEL_1");
         Destroy(gameObject);
         FindObjectOfType<LevelLoader>().LoadLevelTwo();
     }

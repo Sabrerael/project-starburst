@@ -17,11 +17,11 @@ public class Boss : MonoBehaviour {
     private CallResult<UserAchievementStored_t> userAchievementStored;
 
 	private void OnEnable() {
-		if (SteamManager.Initialized) {
+		/*if (SteamManager.Initialized) {
 			userStatsRecieved = CallResult<UserStatsReceived_t>.Create(OnUserStatsReceived);
             userStatsStored = CallResult<UserStatsStored_t>.Create(OnUserStatsStored);
             userAchievementStored = CallResult<UserAchievementStored_t>.Create(OnUserAchievementStored);
-		}
+		}*/
 	}
 
     private void Start() {
