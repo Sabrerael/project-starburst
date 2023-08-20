@@ -172,11 +172,14 @@ MonoBehaviour:
   movementSpeed: -10
   damage: 50
   defaultMaterial: {fileID: 2100000, guid: 51adb4ec7af064340b933f1cb85e7207, type: 2}
-  colorblindMaterial: {fileID: 2100000, guid: 4900947c0ec148a46bb0b8ec472ea582, type: 2}
   particlePrefab: {fileID: 8760689742216663979, guid: 8b699263267bced4fa928c52f1c0854a, type: 3}
   spriteRenderer: {fileID: 7840535699206678114}
   trailRenderer: {fileID: 1048662409466372176}
   bulletType: 1
+  audioClips:
+  - {fileID: 8300000, guid: a66abfdfafb1c4c43842c2c3029abc21, type: 3}
+  - {fileID: 8300000, guid: faa41bece1ea7fa478afa2811927d206, type: 3}
+  - {fileID: 8300000, guid: 3cd1f56872497034a8145075ac900853, type: 3}
 --- !u!82 &6022792281836891035
 AudioSource:
   m_ObjectHideFlags: 0
@@ -188,7 +191,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 3cd1f56872497034a8145075ac900853, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

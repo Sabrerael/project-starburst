@@ -5863,6 +5863,7 @@ MonoBehaviour:
   sparkParticles: {fileID: 2893487680731788967}
   smokeParticles: {fileID: 8552899641836102058}
   isEndless: 0
+  failureJingleObject: {fileID: 1693460294999335279, guid: 35c8df05eacfcf24f89a4934fafd1772, type: 3}
 --- !u!82 &3520145899633785956
 AudioSource:
   m_ObjectHideFlags: 0

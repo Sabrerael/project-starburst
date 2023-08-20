@@ -243,10 +243,11 @@ public class LevelLoader : MonoBehaviour {
         player.GetComponent<BoxCollider2D>().enabled = false;
         player.GetComponent<PlayerController>().enabled = false;
         player.transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
+        player.transform.GetChild(3).gameObject.SetActive(false);
         player.transform.GetChild(4).gameObject.SetActive(false);
         player.transform.GetChild(5).gameObject.SetActive(false);
         player.transform.GetChild(6).gameObject.SetActive(false);
-        player.transform.GetChild(3).gameObject.SetActive(false);
+        player.transform.GetChild(7).gameObject.SetActive(false);
         GameObject playerClone = Instantiate(eolPlayerClone, new Vector3(0, -1, 0), Quaternion.identity);
         yield return new WaitForSeconds(1);
         playerClone.GetComponent<Animator>().SetTrigger("Fly");

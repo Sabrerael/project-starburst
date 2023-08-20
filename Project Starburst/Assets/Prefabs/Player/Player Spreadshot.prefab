@@ -92,11 +92,14 @@ MonoBehaviour:
   movementSpeed: 6.5
   damage: 150
   defaultMaterial: {fileID: 2100000, guid: 76ab8f5eb370ad44fb71ea74dd61c715, type: 2}
-  colorblindMaterial: {fileID: 2100000, guid: 4900947c0ec148a46bb0b8ec472ea582, type: 2}
   particlePrefab: {fileID: 8760689742216663979, guid: a31153e5a5fabd64f85e783e680fe610, type: 3}
   spriteRenderer: {fileID: 4314053665518203043}
   trailRenderer: {fileID: 4451761133970068020}
   bulletType: 4
+  audioClips:
+  - {fileID: 8300000, guid: 1d8074a3156d42d4fa73d6bf39b2b761, type: 3}
+  - {fileID: 8300000, guid: 45b5fd68a7588e845b7d039fda6760ef, type: 3}
+  - {fileID: 8300000, guid: b8609845265193649aee9d2bf19a741c, type: 3}
   smallerSpreadshot: {fileID: 6800198954077177765, guid: 9cb4f1b9499b850429334ac81ec50347, type: 3}
 --- !u!82 &1639910627778184418
 AudioSource:
@@ -105,11 +108,11 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2046136655675650724}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 248de03e1b16c2645b9a799a794c80f0, type: 3}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 1d8074a3156d42d4fa73d6bf39b2b761, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -5125,6 +5128,14 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 76ab8f5eb370ad44fb71ea74dd61c715, type: 2}
+    - target: {fileID: 4821619297104889388, guid: 0918d0cd70ac50e48b1d6d7c716af498, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].time
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4821619297104889388, guid: 0918d0cd70ac50e48b1d6d7c716af498, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
+      value: 0.45075598
+      objectReference: {fileID: 0}
     - target: {fileID: 4821619297104889389, guid: 0918d0cd70ac50e48b1d6d7c716af498, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -5135,7 +5146,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4821619297104889389, guid: 0918d0cd70ac50e48b1d6d7c716af498, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.185
+      value: -0.029
       objectReference: {fileID: 0}
     - target: {fileID: 4821619297104889389, guid: 0918d0cd70ac50e48b1d6d7c716af498, type: 3}
       propertyPath: m_LocalPosition.z

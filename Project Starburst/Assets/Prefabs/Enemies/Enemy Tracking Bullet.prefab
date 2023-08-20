@@ -93,6 +93,10 @@ MonoBehaviour:
   spriteRenderer: {fileID: 1104714674970678475}
   trailRenderer: {fileID: 7860480569715331833}
   bulletType: 5
+  audioClips:
+  - {fileID: 8300000, guid: e307e4eee27d25147a427023162dbd8e, type: 3}
+  - {fileID: 8300000, guid: 9ce28aadc02c8364a8c9b3ad477226db, type: 3}
+  - {fileID: 8300000, guid: 90a93aa02869e104ca9bb58e19977836, type: 3}
   fired: 1
 --- !u!82 &3462934008728934706
 AudioSource:
@@ -105,7 +109,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: dd3139c24d2d0c24f9b487c787d2fc7b, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

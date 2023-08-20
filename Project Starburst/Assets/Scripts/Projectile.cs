@@ -10,6 +10,7 @@ public class Projectile : MonoBehaviour {
     [SerializeField] protected SpriteRenderer spriteRenderer;
     [SerializeField] protected TrailRenderer trailRenderer;
     [SerializeField] protected BulletType bulletType = BulletType.Basic;
+    [SerializeField] protected AudioClip[] audioClips;
     
     protected AudioSource audioSource;
     protected float xMovementSpeed;
@@ -21,6 +22,7 @@ public class Projectile : MonoBehaviour {
 
         xMovementSpeed = Mathf.Sin(Mathf.Deg2Rad * transform.rotation.eulerAngles.z) * movementSpeed * -1;
         yMovementSpeed = Mathf.Cos(Mathf.Deg2Rad * transform.rotation.eulerAngles.z) * movementSpeed;
+        PlayRandomClip();
     }
 
     protected virtual void Update() {
@@ -49,5 +51,10 @@ public class Projectile : MonoBehaviour {
 
     private void SetVolume() {
         audioSource.volume = SettingsManager.GetSoundEffectsVolume();
+    }
+
+    private void PlayRandomClip() {
+        audioSource.clip = audioClips[Random.Range(0,3)];
+        audioSource.Play();
     }
 }

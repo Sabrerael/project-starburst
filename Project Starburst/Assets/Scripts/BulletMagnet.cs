@@ -119,7 +119,6 @@ public class BulletMagnet : MonoBehaviour {
         Projectile projectile = bulletToFire.GetComponent<Projectile>();
         projectile.enabled = true;
         projectile.GetMagnetEffects().SetActive(false);
-        bulletToFire.GetComponent<AudioSource>().enabled = true;
         bulletToFire.GetComponent<MagnetMovement>().enabled = false;
         if (bulletToFire.GetComponent<BoomerangBullet>()) {
             bulletToFire.GetComponent<Animator>().SetTrigger("Boomerang");

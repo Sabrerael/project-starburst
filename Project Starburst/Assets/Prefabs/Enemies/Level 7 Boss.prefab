@@ -264,6 +264,8 @@ MonoBehaviour:
   playerParticleSystem: {fileID: 0}
   sparkParticles: {fileID: 0}
   smokeParticles: {fileID: 0}
+  isEndless: 0
+  failureJingleObject: {fileID: 0}
 --- !u!114 &1410790704824824024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -280,6 +282,7 @@ MonoBehaviour:
   timeBetweenPhases: 1.5
   spriteRenderer: {fileID: 6464262686676509213}
   explosionSFX: {fileID: 8300000, guid: 834af7613e983234692de57764dbc706, type: 3}
+  successJingleObject: {fileID: 2116782028300477571, guid: aaa43972f583fd64ba99b3dddf26377b, type: 3}
   bossMaterial: {fileID: 2100000, guid: 76e7d9647d1d9f24f9e2cce5bc4dfb74, type: 2}
   spawnableWaves:
   - {fileID: 11400000, guid: d359ed8fcd32f8d469ae8c9c30d6aa63, type: 2}

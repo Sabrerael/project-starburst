@@ -19,6 +19,7 @@ public class Health : MonoBehaviour {
     [SerializeField] GameObject sparkParticles;
     [SerializeField] GameObject smokeParticles;
     [SerializeField] bool isEndless;
+    [SerializeField] GameObject failureJingleObject;
 
     private Animator animator;
     private AudioSource audioSource;
@@ -146,6 +147,8 @@ public class Health : MonoBehaviour {
         sparkParticles.SetActive(false);
         smokeParticles.SetActive(false);
         playerParticleSystem.Stop();
+        yield return new WaitForSeconds(0.5f);
+        Instantiate(failureJingleObject, transform.position, Quaternion.identity);
         yield return new WaitForSeconds(1);
         Destroy(gameObject);
         if (!isEndless) {

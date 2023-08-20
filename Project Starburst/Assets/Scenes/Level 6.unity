@@ -1698,7 +1698,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a725250e3232db6489ba50ba5cd00927, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newMusic: {fileID: 8300000, guid: 82959b56a15ab7648b357fefcd3543d8, type: 3}
+  newMusic: {fileID: 8300000, guid: 6eddeba0164b8a942a9b90aa556dca05, type: 3}
 --- !u!4 &2034022337
 Transform:
   m_ObjectHideFlags: 0

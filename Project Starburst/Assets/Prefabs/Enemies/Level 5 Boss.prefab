@@ -215,6 +215,8 @@ MonoBehaviour:
   playerParticleSystem: {fileID: 0}
   sparkParticles: {fileID: 0}
   smokeParticles: {fileID: 0}
+  isEndless: 0
+  failureJingleObject: {fileID: 0}
 --- !u!114 &798657268816212067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,6 +233,7 @@ MonoBehaviour:
   timeBetweenPhases: 1.5
   spriteRenderer: {fileID: 3102858533406856355}
   explosionSFX: {fileID: 8300000, guid: 834af7613e983234692de57764dbc706, type: 3}
+  successJingleObject: {fileID: 2116782028300477571, guid: aaa43972f583fd64ba99b3dddf26377b, type: 3}
   boomerangPrefab: {fileID: 6381543657092874225, guid: 3b07b2e120314504d8f1af90e966688f, type: 3}
   boomerangFireInterval: 1.75
   boomerangsToFire: 6

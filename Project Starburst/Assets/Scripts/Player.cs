@@ -42,6 +42,7 @@ public class Player : MonoBehaviour {
         transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = true;
         transform.GetChild(3).gameObject.SetActive(true);
         transform.GetChild(4).gameObject.SetActive(true);
+        transform.GetChild(5).gameObject.SetActive(true);
         GetComponent<Health>().ResetHealth();
     }
 }

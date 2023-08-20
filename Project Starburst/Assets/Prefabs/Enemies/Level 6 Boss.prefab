@@ -271,6 +271,7 @@ MonoBehaviour:
   sparkParticles: {fileID: 0}
   smokeParticles: {fileID: 0}
   isEndless: 0
+  failureJingleObject: {fileID: 0}
 --- !u!114 &4413927988026938428
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -287,6 +288,7 @@ MonoBehaviour:
   timeBetweenPhases: 1.5
   spriteRenderer: {fileID: 5792943823630676555}
   explosionSFX: {fileID: 8300000, guid: 834af7613e983234692de57764dbc706, type: 3}
+  successJingleObject: {fileID: 2116782028300477571, guid: aaa43972f583fd64ba99b3dddf26377b, type: 3}
   projectileSpawn: {fileID: 4203272143656015526}
   missilePrefab: {fileID: 248572933423984896, guid: d07b18d970145ac4fbf8624db7dbe690, type: 3}
   missileFireInterval: 2

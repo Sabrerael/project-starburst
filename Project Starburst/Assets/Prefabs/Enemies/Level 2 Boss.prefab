@@ -257,7 +257,6 @@ MonoBehaviour:
   applyCameraShake: 0
   deathSoundEffectObject: {fileID: 3553197256188102150, guid: e1539ae132cebc94db5d3d695b5d9592, type: 3}
   hitParticleEffect: {fileID: 8760689742216663979, guid: f19cbf8a5db860b48a121b7a3ab1734c, type: 3}
-  hitParticleEffectColorBlind: {fileID: 8760689742216663979, guid: ca0bb5faa09a2f44caceb0f24bb827d2, type: 3}
   weakness: 0
   shieldWeakness: 0
   shieldObject: {fileID: 0}
@@ -266,6 +265,8 @@ MonoBehaviour:
   playerParticleSystem: {fileID: 0}
   sparkParticles: {fileID: 0}
   smokeParticles: {fileID: 0}
+  isEndless: 0
+  failureJingleObject: {fileID: 0}
 --- !u!114 &7859720483730488887
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -282,31 +283,7 @@ MonoBehaviour:
   timeBetweenPhases: 1.5
   spriteRenderer: {fileID: 8454059422669763128}
   explosionSFX: {fileID: 8300000, guid: 834af7613e983234692de57764dbc706, type: 3}
-  basicBullet: {fileID: 0}
-  basicEnemyMaterial: {fileID: 0}
-  basicEnemyMaterialColorBlind: {fileID: 0}
-  basicBulletFireInterval: 2
-  basicBulletsToFire: 5
-  basicEnemyParticles: {fileID: 0}
-  basicEnemyParticlesColorBlind: {fileID: 0}
-  missile: {fileID: 0}
-  missileEnemyMaterial: {fileID: 0}
-  missileEnemyMaterialColorBlind: {fileID: 0}
-  missileFireInterval: 2
-  missilesToFire: 5
-  missileSpawn1: {fileID: 0}
-  missileSpawn2: {fileID: 0}
-  missileEnemyParticles: {fileID: 0}
-  missileEnemyParticlesColorBlind: {fileID: 0}
-  piercingBullet: {fileID: 0}
-  piercingEnemyMaterial: {fileID: 0}
-  piercingEnemyMaterialColorBlind: {fileID: 0}
-  piercingBulletFireInterval: 2
-  piercingBulletsToFire: 5
-  piercingSpawn1: {fileID: 0}
-  piercingSpawn2: {fileID: 0}
-  piercingEnemyParticles: {fileID: 0}
-  piercingEnemyParticlesColorBlind: {fileID: 0}
+  successJingleObject: {fileID: 2116782028300477571, guid: aaa43972f583fd64ba99b3dddf26377b, type: 3}
   spreadshotBullet: {fileID: 2546877271496692783, guid: 62944b41176092049aa9bc8db18a099f, type: 3}
   spreadshotBulletFireInterval: 2
   spreadshotBulletsToFire: 5

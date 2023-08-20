@@ -10,8 +10,6 @@ public class Spreadshot : Projectile {
             Instantiate(smallerSpreadshot, transform.position, Quaternion.identity);
             Instantiate(smallerSpreadshot, transform.position + new Vector3(-0.2f,0,0), Quaternion.Euler(0,0,25));
             Destroy(gameObject);
-        }
-        
+        }   
     }
-
 }

@@ -175,11 +175,14 @@ MonoBehaviour:
   movementSpeed: 6.5
   damage: 100
   defaultMaterial: {fileID: 2100000, guid: 1249bdb3ca7372643a207431d12e235a, type: 2}
-  colorblindMaterial: {fileID: 2100000, guid: f73a99045c3a04043884e571820e68d6, type: 2}
   particlePrefab: {fileID: 0}
   spriteRenderer: {fileID: 7691141619298732426}
   trailRenderer: {fileID: 6859038099231380407}
   bulletType: 2
+  audioClips:
+  - {fileID: 8300000, guid: 0d1d64eb26e063e45bbf320592f77bb1, type: 3}
+  - {fileID: 8300000, guid: df8127d2ac18add4ca90f519ee9da4d2, type: 3}
+  - {fileID: 8300000, guid: d14cb705a16e2bc4699b50567f46e0b4, type: 3}
   missileExplosionPrefab: {fileID: 104292047470291208, guid: 4899a021c96056841a36759c321c414e, type: 3}
 --- !u!82 &473406268753257633
 AudioSource:
@@ -188,11 +191,11 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5550583240862649229}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: e2cea08df988efb428d24ccb3f027b03, type: 3}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 0d1d64eb26e063e45bbf320592f77bb1, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

@@ -170,15 +170,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlayerProjectile: 0
   magnetEffects: {fileID: 0}
-  movementSpeed: -3.5
+  movementSpeed: -7
   damage: 40
   defaultMaterial: {fileID: 2100000, guid: 9d9bfdfbe2fd14a4091095e38c999da6, type: 2}
   particlePrefab: {fileID: 8760689742216663979, guid: 0790fab0554120744ab0a2c0773a8e02, type: 3}
   spriteRenderer: {fileID: 9165954045405707766}
   trailRenderer: {fileID: 2123086510361279428}
   bulletType: 7
-  timeToGoForward: 1.65
-  timeToReverse: 0.5
+  audioClips:
+  - {fileID: 8300000, guid: a8164582fd18fdf49b96f281e081f5dd, type: 3}
+  - {fileID: 8300000, guid: 1fc98dab2ab8db448814631cc89ccc14, type: 3}
+  - {fileID: 8300000, guid: 674beb6bfde9201449ed71c988bb1372, type: 3}
+  timeToGoForward: 0.85
+  timeToReverse: 0.25
 --- !u!95 &-6190953667242061590
 Animator:
   serializedVersion: 3
@@ -209,7 +213,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 3cd1f56872497034a8145075ac900853, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

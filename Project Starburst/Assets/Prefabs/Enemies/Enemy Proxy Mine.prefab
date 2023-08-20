@@ -94,9 +94,13 @@ MonoBehaviour:
   spriteRenderer: {fileID: 2460171621605716739}
   trailRenderer: {fileID: 4640673837224686897}
   bulletType: 6
+  audioClips:
+  - {fileID: 8300000, guid: d4375509f6609a349a0e6129d09322fe, type: 3}
+  - {fileID: 8300000, guid: 32caf1c922c2bfd40809d159bc8c5f6b, type: 3}
+  - {fileID: 8300000, guid: 3f4b066ae798d88458202882f406085a, type: 3}
   detonationTimer: 0.5
   explosion: {fileID: 2707901877153079967, guid: 279966584f36f134ca4244f60370f18c, type: 3}
-  triggeringSound: {fileID: 0}
+  triggeringSound: {fileID: 8300000, guid: eb9a09918ba625f4a9903456f42c24d1, type: 3}
 --- !u!82 &2125176794036289274
 AudioSource:
   m_ObjectHideFlags: 0
@@ -107,8 +111,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 3cd1f56872497034a8145075ac900853, type: 3}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: d4375509f6609a349a0e6129d09322fe, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
