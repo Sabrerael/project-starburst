@@ -184,6 +184,7 @@ MonoBehaviour:
   scoreValue: 300
   fireInterval: 1.35
   defaultMaterial: {fileID: 2100000, guid: 041ea8c39336a854ea627eaccc1d86c0, type: 2}
+  firing: 1
 --- !u!114 &2341157054001434333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,7 +209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 366aa188abf0faf4facb52f9ed0b4d1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthPoints: 175
+  healthPoints: 350
   applyCameraShake: 0
   deathSoundEffectObject: {fileID: 3553197256188102150, guid: e1539ae132cebc94db5d3d695b5d9592, type: 3}
   hitParticleEffect: {fileID: 8760689742216663979, guid: f76ad1395e75df14f88f9dd89589d9af, type: 3}
@@ -220,6 +221,8 @@ MonoBehaviour:
   playerParticleSystem: {fileID: 0}
   sparkParticles: {fileID: 0}
   smokeParticles: {fileID: 0}
+  isEndless: 0
+  failureJingleObject: {fileID: 0}
 --- !u!82 &2558558081628914513
 AudioSource:
   m_ObjectHideFlags: 0

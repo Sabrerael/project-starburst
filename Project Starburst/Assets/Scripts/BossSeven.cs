@@ -6,6 +6,7 @@ public class BossSeven : Boss {
     [Header("Boss 7 Properties")]
     [SerializeField] Material bossMaterial;
     [SerializeField] WaveConfigSO[] spawnableWaves;
+    [SerializeField] Transform[] projectileSpawns;
     [SerializeField] GameObject shield;
     [SerializeField] GameObject basicPrefab;
     [SerializeField] float basicFireInterval = 2;
@@ -104,7 +105,8 @@ public class BossSeven : Boss {
                 yield return new WaitForSeconds(5);
                 spawning = false;
             } else if (state == BossState.BasicFiring) {            
-                Instantiate(basicPrefab, transform.position, Quaternion.identity);
+                Instantiate(basicPrefab, projectileSpawns[0].position, Quaternion.identity);
+                Instantiate(basicPrefab, projectileSpawns[1].position, Quaternion.identity);
                 yield return new WaitForSeconds(basicFireInterval);
             } else if (state == BossState.MissileSpawning && spawning) {
                 enemySpawner.StartWaveConfig(spawnableWaves[1]);
@@ -113,7 +115,8 @@ public class BossSeven : Boss {
                 yield return new WaitForSeconds(5);
                 spawning = false;
             } else if (state == BossState.MissileFiring) {            
-                Instantiate(missilePrefab, transform.position, Quaternion.identity);
+                Instantiate(missilePrefab, projectileSpawns[0].position, Quaternion.identity);
+                Instantiate(missilePrefab, projectileSpawns[1].position, Quaternion.identity);
                 yield return new WaitForSeconds(missileFireInterval);
             } else if (state == BossState.PiercingSpawning && spawning) {
                 enemySpawner.StartWaveConfig(spawnableWaves[2]);
@@ -122,7 +125,8 @@ public class BossSeven : Boss {
                 yield return new WaitForSeconds(5);
                 spawning = false;
             } else if (state == BossState.PiercingFiring) {            
-                Instantiate(piercingPrefab, transform.position, Quaternion.identity);
+                Instantiate(piercingPrefab, projectileSpawns[0].position, Quaternion.identity);
+                Instantiate(piercingPrefab, projectileSpawns[1].position, Quaternion.identity);
                 yield return new WaitForSeconds(piercingFireInterval);
             } else if (state == BossState.SpreadshotSpawning && spawning) {
                 enemySpawner.StartWaveConfig(spawnableWaves[3]);
@@ -131,7 +135,8 @@ public class BossSeven : Boss {
                 yield return new WaitForSeconds(5);
                 spawning = false;
             } else if (state == BossState.SpreadshotFiring) {            
-                Instantiate(spreadshotPrefab, transform.position, Quaternion.identity);
+                Instantiate(spreadshotPrefab, projectileSpawns[0].position, Quaternion.identity);
+                Instantiate(spreadshotPrefab, projectileSpawns[1].position, Quaternion.identity);
                 yield return new WaitForSeconds(spreadshotFireInterval);
             } else if (state == BossState.BoomerangSpawning && spawning) {
                 enemySpawner.StartWaveConfig(spawnableWaves[4]);
@@ -140,7 +145,8 @@ public class BossSeven : Boss {
                 yield return new WaitForSeconds(5);
                 spawning = false;
             } else if (state == BossState.BoomerangFiring) {            
-                Instantiate(boomerangPrefab, transform.position, Quaternion.identity);
+                Instantiate(boomerangPrefab, projectileSpawns[0].position, Quaternion.identity);
+                Instantiate(boomerangPrefab, projectileSpawns[1].position, Quaternion.identity);
                 yield return new WaitForSeconds(boomerangFireInterval);
             } else if (state == BossState.ProxyMineSpawning && spawning) {
                 enemySpawner.StartWaveConfig(spawnableWaves[5]);
@@ -149,7 +155,8 @@ public class BossSeven : Boss {
                 yield return new WaitForSeconds(5);
                 spawning = false;
             } else if (state == BossState.ProxyMineFiring) {            
-                Instantiate(proxyMinePrefab, transform.position, Quaternion.identity);
+                Instantiate(proxyMinePrefab, projectileSpawns[0].position, Quaternion.identity);
+                Instantiate(proxyMinePrefab, projectileSpawns[1].position, Quaternion.identity);
                 yield return new WaitForSeconds(proxyMineFireInterval);
             } else if (state == BossState.TrackingSpawning && spawning) {
                 enemySpawner.StartWaveConfig(spawnableWaves[6]);
@@ -158,7 +165,8 @@ public class BossSeven : Boss {
                 yield return new WaitForSeconds(5);
                 spawning = false;
             } else if (state == BossState.TrackingFiring) {            
-                Instantiate(trackingPrefab, transform.position, Quaternion.identity);
+                Instantiate(trackingPrefab, projectileSpawns[0].position, Quaternion.identity);
+                Instantiate(trackingPrefab, projectileSpawns[1].position, Quaternion.identity);
                 yield return new WaitForSeconds(trackingFireInterval);
             }
             else {

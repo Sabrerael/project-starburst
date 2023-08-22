@@ -203,7 +203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 366aa188abf0faf4facb52f9ed0b4d1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthPoints: 850
+  healthPoints: 1500
   applyCameraShake: 0
   deathSoundEffectObject: {fileID: 3553197256188102150, guid: e1539ae132cebc94db5d3d695b5d9592, type: 3}
   hitParticleEffect: {fileID: 8760689742216663979, guid: d3e26136373d4f14888398ef7b8834ab, type: 3}
@@ -233,7 +233,6 @@ MonoBehaviour:
   timeBetweenPhases: 1.5
   spriteRenderer: {fileID: 3102858533406856355}
   explosionSFX: {fileID: 8300000, guid: 834af7613e983234692de57764dbc706, type: 3}
-  successJingleObject: {fileID: 2116782028300477571, guid: aaa43972f583fd64ba99b3dddf26377b, type: 3}
   boomerangPrefab: {fileID: 6381543657092874225, guid: 3b07b2e120314504d8f1af90e966688f, type: 3}
   boomerangFireInterval: 1.75
   boomerangsToFire: 6

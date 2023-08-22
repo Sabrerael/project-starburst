@@ -252,7 +252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 366aa188abf0faf4facb52f9ed0b4d1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthPoints: 2100
+  healthPoints: 2800
   applyCameraShake: 0
   deathSoundEffectObject: {fileID: 3553197256188102150, guid: e1539ae132cebc94db5d3d695b5d9592, type: 3}
   hitParticleEffect: {fileID: 8760689742216663979, guid: d3e26136373d4f14888398ef7b8834ab, type: 3}
@@ -282,7 +282,6 @@ MonoBehaviour:
   timeBetweenPhases: 1.5
   spriteRenderer: {fileID: 6464262686676509213}
   explosionSFX: {fileID: 8300000, guid: 834af7613e983234692de57764dbc706, type: 3}
-  successJingleObject: {fileID: 2116782028300477571, guid: aaa43972f583fd64ba99b3dddf26377b, type: 3}
   bossMaterial: {fileID: 2100000, guid: 76e7d9647d1d9f24f9e2cce5bc4dfb74, type: 2}
   spawnableWaves:
   - {fileID: 11400000, guid: d359ed8fcd32f8d469ae8c9c30d6aa63, type: 2}
