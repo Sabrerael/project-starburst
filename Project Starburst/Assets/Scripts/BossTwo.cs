@@ -95,6 +95,6 @@ public class BossTwo : Boss {
         }
         UnlockAchievement("BEAT_LEVEL_2");
         Destroy(gameObject);
-        FindObjectOfType<LevelLoader>().LoadWinScreen();
+        FindObjectOfType<LevelLoader>().LoadLevelThree();
     }
 }
