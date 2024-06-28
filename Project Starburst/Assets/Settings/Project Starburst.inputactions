@@ -35,7 +35,7 @@
                     "id": "26363d87-5fcd-438a-a33b-94d310085eb9",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "Hold(duration=0.075)"
                 },
                 {
                     "name": "Pause",

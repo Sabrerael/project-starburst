@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -289,6 +290,9 @@ public class SettingsSaver : MonoBehaviour {
                                         soundEffectsVolume);
         SettingsManager.SetLevel2BossColor(colors[colorDropdowns[3].value]);
         if (inPauseMenu) {
+            if (optionCanvas == null) {
+                optionCanvas = GameObject.FindObjectOfType<OptionsMenu>(true).gameObject;
+            }
             optionCanvas.SetActive(false);
         } else {
             levelLoader.LoadMainMenu();

@@ -25,6 +25,7 @@ public class BulletMagnet : MonoBehaviour {
     [SerializeField] GameObject targetMarker;
 
     private bool magnetActive = false;
+    private bool isMagnetActivating = false;
     private float magnetPower = 1f;
     private AudioSource audioSource;
     private GameObject[] bulletArray = new GameObject[7];
@@ -97,8 +98,9 @@ public class BulletMagnet : MonoBehaviour {
             audioSource.clip = magnetActivateSound;
             audioSource.Play();
             spriteRenderer.enabled = magnetActive;
+            isMagnetActivating = true;
             StartCoroutine(ActivateMagnet());
-        } else {
+        } else if (!magnetActive && !isMagnetActivating) {
             StartCoroutine(DeactivateMagnet());
         }
     }
@@ -225,6 +227,7 @@ public class BulletMagnet : MonoBehaviour {
                                                1);
             yield return new WaitForEndOfFrame();
         }
+        isMagnetActivating = false;
     }
 
     private IEnumerator DeactivateMagnet() {

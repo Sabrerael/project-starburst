@@ -6985,6 +6985,7 @@ GameObject:
   - component: {fileID: 5595705300168592734}
   - component: {fileID: 5595705300168592735}
   - component: {fileID: 7318382485488212864}
+  - component: {fileID: 8438488944746153077}
   m_Layer: 5
   m_Name: Options Canvas
   m_TagString: Untagged
@@ -7091,6 +7092,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9a89b2bed3e764418436783d48db0dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8438488944746153077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5595705300168592732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4d830d58540b9f4db912326e5571ea5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveButton: {fileID: 5595705300370563862}
 --- !u!1 &5595705300198359703
 GameObject:
   m_ObjectHideFlags: 0
