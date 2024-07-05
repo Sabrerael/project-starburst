@@ -20,6 +20,10 @@ public class MusicPlayer : MonoBehaviour {
         SettingsManager.onSettingsChange += SetVolume;
     }
 
+    private void OnDestroy() {
+        SettingsManager.onSettingsChange -= SetVolume;
+    }
+
     private void SetVolume() {
         audioSource.volume = SettingsManager.GetMusicVolume();
     }

@@ -25117,6 +25117,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6089346217480632898}
   - component: {fileID: 1618408829997960882}
+  - component: {fileID: 2517093330576828933}
   m_Layer: 0
   m_Name: Basic Shield Destroyed
   m_TagString: Untagged
@@ -25245,6 +25246,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2517093330576828933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6089346217480632899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e994fccb3875c94db9239739846c7fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6537163131178707610
 GameObject:
   m_ObjectHideFlags: 0
